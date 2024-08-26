@@ -11,8 +11,16 @@ config_version=5
 [application]
 
 config/name="GodotTemplate"
+run/main_scene="res://scenes/_menus/splash_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+AudioManager="*res://Scripts/AutoLoads/audio_manager.gd"
+GameManager="*res://Scripts/AutoLoads/game_manager.gd"
+LevelManager="*res://Scripts/AutoLoads/level_manager.gd"
+OptionsManager="*res://Scripts/AutoLoads/options_manager.gd"
 
 [dotnet]
 
