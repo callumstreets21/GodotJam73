@@ -7,6 +7,7 @@ public partial class TriggerObject : Area3D
 	public override void _Ready()
 	{
 		this.BodyEntered += OnBodyEntered;
+		this.BodyExited += OnBodyExited;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,5 +18,10 @@ public partial class TriggerObject : Area3D
 	private void OnBodyEntered(Node body)
 	{
 		GD.Print( body.Name +"just entered.");
+	}
+	
+	private void OnBodyExited(Node body)
+	{
+		GD.Print( body.Name +"just exited.");
 	}
 }
