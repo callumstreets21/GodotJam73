@@ -42,7 +42,7 @@ public partial class MovementComponent : Node3D
 		if (direction != Vector3.Zero)
 		{
 			direction = direction.Normalized();
-			direction = parent_to_move.Transform.Basis.Xform(direction);
+			direction = parent_to_move.Transform.Basis * direction;
 		}
 
 		//Vector3 newPosition = parent_to_move.GlobalTransform.Origin + direction * speed * (float)delta;
