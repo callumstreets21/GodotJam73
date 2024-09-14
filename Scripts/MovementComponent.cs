@@ -22,19 +22,19 @@ public partial class MovementComponent : Node3D
 	public override void _PhysicsProcess(double delta)
 	{
 		direction = Vector3.Zero;
-		if (Input.IsActionPressed("ui_right"))
+		if (Input.IsActionPressed("move_right"))
 		{
 			direction.X += 1;
 		}
-		if (Input.IsActionPressed("ui_left"))
+		if (Input.IsActionPressed("move_left"))
 		{
 			direction.X -= 1;
 		}
-		if (Input.IsActionPressed("ui_down"))
+		if (Input.IsActionPressed("move_down"))
 		{
 			direction.Z += 1;
 		}
-		if (Input.IsActionPressed("ui_up"))
+		if (Input.IsActionPressed("move_up"))
 		{
 			direction.Z -= 1;
 		}
