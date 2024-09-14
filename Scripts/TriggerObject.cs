@@ -16,12 +16,12 @@ public partial class TriggerObject : Area3D
 	{
 	}
 	
-	private void OnBodyEntered(Node body)
+	protected virtual void OnBodyEntered(Node body)
 	{
 		GD.Print( body.Name +"just entered.");
 	}
 	
-	private void OnBodyExited(Node body)
+	protected virtual void OnBodyExited(Node body)
 	{
 		GD.Print( body.Name +"just exited.");
 	}
