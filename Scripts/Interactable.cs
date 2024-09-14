@@ -3,7 +3,7 @@ using System;
 
 public partial class Interactable : Area3D
 {
-	// Called when the node enters the scene tree for the first time.
+	// Call this to interact with the object, needs to be overriden in child classes
 	public void Use()
 	{
 		GD.Print("interacted with " + this.Name);
