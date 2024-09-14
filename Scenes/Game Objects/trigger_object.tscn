@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b67lmdt46s2qg"]
+
+[ext_resource type="Script" path="res://Scripts/TriggerObject.cs" id="1_0byos"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4v15v"]
+
+[node name="TriggerObject" type="Area3D"]
+script = ExtResource("1_0byos")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_4v15v")
