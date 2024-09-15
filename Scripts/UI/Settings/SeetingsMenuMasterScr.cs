@@ -19,4 +19,12 @@ public partial class SeetingsMenuMasterScr : Node2D
 		//ProjectSettings.SetSetting("display/window/size/height",NewS.Y);
 		//ProjectSettings.Save();
 	}
+
+	public void Toggle_Vsync(){
+		DisplayServer.WindowSetVsyncMode((DisplayServer.WindowGetVsyncMode() == DisplayServer.VSyncMode.Enabled ? DisplayServer.VSyncMode.Disabled : DisplayServer.VSyncMode.Enabled));
+	}
+	public void Set_FOV(float value, NodePath Text_Path){
+		GetNode<Label>(Text_Path).Text = ("FOV : " + value.ToString());
+		//global
+	}
 }

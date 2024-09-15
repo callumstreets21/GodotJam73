@@ -97,6 +97,28 @@ offset_top = 40.0
 offset_right = 640.0
 offset_bottom = 360.0
 
+[node name="FOVText" type="Label" parent="SubViewportContainer/SubViewport/OpMenuLayer/FOVMenu"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 87.955
+offset_right = 448.0
+offset_bottom = 155.955
+theme = ExtResource("2_fj4ap")
+theme_override_font_sizes/font_size = 64
+text = "FOV : 70"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="SubViewportContainer/SubViewport/OpMenuLayer/FOVMenu"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 160.0
+offset_right = 480.0
+offset_bottom = 176.0
+theme = ExtResource("2_fj4ap")
+min_value = 70.0
+max_value = 120.0
+value = 70.0
+
 [node name="ControlsMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
 layout_mode = 3
 anchors_preset = 0
@@ -170,6 +192,7 @@ theme_override_font_sizes/font_size = 48
 text = "2560x1440"
 
 [node name="VSyncMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -190,6 +213,7 @@ toggle_mode = true
 button_pressed = true
 text = "V-Sync"
 
+[connection signal="value_changed" from="SubViewportContainer/SubViewport/OpMenuLayer/FOVMenu/HSlider" to="." method="Set_FOV" binds= [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/FOVMenu/FOVText")]]
 [connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/ResolutionMenu/ResolutionPanel/Button2" to="." method="GameSetRes" binds= [Vector2i(640, 360)]]
 [connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/ResolutionMenu/ResolutionPanel/Button3" to="." method="GameSetRes" binds= [Vector2i(1280, 720)]]
 [connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/ResolutionMenu/ResolutionPanel/Button4" to="." method="GameSetRes" binds= [Vector2i(1920, 1080)]]
