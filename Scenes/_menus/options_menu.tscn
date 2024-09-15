@@ -339,6 +339,11 @@ offset_right = 640.0
 offset_bottom = 400.0
 
 [connection signal="value_changed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/FOVMenu/HSlider" to="." method="Set_FOV" binds= [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/FOVMenu/FOVText")]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Forward" to="." method="Set_Button" binds= [0]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Backward" to="." method="Set_Button" binds= [1]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Left" to="." method="Set_Button" binds= [2]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Right" to="." method="Set_Button" binds= [3]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Jump" to="." method="Set_Button" binds= [4]]
 [connection signal="ready" from="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/VSyncMenu" to="." method="Get_Vsync" binds= [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/VSyncMenu/ResolutionButton2")]]
 [connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/VSyncMenu/ResolutionButton2" to="." method="Toggle_Vsync"]
 [connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel/Button2" to="." method="GameSetRes" binds= [Vector2i(640, 360)]]

@@ -5,7 +5,9 @@ public partial class SeetingsMenuMasterScr : Node2D
 {
 	//to simply references for control buttons
 	[Export] public Button[] ControlButtons;
+	[Export] private string[] ControlInputs = {"move_up","move_down","move_left","move_right","jump"};
 	public bool Active_Button_Input = false;
+	public int SelectControlButton = -1;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -16,7 +18,21 @@ public partial class SeetingsMenuMasterScr : Node2D
 	{
 	}
 
-	public void GameSetRes(Vector2I NewS){
+    public override void _Input(InputEvent @event)
+    {
+        base._Input(@event);
+		if (@event is InputEventKey keyEvent && keyEvent.Pressed){
+			if(SelectControlButton >= 0 && keyEvent.Keycode != Key.Escape){
+				InputMap.ActionEraseEvents(ControlInputs[SelectControlButton]);
+				InputMap.ActionAddEvent(ControlInputs[SelectControlButton],@event);
+				GD.Print(@event.AsText());
+			}
+			SelectControlButton = -1;
+			Deactivate_Buttons();
+		}
+    }
+
+    public void GameSetRes(Vector2I NewS){
 		GetWindow().Size = NewS;
 		//ProjectSettings.SetSetting("display/window/size/width",NewS.X);
 		//ProjectSettings.SetSetting("display/window/size/height",NewS.Y);
@@ -40,8 +56,13 @@ public partial class SeetingsMenuMasterScr : Node2D
 
 	}
 
+	private void Deactivate_Buttons(int ex = -1){
+		for(int l = 0; l < ControlButtons.Length; l++)
+			if (l != ex)
+				ControlButtons[l].ButtonPressed = false;
+	}
 	public void Set_Button(int b){
-		Active_Button_Input = true;
-		
+		Deactivate_Buttons(b);
+		SelectControlButton = b;
 	}
 }
