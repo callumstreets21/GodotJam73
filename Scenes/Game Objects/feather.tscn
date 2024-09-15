@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbscgi28d25ko"]
+
+[ext_resource type="Script" path="res://Scripts/FeatherCollectable.cs" id="1_jolao"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ndqeo"]
+size = Vector3(0.336121, 0.515991, 0.386658)
+
+[sub_resource type="Animation" id="Animation_usroh"]
+resource_name = "FeatherSpin"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.1408), Vector3(0, 3.14159, 1.14145), Vector3(0, 6.28319, 1.14145)]
+}
+
+[sub_resource type="Animation" id="Animation_vuh6c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 1.1408)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qywsl"]
+_data = {
+"FeatherSpin": SubResource("Animation_usroh"),
+"RESET": SubResource("Animation_vuh6c")
+}
+
+[node name="Feather" type="Area3D"]
+script = ExtResource("1_jolao")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0185852, 0.0578003, -0.0189514)
+shape = SubResource("BoxShape3D_ndqeo")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(0.416868, -0.908967, 0, 0.908967, 0.416868, 0, 0, 0, 1, 0, 0, 0)
+text = "Feather"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qywsl")
+}
+autoplay = "FeatherSpin"
