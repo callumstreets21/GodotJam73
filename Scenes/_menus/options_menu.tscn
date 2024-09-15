@@ -221,7 +221,7 @@ offset_bottom = 280.0
 theme = ExtResource("2_fj4ap")
 min_value = 1.0
 max_value = 5.0
-step = 0.001
+step = 0.01
 value = 1.0
 
 [node name="GraphicsMenus" type="Node" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
@@ -344,6 +344,7 @@ offset_bottom = 400.0
 [connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Left" to="." method="Set_Button" binds= [2]]
 [connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Right" to="." method="Set_Button" binds= [3]]
 [connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Jump" to="." method="Set_Button" binds= [4]]
+[connection signal="value_changed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/HSlider" to="." method="Set_Sensitivity" binds= [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/MouseSensText")]]
 [connection signal="ready" from="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/VSyncMenu" to="." method="Get_Vsync" binds= [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/VSyncMenu/ResolutionButton2")]]
 [connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/VSyncMenu/ResolutionButton2" to="." method="Toggle_Vsync"]
 [connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel/Button2" to="." method="GameSetRes" binds= [Vector2i(640, 360)]]

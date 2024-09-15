@@ -65,4 +65,9 @@ public partial class SeetingsMenuMasterScr : Node2D
 		Deactivate_Buttons(b);
 		SelectControlButton = b;
 	}
+
+	public void Set_Sensitivity(float value, NodePath Text_Path){
+		GetNode<Label>(Text_Path).Text = ("Sensitivity : " + value.ToString());
+		GetNode("/root/OptionsManager").Call("SetSensitivity",value);
+	}
 }
