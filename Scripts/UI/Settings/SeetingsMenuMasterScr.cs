@@ -3,6 +3,9 @@ using System;
 
 public partial class SeetingsMenuMasterScr : Node2D
 {
+	//to simply references for control buttons
+	[Export] public Button[] ControlButtons;
+	public bool Active_Button_Input = false;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -35,5 +38,10 @@ public partial class SeetingsMenuMasterScr : Node2D
 
 	public void Set_Mono(){
 
+	}
+
+	public void Set_Button(int b){
+		Active_Button_Input = true;
+		
 	}
 }

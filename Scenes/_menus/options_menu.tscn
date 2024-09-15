@@ -5,8 +5,9 @@
 [ext_resource type="Theme" uid="uid://b87v1vhruqoac" path="res://Themes/BaseMenuTabT1.tres" id="2_fj4ap"]
 [ext_resource type="Script" path="res://Scripts/UI/Settings/SettingTabBarSelect.cs" id="2_nkbbt"]
 
-[node name="OptionsMenu" type="Node2D"]
+[node name="OptionsMenu" type="Node2D" node_paths=PackedStringArray("ControlButtons")]
 script = ExtResource("1_rvv2v")
+ControlButtons = [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Forward"), NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Backward"), NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Left"), NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Right"), NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Jump")]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 offset_right = 640.0
@@ -120,14 +121,103 @@ theme = ExtResource("2_fj4ap")
 min_value = 70.0
 max_value = 120.0
 value = 70.0
+rounded = true
 
 [node name="ControlsMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = 40.0
 offset_right = 640.0
 offset_bottom = 360.0
+
+[node name="ResolutionPanel" type="Panel" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+offset_left = 40.0
+offset_top = 22.0
+offset_right = 600.0
+offset_bottom = 302.0
+rotation = -6.28319
+theme = ExtResource("1_raxkd")
+
+[node name="Forward" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 40.0
+offset_right = 384.0
+offset_bottom = 68.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "forward"
+
+[node name="Backward" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 72.0
+offset_right = 384.0
+offset_bottom = 100.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "backward"
+
+[node name="Left" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 104.0
+offset_right = 384.0
+offset_bottom = 132.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "Left"
+
+[node name="Right" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 136.0
+offset_right = 384.0
+offset_bottom = 164.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "Right"
+
+[node name="Jump" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 168.0
+offset_right = 384.0
+offset_bottom = 196.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "Jump"
+
+[node name="MouseSensText" type="Label" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+offset_left = 192.0
+offset_top = 216.0
+offset_right = 448.0
+offset_bottom = 284.0
+theme = ExtResource("2_fj4ap")
+theme_override_font_sizes/font_size = 48
+text = "Sensitivity : 1"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+offset_left = 160.0
+offset_top = 264.0
+offset_right = 480.0
+offset_bottom = 280.0
+theme = ExtResource("2_fj4ap")
+min_value = 1.0
+max_value = 5.0
+step = 0.001
+value = 1.0
 
 [node name="GraphicsMenus" type="Node" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
 
@@ -154,6 +244,7 @@ button_pressed = true
 text = "V-Sync"
 
 [node name="ResolutionMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = 40.0
