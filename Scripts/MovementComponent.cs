@@ -16,7 +16,6 @@ public partial class MovementComponent : Node3D
 		direction = Vector3.Zero;
 		parent_to_move = GetParent<Node3D>();
 		Input.MouseMode = Input.MouseModeEnum.Captured;
-		GD.Print(parent_to_move.Name);
 	}
 
 	public override void _PhysicsProcess(double delta)
