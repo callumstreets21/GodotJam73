@@ -1,22 +1,117 @@
-[gd_scene load_steps=2 format=3 uid="uid://c25twsyjp0yy1"]
+[gd_scene load_steps=3 format=3 uid="uid://c25twsyjp0yy1"]
 
-[ext_resource type="Texture2D" uid="uid://ct7sxncus17ge" path="res://Images/Textures/UI/menubg1.png" id="1_nmx63"]
+[ext_resource type="Theme" uid="uid://nkwrsdxhcjxg" path="res://Themes/BaseMenuTheming1.tres" id="1_raxkd"]
+[ext_resource type="Script" path="res://Scripts/UI/Settings/SettingTabBarSelect.cs" id="2_nkbbt"]
 
 [node name="OptionsMenu" type="Node2D"]
 
-[node name="OpMenuLayer" type="CanvasLayer" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+stretch = true
 
-[node name="TextureRect" type="TextureRect" parent="OpMenuLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="OpMenuLayer" type="CanvasLayer" parent="SubViewportContainer/SubViewport"]
+layer = 8
+
+[node name="TabBar" type="TabBar" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 42.0
 grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-texture = ExtResource("1_nmx63")
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+current_tab = 0
+deselect_enabled = true
+tab_count = 2
+tab_0/title = "Graphicx"
+tab_1/title = "Audio"
+script = ExtResource("2_nkbbt")
+
+[node name="SettingsMenu1" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ResolutionButton" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/SettingsMenu1"]
+offset_left = 32.0
+offset_top = 60.0
+offset_right = 288.0
+offset_bottom = 113.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 48
+text = "Resolution"
+alignment = 0
+
+[node name="ResolutionButton2" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/SettingsMenu1"]
+offset_left = 32.0
+offset_top = 123.845
+offset_right = 288.0
+offset_bottom = 176.845
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 48
+text = "Prevuew"
+alignment = 0
+
+[node name="ResolutionPanel" type="Panel" parent="SubViewportContainer/SubViewport/OpMenuLayer/SettingsMenu1"]
+offset_left = 348.0
+offset_top = 40.0
+offset_right = 620.0
+offset_bottom = 320.0
+rotation = -6.28319
+theme = ExtResource("1_raxkd")
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/OpMenuLayer/SettingsMenu1/ResolutionPanel"]
+layout_mode = 0
+offset_top = -32.0
+offset_right = 140.0
+offset_bottom = 2.0
+theme = ExtResource("1_raxkd")
+text = "Resolutions"
+
+[node name="Button2" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/SettingsMenu1/ResolutionPanel"]
+offset_left = 16.0
+offset_top = 20.0
+offset_right = 253.0
+offset_bottom = 73.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 48
+text = "640x360"
+
+[node name="Button3" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/SettingsMenu1/ResolutionPanel"]
+offset_left = 16.0
+offset_top = 80.0
+offset_right = 253.0
+offset_bottom = 133.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 48
+text = "1280x720"
+
+[node name="Button4" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/SettingsMenu1/ResolutionPanel"]
+offset_left = 16.0
+offset_top = 142.0
+offset_right = 253.0
+offset_bottom = 195.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 48
+text = "1920x1080"
+
+[node name="Button5" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/SettingsMenu1/ResolutionPanel"]
+offset_left = 16.0
+offset_top = 204.0
+offset_right = 253.0
+offset_bottom = 257.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 48
+text = "2560x1440"
