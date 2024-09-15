@@ -28,7 +28,7 @@ public partial class HealthComponent : Node3D
     public override void _Ready()
     {
         base._Ready();
-        health = 100.0f;
+        health = maxHealth;
         parent_class = GetParent<Node3D>();
     }
     
