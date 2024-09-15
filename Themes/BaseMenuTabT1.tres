@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://b87v1vhruqoac"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://b87v1vhruqoac"]
 
 [ext_resource type="FontFile" uid="uid://dt14h614aivvs" path="res://Fonts/BloodBlocks Project.ttf" id="1_o715i"]
 
@@ -30,6 +30,20 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3lqu8"]
+bg_color = Color(0, 0, 0, 0.494118)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qr26o"]
+bg_color = Color(1, 0.34902, 0.0313726, 0.784314)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5trv"]
 bg_color = Color(1, 0.34902, 0.0313726, 0.784314)
 
@@ -46,5 +60,7 @@ default_font_size = 32
 Button/styles/hover = SubResource("StyleBoxFlat_onl5c")
 Button/styles/normal = SubResource("StyleBoxFlat_a035p")
 Button/styles/pressed = SubResource("StyleBoxFlat_3kfnj")
+MenuButton/styles/normal = SubResource("StyleBoxFlat_3lqu8")
+MenuButton/styles/pressed = SubResource("StyleBoxFlat_qr26o")
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_m5trv")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_vk1br")
