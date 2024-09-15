@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://j61fkxgsv1xk"]
 
-[ext_resource type="ArrayMesh" uid="uid://bd1sgwdtgs42n" path="res://Models/basic-cross-wall_Cube_001.res" id="1_t56on"]
-[ext_resource type="ArrayMesh" uid="uid://rs2tfrcqlckj" path="res://Models/basic-corner-wall_Cube_002.res" id="2_qiraf"]
+[ext_resource type="ArrayMesh" uid="uid://yw1qu7fm7b77" path="res://Models/basic-cross-wall_Cube_001.res" id="1_t56on"]
+[ext_resource type="ArrayMesh" uid="uid://caapyc0t6tgoj" path="res://Models/basic-corner-wall_Cube_002.res" id="2_qiraf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkvu5"]
 albedo_color = Color(0.265361, 0.265361, 0.265361, 1)

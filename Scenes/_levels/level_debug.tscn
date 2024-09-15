@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7ocvb2duj8e6"]
+[gd_scene load_steps=5 format=3 uid="uid://c7ocvb2duj8e6"]
 
 [ext_resource type="MeshLibrary" uid="uid://co5qc03umvxbc" path="res://MeshLibrary/FloorLibrary.tres" id="1_4vw6e"]
 [ext_resource type="MeshLibrary" uid="uid://clq73qvg4x8b0" path="res://MeshLibrary/WallLibrary.tres" id="2_i86rw"]
 [ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="3_0e3e1"]
+[ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="4_57n5t"]
 
 [node name="LevelDebug" type="Node3D"]
 
@@ -23,3 +24,6 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="DefaultEnvironment" parent="." instance=ExtResource("3_0e3e1")]
+
+[node name="Player" parent="." instance=ExtResource("4_57n5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32016, 3.41843, -1.53209)
