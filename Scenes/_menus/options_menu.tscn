@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c25twsyjp0yy1"]
+[gd_scene load_steps=4 format=3 uid="uid://c25twsyjp0yy1"]
 
 [ext_resource type="Theme" uid="uid://nkwrsdxhcjxg" path="res://Themes/BaseMenuTheming1.tres" id="1_raxkd"]
+[ext_resource type="Theme" uid="uid://b87v1vhruqoac" path="res://Themes/BaseMenuTabT1.tres" id="2_fj4ap"]
 [ext_resource type="Script" path="res://Scripts/UI/Settings/SettingTabBarSelect.cs" id="2_nkbbt"]
 
 [node name="OptionsMenu" type="Node2D"]
@@ -18,31 +19,90 @@ render_target_update_mode = 4
 [node name="OpMenuLayer" type="CanvasLayer" parent="SubViewportContainer/SubViewport"]
 layer = 8
 
-[node name="TabBar" type="TabBar" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
-anchors_preset = 10
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 42.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-focus_mode = 0
-theme = ExtResource("1_raxkd")
-current_tab = 0
-deselect_enabled = true
-tab_count = 2
-tab_0/title = "Graphicx"
-tab_1/title = "Audio"
+grow_vertical = 2
+color = Color(0, 0, 0, 0.282353)
+
+[node name="TabControl" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer" node_paths=PackedStringArray("TabButtons", "TabMenus")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 48.0
 script = ExtResource("2_nkbbt")
+TabButtons = [NodePath("GameOption"), NodePath("GraphicsOption"), NodePath("AudioOption")]
+TabMenus = [NodePath("../SettingsMenu1"), NodePath("../SettingsMenu2")]
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/OpMenuLayer/TabControl"]
+offset_right = 640.0
+offset_bottom = 42.0
+color = Color(0, 0, 0, 0.494118)
+
+[node name="GameOption" type="OptionButton" parent="SubViewportContainer/SubViewport/OpMenuLayer/TabControl"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 258.0
+offset_bottom = 41.0
+focus_mode = 0
+theme = ExtResource("2_fj4ap")
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Gameplay"
+popup/item_0/disabled = true
+popup/item_1/text = "FOV"
+popup/item_1/id = 1
+popup/item_2/text = "Controls"
+popup/item_2/id = 2
+
+[node name="GraphicsOption" type="OptionButton" parent="SubViewportContainer/SubViewport/OpMenuLayer/TabControl"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 258.0
+offset_bottom = 41.0
+focus_mode = 0
+theme = ExtResource("2_fj4ap")
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Graphics"
+popup/item_0/disabled = true
+popup/item_1/text = "Resolution"
+popup/item_1/id = 1
+popup/item_2/text = "v-sync"
+popup/item_2/id = 2
+
+[node name="AudioOption" type="OptionButton" parent="SubViewportContainer/SubViewport/OpMenuLayer/TabControl"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 258.0
+offset_bottom = 41.0
+focus_mode = 0
+theme = ExtResource("2_fj4ap")
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Audio"
+popup/item_0/disabled = true
+popup/item_1/text = "Volume"
+popup/item_1/id = 1
+popup/item_2/text = "Mono-Setero"
+popup/item_2/id = 2
 
 [node name="SettingsMenu1" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 640.0
+offset_bottom = 360.0
 
 [node name="ResolutionButton" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/SettingsMenu1"]
 offset_left = 32.0
-offset_top = 60.0
+offset_top = 108.0
 offset_right = 288.0
-offset_bottom = 113.0
+offset_bottom = 161.0
 focus_mode = 0
 theme = ExtResource("1_raxkd")
 theme_override_font_sizes/font_size = 48
@@ -51,9 +111,9 @@ alignment = 0
 
 [node name="ResolutionButton2" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/SettingsMenu1"]
 offset_left = 32.0
-offset_top = 123.845
+offset_top = 172.0
 offset_right = 288.0
-offset_bottom = 176.845
+offset_bottom = 225.0
 focus_mode = 0
 theme = ExtResource("1_raxkd")
 theme_override_font_sizes/font_size = 48
@@ -62,19 +122,20 @@ alignment = 0
 
 [node name="ResolutionPanel" type="Panel" parent="SubViewportContainer/SubViewport/OpMenuLayer/SettingsMenu1"]
 offset_left = 348.0
-offset_top = 40.0
+offset_top = 62.0
 offset_right = 620.0
-offset_bottom = 320.0
+offset_bottom = 342.0
 rotation = -6.28319
 theme = ExtResource("1_raxkd")
 
 [node name="Label" type="Label" parent="SubViewportContainer/SubViewport/OpMenuLayer/SettingsMenu1/ResolutionPanel"]
 layout_mode = 0
-offset_top = -32.0
-offset_right = 140.0
-offset_bottom = 2.0
+offset_left = -264.0
+offset_right = -8.0
+offset_bottom = 34.0
 theme = ExtResource("1_raxkd")
 text = "Resolutions"
+horizontal_alignment = 2
 
 [node name="Button2" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/SettingsMenu1/ResolutionPanel"]
 offset_left = 16.0
@@ -115,3 +176,20 @@ focus_mode = 0
 theme = ExtResource("1_raxkd")
 theme_override_font_sizes/font_size = 48
 text = "2560x1440"
+
+[node name="SettingsMenu2" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/OpMenuLayer/SettingsMenu2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 78.0
+offset_bottom = 82.0
+theme = ExtResource("1_raxkd")
+text = "MENU2"
