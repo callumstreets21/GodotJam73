@@ -5,13 +5,29 @@ namespace GodotTemplate.Scripts;
 
 public partial class HealthComponent : Node3D
 {
+    [Export]
     private float health;
+    [Export]
     private bool isInvincible;
+    [Export] 
+    private float maxHealth;
     private bool isDead;
     private Node3D parent_class;
     
+    public float Health
+    {
+        get { return health; }
+        set { health = value;
+            if (health <= 0)
+            {
+                Die();
+            }
+        }
+    }
+    
     public override void _Ready()
     {
+        base._Ready();
         health = 100.0f;
         parent_class = GetParent<Node3D>();
     }
@@ -31,43 +47,27 @@ public partial class HealthComponent : Node3D
     public void Heal(float healAmount)
     {
         health += healAmount;
-        if (health > 100)
+        if (health > maxHealth)
         {
-            health = 100;
+            health = maxHealth;
         }
     }
     
-    public void Die()
+    public virtual void Die()
     {
-        isDead = true;
-        health = 0;
-        PackedScene gameOverScene = (PackedScene)ResourceLoader.Load("res://Scenes/_menus/game_over_screen.tscn");
-        Node gameOverInstance = gameOverScene.Instantiate();
-        GetTree().Root.AddChild(gameOverInstance);
+        // empty for now
+        // override in child classes
     }
     
-    public void Respawn()
+    public virtual void Respawn()
     {
-        isDead = false;
-        health = 100;
-        // Reload the current level
-        GetTree().ReloadCurrentScene();
+        // empty for now
+        // override in child classes
     }
     
     public void SetInvincible(bool invincible)
     {
         isInvincible = invincible;
     }
-    
-    public float GetHealth()
-    {
-        return health;
-    }
-    
-    public void SetHealth(float newHealth)
-    {
-        health = newHealth;
-    }
-    
 }
 
