@@ -70,4 +70,20 @@ public partial class SeetingsMenuMasterScr : Node2D
 		GetNode<Label>(Text_Path).Text = ("Sensitivity : " + value.ToString());
 		GetNode("/root/OptionsManager").Call("SetSensitivity",value);
 	}
+
+	public void Get_Music_V(NodePath S_Path, NodePath L_Path){
+		float get_M = (float)GetNode("/root/OptionsManager").Get("MusicVolume");
+		//GetNode<Label>(L_Path).Text = ("Music : " + value.ToString());
+		//GetNode<Slider>(S_Path).Value = GetNode("/root/OptionsManager").("SetSensitivity",value);
+	}
+	public void Set_Music_Volume(float value, NodePath Path){
+
+	}
+	public void Get_SFX_V(NodePath Path){
+		float get_S = 0;
+		GetNode<Button>(Path).ButtonPressed = (DisplayServer.WindowGetVsyncMode() == DisplayServer.VSyncMode.Enabled);
+	}
+	public void Set_SFX_Volume(float value, NodePath Path){
+
+	}
 }

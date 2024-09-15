@@ -126,6 +126,7 @@ value = 70.0
 rounded = true
 
 [node name="ControlsMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = 40.0
@@ -323,20 +324,70 @@ text = "2560x1440"
 [node name="AudioMenu" type="Node" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
 
 [node name="VolumeMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_top = 160.0
+offset_top = 40.0
 offset_right = 640.0
-offset_bottom = 480.0
+offset_bottom = 360.0
+
+[node name="MusicText" type="Label" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu"]
+offset_left = 192.0
+offset_top = 80.0
+offset_right = 448.0
+offset_bottom = 148.0
+theme = ExtResource("2_fj4ap")
+theme_override_font_sizes/font_size = 48
+text = "Music : 1"
+horizontal_alignment = 1
+
+[node name="HSlider2" type="HSlider" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu"]
+offset_left = 160.0
+offset_top = 132.0
+offset_right = 480.0
+offset_bottom = 148.0
+theme = ExtResource("2_fj4ap")
+min_value = -24.0
+max_value = 24.0
+
+[node name="SFXText" type="Label" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu"]
+offset_left = 192.0
+offset_top = 160.0
+offset_right = 448.0
+offset_bottom = 228.0
+theme = ExtResource("2_fj4ap")
+theme_override_font_sizes/font_size = 48
+text = "SFX : 1"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu"]
+offset_left = 160.0
+offset_top = 210.0
+offset_right = 480.0
+offset_bottom = 226.0
+theme = ExtResource("2_fj4ap")
+min_value = -24.0
+max_value = 24.0
+value = 1.0
 
 [node name="MonoMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_top = 80.0
+offset_top = 40.0
 offset_right = 640.0
-offset_bottom = 400.0
+offset_bottom = 360.0
+
+[node name="MonoAudioT" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/MonoMenu"]
+offset_left = 192.0
+offset_top = 120.0
+offset_right = 448.0
+offset_bottom = 173.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 48
+toggle_mode = true
+button_pressed = true
+text = "Mono"
 
 [connection signal="value_changed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/FOVMenu/HSlider" to="." method="Set_FOV" binds= [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/FOVMenu/FOVText")]]
 [connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Forward" to="." method="Set_Button" binds= [0]]
@@ -351,3 +402,5 @@ offset_bottom = 400.0
 [connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel/Button3" to="." method="GameSetRes" binds= [Vector2i(1280, 720)]]
 [connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel/Button4" to="." method="GameSetRes" binds= [Vector2i(1920, 1080)]]
 [connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel/Button5" to="." method="GameSetRes" binds= [Vector2i(2560, 1440)]]
+[connection signal="value_changed" from="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu/HSlider2" to="." method="Set_Sensitivity" binds= [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/MouseSensText")]]
+[connection signal="value_changed" from="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu/HSlider" to="." method="Set_Sensitivity" binds= [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/MouseSensText")]]
