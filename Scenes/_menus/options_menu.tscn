@@ -331,6 +331,7 @@ offset_right = 640.0
 offset_bottom = 360.0
 
 [node name="MusicText" type="Label" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu"]
+layout_mode = 0
 offset_left = 192.0
 offset_top = 80.0
 offset_right = 448.0
@@ -341,6 +342,7 @@ text = "Music : 1"
 horizontal_alignment = 1
 
 [node name="HSlider2" type="HSlider" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 132.0
 offset_right = 480.0
@@ -350,6 +352,7 @@ min_value = -24.0
 max_value = 24.0
 
 [node name="SFXText" type="Label" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu"]
+layout_mode = 0
 offset_left = 192.0
 offset_top = 160.0
 offset_right = 448.0
@@ -360,6 +363,7 @@ text = "SFX : 1"
 horizontal_alignment = 1
 
 [node name="HSlider" type="HSlider" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 210.0
 offset_right = 480.0
@@ -378,6 +382,7 @@ offset_right = 640.0
 offset_bottom = 360.0
 
 [node name="MonoAudioT" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/MonoMenu"]
+layout_mode = 0
 offset_left = 192.0
 offset_top = 120.0
 offset_right = 448.0
