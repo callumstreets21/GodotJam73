@@ -25,6 +25,8 @@ public partial class SeetingsMenuMasterScr : Node2D
 	}
 	public void Set_FOV(float value, NodePath Text_Path){
 		GetNode<Label>(Text_Path).Text = ("FOV : " + value.ToString());
+		GD.Print(GetNode("/root/OptionsManager") != null);
+		GetNode("/root/OptionsManager").Call("SetFOV",value);
 		//global
 	}
 }

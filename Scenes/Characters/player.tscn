@@ -1,13 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkbwkvi8f7mtw"]
-
-[ext_resource type="PackedScene" path="res://Scenes/Components/movement_component.tscn" id="1_aafd6"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/DamageComponent.tscn" id="2_t245d"]
+[gd_scene format=3 uid="uid://dkbwkvi8f7mtw"]
 
 [node name="Player" type="Node3D"]
 
-[node name="MovementComponent" parent="." instance=ExtResource("1_aafd6")]
+[node name="MovementComponent" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
 [node name="Camera3D" type="Camera3D" parent="."]
 
-[node name="DamageComponent" parent="." instance=ExtResource("2_t245d")]
+[node name="DamageComponent" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 activeLayer = 2
+script = null
