@@ -23,10 +23,17 @@ public partial class SeetingsMenuMasterScr : Node2D
 	public void Toggle_Vsync(){
 		DisplayServer.WindowSetVsyncMode((DisplayServer.WindowGetVsyncMode() == DisplayServer.VSyncMode.Enabled ? DisplayServer.VSyncMode.Disabled : DisplayServer.VSyncMode.Enabled));
 	}
+	public void Get_Vsync(NodePath Path){
+		GetNode<Button>(Path).ButtonPressed = (DisplayServer.WindowGetVsyncMode() == DisplayServer.VSyncMode.Enabled);
+	}
 	public void Set_FOV(float value, NodePath Text_Path){
 		GetNode<Label>(Text_Path).Text = ("FOV : " + value.ToString());
 		GD.Print(GetNode("/root/OptionsManager") != null);
 		GetNode("/root/OptionsManager").Call("SetFOV",value);
 		//global
+	}
+
+	public void Set_Mono(){
+
 	}
 }
