@@ -8,17 +8,21 @@ public partial class SettingTabBarSelect : Control
 	[Export] public float PaddingV = 2.0f;
 
 	[Export] public Control[] TabMenus;
+	int ButtonMenuLength = 0;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		ICloseAllMenu();
-		int LastStart = 0;
 		for(int i=0; i < TabButtons.Length; i++){
+			//Set tab size
 			TabButtons[i].Size = new Vector2((Size.X / TabButtons.Length)  - (PaddingH), TabButtons[i].Size.Y - (PaddingV));
 			TabButtons[i].Position = new Vector2((Size.X / TabButtons.Length)*i + (PaddingH/2), + (PaddingV/2));
-			LastStart += TabButtons[i].ItemCount-1;
-			//if (i < TabMenus.Length)
-				//TabButtons[i].ItemSelected += OpenMenu();
+			//update button id
+			for(int t=0; t < TabButtons[i].GetPopup().ItemCount; t++)
+				TabButtons[i].GetPopup().SetItemId(t,TabButtons[i].GetPopup().GetItemId(t)+ButtonMenuLength);
+			//connect button methods
+			TabButtons[i].GetPopup().Connect("id_pressed", new Callable(this, MethodName.OpenMenu));
+			ButtonMenuLength += TabButtons[i].ItemCount;
 		}
 	}
 
@@ -33,11 +37,11 @@ public partial class SettingTabBarSelect : Control
 			Menu.ProcessMode = ProcessModeEnum.Disabled;
 		}
 	}
-	private void OpenMenu(Godot.OptionButton.ItemSelectedEventHandler i){
-		GD.Print("Select");
+	private void OpenMenu(long id){
+		GD.Print(id);
 		ICloseAllMenu();
-		//Control Menu = TabMenus[i];
-		//Menu.Visible = true;
-		//Menu.ProcessMode = ProcessModeEnum.Inherit;
+		Control Menu = TabMenus[id];
+		Menu.Visible = true;
+		Menu.ProcessMode = ProcessModeEnum.Inherit;
 	}
 }

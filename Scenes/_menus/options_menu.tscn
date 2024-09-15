@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c25twsyjp0yy1"]
+[gd_scene load_steps=5 format=3 uid="uid://c25twsyjp0yy1"]
 
 [ext_resource type="Theme" uid="uid://nkwrsdxhcjxg" path="res://Themes/BaseMenuTheming1.tres" id="1_raxkd"]
+[ext_resource type="Script" path="res://Scripts/UI/Settings/SeetingsMenuMasterScr.cs" id="1_rvv2v"]
 [ext_resource type="Theme" uid="uid://b87v1vhruqoac" path="res://Themes/BaseMenuTabT1.tres" id="2_fj4ap"]
 [ext_resource type="Script" path="res://Scripts/UI/Settings/SettingTabBarSelect.cs" id="2_nkbbt"]
 
 [node name="OptionsMenu" type="Node2D"]
+script = ExtResource("1_rvv2v")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 offset_right = 640.0
@@ -34,7 +36,7 @@ offset_right = 640.0
 offset_bottom = 48.0
 script = ExtResource("2_nkbbt")
 TabButtons = [NodePath("GameOption"), NodePath("GraphicsOption"), NodePath("AudioOption")]
-TabMenus = [NodePath("../ResolutionMenu"), NodePath("../SettingsMenu2")]
+TabMenus = [NodePath("../FOVMenu"), NodePath("../ControlsMenu"), NodePath("../ResolutionMenu"), NodePath("../VSyncMenu")]
 
 [node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/OpMenuLayer/TabControl"]
 offset_right = 640.0
@@ -55,12 +57,10 @@ text = "GAMEPLAY"
 flat = false
 item_count = 2
 popup/item_0/text = "FOV"
-popup/item_0/id = 1
 popup/item_1/text = "Controls"
-popup/item_1/id = 2
+popup/item_1/id = 1
 
 [node name="GraphicsOption" type="MenuButton" parent="SubViewportContainer/SubViewport/OpMenuLayer/TabControl"]
-layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 258.0
@@ -71,9 +71,8 @@ text = "Graphics"
 flat = false
 item_count = 2
 popup/item_0/text = "Resolution"
-popup/item_0/id = 1
 popup/item_1/text = "v-sync"
-popup/item_1/id = 2
+popup/item_1/id = 1
 
 [node name="AudioOption" type="MenuButton" parent="SubViewportContainer/SubViewport/OpMenuLayer/TabControl"]
 layout_mode = 0
@@ -91,17 +90,33 @@ popup/item_0/id = 1
 popup/item_1/text = "Mono-Setero"
 popup/item_1/id = 2
 
-[node name="ResolutionMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
+[node name="FOVMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
 layout_mode = 3
 anchors_preset = 0
+offset_top = 40.0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="ControlsMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 40.0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="ResolutionMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = 40.0
 offset_right = 640.0
 offset_bottom = 360.0
 
 [node name="ResolutionPanel" type="Panel" parent="SubViewportContainer/SubViewport/OpMenuLayer/ResolutionMenu"]
 offset_left = 16.0
-offset_top = 62.0
+offset_top = 22.0
 offset_right = 288.0
-offset_bottom = 342.0
+offset_bottom = 302.0
 rotation = -6.28319
 theme = ExtResource("1_raxkd")
 
@@ -154,31 +169,28 @@ theme = ExtResource("1_raxkd")
 theme_override_font_sizes/font_size = 48
 text = "2560x1440"
 
-[node name="SettingsMenu2" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
-visible = false
+[node name="VSyncMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/OpMenuLayer/SettingsMenu2"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 48.0
-offset_right = 78.0
-offset_bottom = 82.0
-theme = ExtResource("1_raxkd")
-text = "MENU2"
-
-[node name="ResolutionButton2" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/SettingsMenu2"]
-offset_left = 32.0
-offset_top = 172.0
-offset_right = 288.0
-offset_bottom = 225.0
+[node name="ResolutionButton2" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/VSyncMenu"]
+offset_left = 192.0
+offset_top = 120.0
+offset_right = 448.0
+offset_bottom = 173.0
 focus_mode = 0
 theme = ExtResource("1_raxkd")
 theme_override_font_sizes/font_size = 48
-text = "Prevuew"
-alignment = 0
+toggle_mode = true
+button_pressed = true
+text = "V-Sync"
+
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/ResolutionMenu/ResolutionPanel/Button2" to="." method="GameSetRes" binds= [Vector2i(640, 360)]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/ResolutionMenu/ResolutionPanel/Button3" to="." method="GameSetRes" binds= [Vector2i(1280, 720)]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/ResolutionMenu/ResolutionPanel/Button4" to="." method="GameSetRes" binds= [Vector2i(1920, 1080)]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/ResolutionMenu/ResolutionPanel/Button5" to="." method="GameSetRes" binds= [Vector2i(2560, 1440)]]
