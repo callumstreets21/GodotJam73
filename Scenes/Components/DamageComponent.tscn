@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://blwj6sqn71fhu"]
+
+[ext_resource type="Script" path="res://Scripts/DamageComponent.cs" id="1_7s0km"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_00lke"]
+
+[node name="DamageComponent" type="Area3D"]
+script = ExtResource("1_7s0km")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_00lke")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
