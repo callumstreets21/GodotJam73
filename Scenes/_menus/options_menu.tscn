@@ -40,6 +40,7 @@ TabButtons = [NodePath("GameOption"), NodePath("GraphicsOption"), NodePath("Audi
 TabMenus = [NodePath("../GameplayMenus/FOVMenu"), NodePath("../GameplayMenus/ControlsMenu"), NodePath("../GraphicsMenus/ResolutionMenu"), NodePath("../GraphicsMenus/VSyncMenu"), NodePath("../AudioMenu/VolumeMenu"), NodePath("../AudioMenu/MonoMenu")]
 
 [node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/OpMenuLayer/TabControl"]
+layout_mode = 0
 offset_right = 640.0
 offset_bottom = 40.0
 color = Color(0, 0, 0, 0.494118)
@@ -62,6 +63,7 @@ popup/item_1/text = "Controls"
 popup/item_1/id = 1
 
 [node name="GraphicsOption" type="MenuButton" parent="SubViewportContainer/SubViewport/OpMenuLayer/TabControl"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 258.0
@@ -131,6 +133,7 @@ offset_right = 640.0
 offset_bottom = 360.0
 
 [node name="ResolutionPanel" type="Panel" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 22.0
 offset_right = 600.0
@@ -199,6 +202,7 @@ toggle_mode = true
 text = "Jump"
 
 [node name="MouseSensText" type="Label" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+layout_mode = 0
 offset_left = 192.0
 offset_top = 216.0
 offset_right = 448.0
@@ -209,6 +213,7 @@ text = "Sensitivity : 1"
 horizontal_alignment = 1
 
 [node name="HSlider" type="HSlider" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 264.0
 offset_right = 480.0
@@ -232,6 +237,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ResolutionButton2" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/VSyncMenu"]
+layout_mode = 0
 offset_left = 192.0
 offset_top = 120.0
 offset_right = 448.0
@@ -252,6 +258,7 @@ offset_right = 640.0
 offset_bottom = 360.0
 
 [node name="ResolutionPanel" type="Panel" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu"]
+layout_mode = 0
 offset_left = 184.0
 offset_top = 22.0
 offset_right = 456.0
@@ -270,6 +277,7 @@ theme = ExtResource("1_raxkd")
 text = "Resolutions"
 
 [node name="Button2" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel"]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 20.0
 offset_right = 253.0
@@ -280,6 +288,7 @@ theme_override_font_sizes/font_size = 48
 text = "640x360"
 
 [node name="Button3" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel"]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 80.0
 offset_right = 253.0
@@ -290,6 +299,7 @@ theme_override_font_sizes/font_size = 48
 text = "1280x720"
 
 [node name="Button4" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel"]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 142.0
 offset_right = 253.0
@@ -300,6 +310,7 @@ theme_override_font_sizes/font_size = 48
 text = "1920x1080"
 
 [node name="Button5" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel"]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 204.0
 offset_right = 253.0
