@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7ocvb2duj8e6"]
+[gd_scene load_steps=6 format=3 uid="uid://c7ocvb2duj8e6"]
 
 [ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="3_0e3e1"]
 [ext_resource type="PackedScene" uid="uid://clg7mqcgrdji1" path="res://Scenes/_floors/floor_sample.tscn" id="3_gdilv"]
 [ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="4_57n5t"]
 [ext_resource type="PackedScene" uid="uid://v7b4j44hvjej" path="res://Scenes/teleporter.tscn" id="4_84eak"]
+[ext_resource type="PackedScene" uid="uid://dt7rm4c8cord0" path="res://Scenes/Props/torch.tscn" id="5_x38n2"]
 
 [node name="LevelDebug" type="Node3D"]
 
@@ -22,5 +23,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7.2605)
 
 [node name="Teleporter2" parent="." instance=ExtResource("4_84eak")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -11)
+
+[node name="Torch" parent="." instance=ExtResource("5_x38n2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4905, 0, 8.18096)
+
+[node name="Torch2" parent="." instance=ExtResource("5_x38n2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6759, 0, -7.50152)
 
 [editable path="Teleporter"]
