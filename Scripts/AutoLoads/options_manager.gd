@@ -2,10 +2,10 @@ extends Node
 class_name Option_Manager
 
 var FOV:float = 0
-var MouseSens:float = 1.0
+var MouseSens:float = 0.0
 
 var MusicVolume:float = 0
-var SFXVolume:float = 1.0
+var SFXVolume:float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

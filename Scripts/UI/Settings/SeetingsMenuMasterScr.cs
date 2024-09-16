@@ -73,17 +73,21 @@ public partial class SeetingsMenuMasterScr : Node2D
 
 	public void Get_Music_V(NodePath S_Path, NodePath L_Path){
 		float get_M = (float)GetNode("/root/OptionsManager").Get("MusicVolume");
-		//GetNode<Label>(L_Path).Text = ("Music : " + value.ToString());
-		//GetNode<Slider>(S_Path).Value = GetNode("/root/OptionsManager").("SetSensitivity",value);
+		GetNode<Label>(L_Path).Text = ("Music : " + get_M.ToString());
+		GetNode<Slider>(S_Path).Value = get_M;
 	}
 	public void Set_Music_Volume(float value, NodePath Path){
-
+		GetNode("/root/OptionsManager").Set("MusicVolume",value);
+		GetNode<Label>(Path).Text = ("Music : " + value.ToString());
 	}
-	public void Get_SFX_V(NodePath Path){
-		float get_S = 0;
-		GetNode<Button>(Path).ButtonPressed = (DisplayServer.WindowGetVsyncMode() == DisplayServer.VSyncMode.Enabled);
+	public void Get_SFX_V(NodePath S_Path, NodePath L_Path){
+		float get_S = (float)GetNode("/root/OptionsManager").Get("SFXVolume");
+		GetNode<Label>(L_Path).Text = ("SFX : " + get_S.ToString());
+		GetNode<Slider>(S_Path).Value = get_S;
+		//GetNode<Button>(Path).ButtonPressed = (DisplayServer.WindowGetVsyncMode() == DisplayServer.VSyncMode.Enabled);
 	}
 	public void Set_SFX_Volume(float value, NodePath Path){
-
+		GetNode("/root/OptionsManager").Set("SFXVolume",value);
+		GetNode<Label>(Path).Text = ("SFX : " + value.ToString());
 	}
 }
