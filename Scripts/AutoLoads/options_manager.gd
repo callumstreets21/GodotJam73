@@ -32,10 +32,8 @@ func SetSensitivity(value:float) -> void:
 
 #dosent need to be function but plays better with c#
 func SetMusicV(value:float)->void:
-	print("GHidhgahdaj")
 	MusicVolume = value
 
 #dosent need to be function but plays better with c#
 func SetSFXV(value:float)->void:
-	print("GHidhgahdaj")
 	SFXVolume = value

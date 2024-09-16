@@ -80,7 +80,7 @@ public partial class SeetingsMenuMasterScr : Node2D
 		GetNode<Slider>(S_Path).Value = get_M;
 	}
 	public void Set_Music_Volume(float value, NodePath Path){
-		GetNode("/root/OptionsManager").Set("SetMusicV",value);
+		GetNode("/root/OptionsManager").Call("SetMusicV",value);
 		GetNode<Label>(Path).Text = ("Music : " + (value > -24 ? ((value/48)+0.5).ToString().PadDecimals(3) : "X"));
 	}
 	public void Get_SFX_V(NodePath S_Path, NodePath L_Path){
@@ -90,7 +90,7 @@ public partial class SeetingsMenuMasterScr : Node2D
 		//GetNode<Button>(Path).ButtonPressed = (DisplayServer.WindowGetVsyncMode() == DisplayServer.VSyncMode.Enabled);
 	}
 	public void Set_SFX_Volume(float value, NodePath Path){
-		GetNode("/root/OptionsManager").Set("SetSFXV",value);
+		GetNode("/root/OptionsManager").Call("SetSFXV",value);
 		GetNode<Label>(Path).Text = ("SFX : " + (value > -24 ? ((value/48)+0.5).ToString().PadDecimals(3) : "X"));
 	}
 
