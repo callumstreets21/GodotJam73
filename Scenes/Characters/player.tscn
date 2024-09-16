@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=4 format=3 uid="uid://dkbwkvi8f7mtw"]
 
 [ext_resource type="PackedScene" uid="uid://bgdr43xclpdfg" path="res://Scenes/Components/movement_component.tscn" id="1_aafd6"]
@@ -6,8 +7,6 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_kth4q"]
 
 [node name="Player" type="Node3D" groups=["Player"]]
-
-[node name="MovementComponent" parent="." instance=ExtResource("1_aafd6")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 
