@@ -7,15 +7,19 @@ public partial class MovementComponent : Node3D
 {
 	private float speed;
 	private Vector3 direction;
-	private Node3D parent_to_move;
+	private Vector3 velocity;
+	private Vector3 gravity;
+	private CharacterBody3D parent_to_move;
 	public float mouseSensitivity = 0.1f; // public to allow for changing in the settings menu
 
 	public override void _Ready()
 	{
 		speed = 10.0f;
 		direction = Vector3.Zero;
-		parent_to_move = GetParent<Node3D>();
+		velocity = Vector3.Zero;
+		parent_to_move = GetParent<CharacterBody3D>();
 		Input.MouseMode = Input.MouseModeEnum.Captured;
+		gravity = new Vector3(0, (float)ProjectSettings.GetSetting("physics/3d/default_gravity"), 0);
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -43,10 +47,10 @@ public partial class MovementComponent : Node3D
 			direction = direction.Normalized();
 			direction = parent_to_move.Transform.Basis * direction;
 		}
-
-		//Vector3 newPosition = parent_to_move.GlobalTransform.Origin + direction * speed * (float)delta;
-		//parent_to_move.GlobalTransform = new Transform3D(parent_to_move.GlobalTransform.Basis, newPosition);
-		parent_to_move.GlobalPosition += direction * speed * (float)delta;
+		
+		parent_to_move.Velocity = direction * speed;
+		parent_to_move.Velocity -= gravity;
+		parent_to_move.MoveAndSlide();
 	}
 
 	public override void _Input(InputEvent @event)
