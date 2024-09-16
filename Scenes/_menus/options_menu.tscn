@@ -1,3 +1,453 @@
-[gd_scene format=3 uid="uid://c25twsyjp0yy1"]
+[gd_scene load_steps=5 format=3 uid="uid://c25twsyjp0yy1"]
 
-[node name="OptionsMenu" type="Node2D"]
+[ext_resource type="Theme" uid="uid://nkwrsdxhcjxg" path="res://Themes/BaseMenuTheming1.tres" id="1_raxkd"]
+[ext_resource type="Script" path="res://Scripts/UI/Settings/SeetingsMenuMasterScr.cs" id="1_rvv2v"]
+[ext_resource type="Theme" uid="uid://b87v1vhruqoac" path="res://Themes/BaseMenuTabT1.tres" id="2_fj4ap"]
+[ext_resource type="Script" path="res://Scripts/UI/Settings/SettingTabBarSelect.cs" id="2_nkbbt"]
+
+[node name="OptionsMenu" type="Node2D" node_paths=PackedStringArray("ControlButtons")]
+script = ExtResource("1_rvv2v")
+ControlButtons = [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Forward"), NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Backward"), NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Left"), NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Right"), NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Jump")]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="OpMenuLayer" type="CanvasLayer" parent="SubViewportContainer/SubViewport"]
+layer = 8
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.282353)
+
+[node name="TabControl" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer" node_paths=PackedStringArray("TabButtons", "TabMenus")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 48.0
+script = ExtResource("2_nkbbt")
+TabButtons = [NodePath("GameOption"), NodePath("GraphicsOption"), NodePath("AudioOption")]
+TabMenus = [NodePath("../GameplayMenus/FOVMenu"), NodePath("../GameplayMenus/ControlsMenu"), NodePath("../GraphicsMenus/ResolutionMenu"), NodePath("../GraphicsMenus/VSyncMenu"), NodePath("../AudioMenu/VolumeMenu"), NodePath("../AudioMenu/MonoMenu")]
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/OpMenuLayer/TabControl"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0.494118)
+
+[node name="GameOption" type="MenuButton" parent="SubViewportContainer/SubViewport/OpMenuLayer/TabControl"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 258.0
+offset_bottom = 41.0
+theme = ExtResource("2_fj4ap")
+theme_type_variation = &"FlatMenuButton"
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "GAMEPLAY"
+flat = false
+item_count = 2
+popup/item_0/text = "FOV"
+popup/item_1/text = "Controls"
+popup/item_1/id = 1
+
+[node name="GraphicsOption" type="MenuButton" parent="SubViewportContainer/SubViewport/OpMenuLayer/TabControl"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 258.0
+offset_bottom = 41.0
+theme = ExtResource("2_fj4ap")
+theme_type_variation = &"FlatMenuButton"
+text = "Graphics"
+flat = false
+item_count = 2
+popup/item_0/text = "Resolution"
+popup/item_1/text = "v-sync"
+popup/item_1/id = 1
+
+[node name="AudioOption" type="MenuButton" parent="SubViewportContainer/SubViewport/OpMenuLayer/TabControl"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 258.0
+offset_bottom = 41.0
+theme = ExtResource("2_fj4ap")
+theme_type_variation = &"FlatMenuButton"
+text = "AUDIO"
+flat = false
+item_count = 2
+popup/item_0/text = "Volume"
+popup/item_1/text = "Mono-Setero"
+popup/item_1/id = 1
+
+[node name="GameplayMenus" type="Node" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
+
+[node name="FOVMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 40.0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="MonoPanel" type="Panel" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/FOVMenu"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 64.0
+offset_right = 510.0
+offset_bottom = 210.0
+rotation = -6.28319
+theme = ExtResource("1_raxkd")
+
+[node name="FOVText" type="Label" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/FOVMenu"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 87.955
+offset_right = 448.0
+offset_bottom = 155.955
+theme = ExtResource("2_fj4ap")
+theme_override_font_sizes/font_size = 64
+text = "FOV : 70"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/FOVMenu"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 160.0
+offset_right = 480.0
+offset_bottom = 176.0
+theme = ExtResource("2_fj4ap")
+min_value = 70.0
+max_value = 120.0
+value = 70.0
+rounded = true
+
+[node name="ControlsMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = 40.0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="ResolutionPanel" type="Panel" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 22.0
+offset_right = 600.0
+offset_bottom = 302.0
+rotation = -6.28319
+theme = ExtResource("1_raxkd")
+
+[node name="Forward" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 40.0
+offset_right = 384.0
+offset_bottom = 68.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "forward"
+
+[node name="Backward" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 72.0
+offset_right = 384.0
+offset_bottom = 100.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "backward"
+
+[node name="Left" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 104.0
+offset_right = 384.0
+offset_bottom = 132.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "Left"
+
+[node name="Right" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 136.0
+offset_right = 384.0
+offset_bottom = 164.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "Right"
+
+[node name="Jump" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 168.0
+offset_right = 384.0
+offset_bottom = 196.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "Jump"
+
+[node name="MouseSensText" type="Label" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 216.0
+offset_right = 448.0
+offset_bottom = 284.0
+theme = ExtResource("2_fj4ap")
+theme_override_font_sizes/font_size = 48
+text = "Sensitivity : 1"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 264.0
+offset_right = 480.0
+offset_bottom = 280.0
+theme = ExtResource("2_fj4ap")
+min_value = 1.0
+max_value = 5.0
+step = 0.01
+value = 1.0
+
+[node name="GraphicsMenus" type="Node" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
+
+[node name="VSyncMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MonoPanel" type="Panel" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/VSyncMenu"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 104.0
+offset_right = 464.0
+offset_bottom = 188.0
+rotation = -6.28319
+theme = ExtResource("1_raxkd")
+
+[node name="ResolutionButton2" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/VSyncMenu"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 120.0
+offset_right = 448.0
+offset_bottom = 173.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 48
+toggle_mode = true
+button_pressed = true
+text = "V-Sync"
+
+[node name="ResolutionMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = 40.0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="ResolutionPanel" type="Panel" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 22.0
+offset_right = 456.0
+offset_bottom = 302.0
+rotation = -6.28319
+theme = ExtResource("1_raxkd")
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel"]
+visible = false
+layout_mode = 0
+offset_left = 280.0
+offset_top = 256.0
+offset_right = 536.0
+offset_bottom = 290.0
+theme = ExtResource("1_raxkd")
+text = "Resolutions"
+
+[node name="Button2" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 20.0
+offset_right = 253.0
+offset_bottom = 73.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 48
+text = "640x360"
+
+[node name="Button3" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 80.0
+offset_right = 253.0
+offset_bottom = 133.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 48
+text = "1280x720"
+
+[node name="Button4" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 142.0
+offset_right = 253.0
+offset_bottom = 195.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 48
+text = "1920x1080"
+
+[node name="Button5" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 204.0
+offset_right = 253.0
+offset_bottom = 257.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 48
+text = "2560x1440"
+
+[node name="AudioMenu" type="Node" parent="SubViewportContainer/SubViewport/OpMenuLayer"]
+
+[node name="VolumeMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = 40.0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="VolumePanel" type="Panel" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 52.0
+offset_right = 530.0
+offset_bottom = 272.0
+rotation = -6.28319
+theme = ExtResource("1_raxkd")
+
+[node name="MusicText" type="Label" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 80.0
+offset_right = 448.0
+offset_bottom = 148.0
+theme = ExtResource("2_fj4ap")
+theme_override_font_sizes/font_size = 48
+text = "Music : 1"
+horizontal_alignment = 1
+
+[node name="HSlider2" type="HSlider" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 132.0
+offset_right = 480.0
+offset_bottom = 148.0
+theme = ExtResource("2_fj4ap")
+min_value = -24.0
+max_value = 24.0
+
+[node name="SFXText" type="Label" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 160.0
+offset_right = 448.0
+offset_bottom = 228.0
+theme = ExtResource("2_fj4ap")
+theme_override_font_sizes/font_size = 48
+text = "SFX : 1"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 210.0
+offset_right = 480.0
+offset_bottom = 226.0
+theme = ExtResource("2_fj4ap")
+min_value = -24.0
+max_value = 24.0
+value = 1.0
+
+[node name="MonoMenu" type="Control" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = 40.0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="MonoPanel" type="Panel" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/MonoMenu"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 104.0
+offset_right = 464.0
+offset_bottom = 188.0
+rotation = -6.28319
+theme = ExtResource("1_raxkd")
+
+[node name="MonoAudioT" type="Button" parent="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/MonoMenu"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 120.0
+offset_right = 448.0
+offset_bottom = 173.0
+focus_mode = 0
+theme = ExtResource("1_raxkd")
+theme_override_font_sizes/font_size = 48
+toggle_mode = true
+button_pressed = true
+text = "Mono"
+
+[connection signal="value_changed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/FOVMenu/HSlider" to="." method="Set_FOV" binds= [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/FOVMenu/FOVText")]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Forward" to="." method="Set_Button" binds= [0]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Backward" to="." method="Set_Button" binds= [1]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Left" to="." method="Set_Button" binds= [2]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Right" to="." method="Set_Button" binds= [3]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/Jump" to="." method="Set_Button" binds= [4]]
+[connection signal="value_changed" from="SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/HSlider" to="." method="Set_Sensitivity" binds= [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GameplayMenus/ControlsMenu/MouseSensText")]]
+[connection signal="ready" from="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/VSyncMenu" to="." method="Get_Vsync" binds= [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/VSyncMenu/ResolutionButton2")]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/VSyncMenu/ResolutionButton2" to="." method="Toggle_Vsync"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel/Button2" to="." method="GameSetRes" binds= [Vector2i(640, 360)]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel/Button3" to="." method="GameSetRes" binds= [Vector2i(1280, 720)]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel/Button4" to="." method="GameSetRes" binds= [Vector2i(1920, 1080)]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/GraphicsMenus/ResolutionMenu/ResolutionPanel/Button5" to="." method="GameSetRes" binds= [Vector2i(2560, 1440)]]
+[connection signal="ready" from="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu/HSlider2" to="." method="Get_Music_V" binds= [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu/HSlider2"), NodePath("SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu/MusicText")]]
+[connection signal="value_changed" from="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu/HSlider2" to="." method="Set_Music_Volume" binds= [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu/MusicText")]]
+[connection signal="ready" from="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu/HSlider" to="." method="Get_SFX_V" binds= [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu/HSlider"), NodePath("SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu/SFXText")]]
+[connection signal="value_changed" from="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu/HSlider" to="." method="Set_SFX_Volume" binds= [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/VolumeMenu/SFXText")]]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/MonoMenu/MonoAudioT" to="." method="Set_Mono"]
+[connection signal="ready" from="SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/MonoMenu/MonoAudioT" to="." method="Get_Mono" binds= [NodePath("SubViewportContainer/SubViewport/OpMenuLayer/AudioMenu/MonoMenu/MonoAudioT")]]

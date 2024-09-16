@@ -32,6 +32,8 @@ window/size/viewport_height=1080
 
 project/assembly_name="GodotTemplate"
 
+[editor]
+
 [global_group]
 
 Player=""
@@ -133,3 +135,8 @@ jump={
 
 3d_physics/layer_1="Player"
 3d_physics/layer_2="Enemy"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+textures/decals/filter=0
