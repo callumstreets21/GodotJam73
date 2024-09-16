@@ -52,8 +52,11 @@ public partial class SeetingsMenuMasterScr : Node2D
 		//global
 	}
 
+	public void Get_Mono(NodePath Path){
+		GetNode<Button>(Path).ButtonPressed = (bool)GetNode("/root/OptionsManager").Get("MonoAudio");
+	}
 	public void Set_Mono(){
-
+		GetNode("/root/OptionsManager").Set("MonoAudio",!(bool)GetNode("/root/OptionsManager").Get("MonoAudio"));
 	}
 
 	private void Deactivate_Buttons(int ex = -1){
@@ -72,22 +75,32 @@ public partial class SeetingsMenuMasterScr : Node2D
 	}
 
 	public void Get_Music_V(NodePath S_Path, NodePath L_Path){
-		float get_M = (float)GetNode("/root/OptionsManager").Get("MusicVolume");
-		GetNode<Label>(L_Path).Text = ("Music : " + get_M.ToString());
+		float get_M = GetTControlerVolume(0);
+		GetNode<Label>(L_Path).Text = ("Music : " + ((get_M/48)+0.5 > -24 ? ((get_M/48)+0.5).ToString().PadDecimals(3) : "X"));
 		GetNode<Slider>(S_Path).Value = get_M;
 	}
 	public void Set_Music_Volume(float value, NodePath Path){
-		GetNode("/root/OptionsManager").Set("MusicVolume",value);
-		GetNode<Label>(Path).Text = ("Music : " + value.ToString());
+		GetNode("/root/OptionsManager").Set("SetMusicV",value);
+		GetNode<Label>(Path).Text = ("Music : " + (value > -24 ? ((value/48)+0.5).ToString().PadDecimals(3) : "X"));
 	}
 	public void Get_SFX_V(NodePath S_Path, NodePath L_Path){
-		float get_S = (float)GetNode("/root/OptionsManager").Get("SFXVolume");
-		GetNode<Label>(L_Path).Text = ("SFX : " + get_S.ToString());
+		float get_S = GetTControlerVolume(1);
+		GetNode<Label>(L_Path).Text = ("SFX : " + (get_S > -24 ? ((get_S/48)+0.5).ToString().PadDecimals(3) : "X"));
 		GetNode<Slider>(S_Path).Value = get_S;
 		//GetNode<Button>(Path).ButtonPressed = (DisplayServer.WindowGetVsyncMode() == DisplayServer.VSyncMode.Enabled);
 	}
 	public void Set_SFX_Volume(float value, NodePath Path){
-		GetNode("/root/OptionsManager").Set("SFXVolume",value);
-		GetNode<Label>(Path).Text = ("SFX : " + value.ToString());
+		GetNode("/root/OptionsManager").Set("SetSFXV",value);
+		GetNode<Label>(Path).Text = ("SFX : " + (value > -24 ? ((value/48)+0.5).ToString().PadDecimals(3) : "X"));
+	}
+
+	private float GetTControlerVolume(int Slider = -1){
+		float get_V = 0;
+		if(Slider==0){
+			get_V = (float)GetNode("/root/OptionsManager").Get("MusicVolume");
+		}else if(Slider == 1){
+			get_V = (float)GetNode("/root/OptionsManager").Get("SFXVolume");
+		}
+		return get_V;
 	}
 }
