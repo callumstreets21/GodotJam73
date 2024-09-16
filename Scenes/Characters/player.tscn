@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkbwkvi8f7mtw"]
+[gd_scene load_steps=4 format=3 uid="uid://dkbwkvi8f7mtw"]
 
 [ext_resource type="PackedScene" uid="uid://bgdr43xclpdfg" path="res://Scenes/Components/movement_component.tscn" id="1_aafd6"]
 [ext_resource type="PackedScene" uid="uid://blwj6sqn71fhu" path="res://Scenes/Components/DamageComponent.tscn" id="2_t245d"]
 
-[node name="Player" type="Node3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_kth4q"]
+
+[node name="Player" type="Node3D" groups=["Player"]]
 
 [node name="MovementComponent" parent="." instance=ExtResource("1_aafd6")]
 
@@ -11,3 +13,8 @@
 
 [node name="DamageComponent" parent="." instance=ExtResource("2_t245d")]
 activeLayer = 2
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["Player"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("SphereShape3D_kth4q")
