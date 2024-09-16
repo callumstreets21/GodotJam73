@@ -1,10 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://cs4t3jf5u102l"]
+[gd_scene load_steps=12 format=3 uid="uid://cs4t3jf5u102l"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqlw7"]
-albedo_color = Color(0.364706, 0.192157, 0, 1)
+[ext_resource type="Texture2D" uid="uid://d00bsowcyyg2v" path="res://Images/Textures/Wooden Floor/Floor Tile_standardSurface1_BaseMap.png" id="1_1su84"]
+[ext_resource type="Texture2D" uid="uid://uu4v5f3k3sa7" path="res://Images/Textures/Wooden Floor/Floor Tile_standardSurface1_Normal.png" id="2_x3o35"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lwi7o"]
+albedo_texture = ExtResource("1_1su84")
+metallic = 1.0
+metallic_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("2_x3o35")
+anisotropy = -1.0
+ao_enabled = true
+ao_texture_channel = 1
+refraction_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_ve02j"]
-material = SubResource("StandardMaterial3D_iqlw7")
+material = SubResource("StandardMaterial3D_lwi7o")
 size = Vector3(2, 0.1, 2)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jfhle"]

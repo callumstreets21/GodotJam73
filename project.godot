@@ -23,6 +23,12 @@ LevelManager="*res://Scripts/AutoLoads/level_manager.gd"
 OptionsManager="*res://Scripts/AutoLoads/options_manager.gd"
 CollectableManager="*res://Scripts/AutoLoads/CollectableManager.cs"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
+
 [dotnet]
 
 project/assembly_name="GodotTemplate"
