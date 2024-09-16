@@ -11,6 +11,9 @@ public partial class MovementComponent : Node3D
 	private Vector3 gravity;
 	private CharacterBody3D parent_to_move;
 	public float mouseSensitivity = 0.1f; // public to allow for changing in the settings menu
+	[Export]
+	private float jumpForce = 10.0f;
+	private bool isOnGround = false;
 
 	public override void _Ready()
 	{
@@ -48,8 +51,18 @@ public partial class MovementComponent : Node3D
 			direction = parent_to_move.Transform.Basis * direction;
 		}
 		
-		parent_to_move.Velocity = direction * speed;
-		parent_to_move.Velocity -= gravity;
+		isOnGround = parent_to_move.IsOnFloor();
+		
+		if (isOnGround && Input.IsActionJustPressed("jump"))
+		{
+			velocity.Y = jumpForce;
+		}
+		
+		velocity -= gravity * (float)delta;
+		velocity.X = direction.X * speed;
+		velocity.Z = direction.Z * speed;
+		
+		parent_to_move.Velocity = velocity;
 		parent_to_move.MoveAndSlide();
 	}
 
