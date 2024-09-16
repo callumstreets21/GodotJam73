@@ -17,7 +17,7 @@ public partial class CollectableManager : Node
 	public void CollectFeather()
 	{
 		_feathersCollected++;
-		GD.Print("Feathers Collected: " + _feathersCollected);
+		//GD.Print("Feathers Collected: " + _feathersCollected);
 	}
 	
 	public int GetFeathersCollected()

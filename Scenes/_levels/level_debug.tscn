@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://c7ocvb2duj8e6"]
+[gd_scene load_steps=4 format=3 uid="uid://c7ocvb2duj8e6"]
+
+[ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="3_0e3e1"]
+[ext_resource type="PackedScene" uid="uid://clg7mqcgrdji1" path="res://Scenes/_floors/floor_sample.tscn" id="3_gdilv"]
+[ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="4_57n5t"]
 
 [node name="LevelDebug" type="Node3D"]
+
+[node name="DefaultEnvironment" parent="." instance=ExtResource("3_0e3e1")]
+
+[node name="Player" parent="." instance=ExtResource("4_57n5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32016, 3.41843, -1.53209)
+
+[node name="Floor Sample" parent="." instance=ExtResource("3_gdilv")]
