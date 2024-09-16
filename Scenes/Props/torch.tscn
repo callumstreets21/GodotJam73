@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt7rm4c8cord0"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bfaqr"]
+top_radius = 0.1
+bottom_radius = 0.05
+height = 0.6
+
+[node name="Torch" type="Node3D"]
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+mesh = SubResource("CylinderMesh_bfaqr")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+light_color = Color(0.785841, 0.406413, 0.116389, 1)
+light_energy = 4.0
+light_size = 0.1
+shadow_enabled = true
+distance_fade_enabled = true
+omni_range = 10.0
+omni_attenuation = 2.0
+omni_shadow_mode = 0
