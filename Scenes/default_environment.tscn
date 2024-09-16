@@ -8,10 +8,17 @@ ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 sky_material = SubResource("ProceduralSkyMaterial_ut04f")
 
 [sub_resource type="Environment" id="Environment_0hmcr"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.0110197, 0.00976828, 0.0314386, 1)
+background_energy_multiplier = 0.1
 sky = SubResource("Sky_1t6tt")
 tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
 glow_enabled = true
+glow_strength = 2.0
+glow_bloom = 0.1
 
 [node name="DefaultEnvironment" type="Node3D"]
 
@@ -20,4 +27,9 @@ environment = SubResource("Environment_0hmcr")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_color = Color(0.770743, 0.573414, 0.605282, 1)
+light_energy = 0.02
+light_indirect_energy = 4.0
+light_bake_mode = 1
 shadow_enabled = true
+sky_mode = 1
