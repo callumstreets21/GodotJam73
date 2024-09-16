@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7ocvb2duj8e6"]
+[gd_scene load_steps=5 format=3 uid="uid://c7ocvb2duj8e6"]
 
 [ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="3_0e3e1"]
 [ext_resource type="PackedScene" uid="uid://clg7mqcgrdji1" path="res://Scenes/_floors/floor_sample.tscn" id="3_gdilv"]
 [ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="4_57n5t"]
+[ext_resource type="PackedScene" uid="uid://v7b4j44hvjej" path="res://Scenes/teleporter.tscn" id="4_84eak"]
 
 [node name="LevelDebug" type="Node3D"]
 
@@ -12,3 +13,14 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32016, 3.41843, -1.53209)
 
 [node name="Floor Sample" parent="." instance=ExtResource("3_gdilv")]
+
+[node name="Teleporter" parent="." instance=ExtResource("4_84eak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -3)
+
+[node name="TeleportDestination" parent="Teleporter" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7.2605)
+
+[node name="Teleporter2" parent="." instance=ExtResource("4_84eak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -11)
+
+[editable path="Teleporter"]
