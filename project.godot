@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 AudioManager="*res://Scripts/AutoLoads/audio_manager.gd"
 GameManager="*res://Scripts/AutoLoads/game_manager.gd"
-LevelManager="*res://Scenes/_levels/level_manager.gd"
+LevelManager="*res://Scripts/AutoLoads/level_manager.gd"
 OptionsManager="*res://Scripts/AutoLoads/options_manager.gd"
 CollectableManager="*res://Scripts/AutoLoads/CollectableManager.cs"
 
