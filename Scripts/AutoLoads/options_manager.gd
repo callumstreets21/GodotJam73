@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 
 func SetFOV(value:float) -> void:
 	if get_tree().current_scene != null && get_tree().get_node_count_in_group("Player") > 0:
-		get_tree().get_nodes_in_group("Player")[0].get_node("Camera3D").set_fov(value)
+		(get_tree().get_nodes_in_group("Player")[0].get_node("Camera3D") as Camera3D).fov = clampf(value,1,179)
 	FOV = value
 
 func SetSensitivity(value:float) -> void:
