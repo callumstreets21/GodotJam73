@@ -18,9 +18,9 @@ public partial class SeetingsMenuMasterScr : Node2D
 	{
 	}
 
-    public override void _Input(InputEvent @event)
-    {
-        base._Input(@event);
+	public override void _Input(InputEvent @event)
+	{
+		base._Input(@event);
 		if (@event is InputEventKey keyEvent && keyEvent.Pressed){
 			if(SelectControlButton >= 0 && keyEvent.Keycode != Key.Escape){
 				InputMap.ActionEraseEvents(ControlInputs[SelectControlButton]);
@@ -30,9 +30,9 @@ public partial class SeetingsMenuMasterScr : Node2D
 			SelectControlButton = -1;
 			Deactivate_Buttons();
 		}
-    }
+	}
 
-    public void GameSetRes(Vector2I NewS){
+	public void GameSetRes(Vector2I NewS){
 		GetWindow().Size = NewS;
 		//ProjectSettings.SetSetting("display/window/size/width",NewS.X);
 		//ProjectSettings.SetSetting("display/window/size/height",NewS.Y);
