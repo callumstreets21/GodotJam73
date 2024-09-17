@@ -1,7 +1,7 @@
 extends Node
 class_name Option_Manager
 
-var FOV:float = 0
+var FOV:float = 75
 var MouseSens:float = 1.0
 
 var MusicVolume:float = 0.0
