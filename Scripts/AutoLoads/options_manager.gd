@@ -16,14 +16,16 @@ func _ready() -> void:
 	SetSensitivity(MouseSens)
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func SetFOV(value:float) -> void:
+	return
 	if get_tree().current_scene != null && get_tree().get_node_count_in_group("Player") > 0:
-		get_tree().get_nodes_in_group("Player")[0].get_node("Camera3D").set_fov(value)
+		var player: Node3D = get_tree().get_nodes_in_group("Player")[0]
+		var camera: Camera3D = player.get_node("Camera3D")
+		camera.set_fov(clamp(value, 1, 179))
 	FOV = value
 
 func SetSensitivity(value:float) -> void:
