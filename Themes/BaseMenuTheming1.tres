@@ -1,6 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://nkwrsdxhcjxg"]
-
-[ext_resource type="FontFile" uid="uid://dt14h614aivvs" path="res://Fonts/BloodBlocks Project.ttf" id="2_tnl3x"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://nkwrsdxhcjxg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvgq8"]
 content_margin_left = 12.0
@@ -70,7 +68,6 @@ bg_color = Color(0, 0, 0, 0.494118)
 skew = Vector2(-0.1, 0.05)
 
 [resource]
-default_font = ExtResource("2_tnl3x")
 default_font_size = 32
 Button/colors/font_color = Color(1, 1, 1, 0.784314)
 Button/font_sizes/font_size = 32
