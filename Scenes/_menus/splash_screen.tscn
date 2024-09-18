@@ -1,3 +1,55 @@
-[gd_scene format=3 uid="uid://d1qulakchfluv"]
+[gd_scene load_steps=8 format=3 uid="uid://d1qulakchfluv"]
+
+[ext_resource type="Script" path="res://Scripts/SplashScreen.cs" id="1_21o2l"]
+[ext_resource type="Texture2D" uid="uid://dbo6ys3wo7uvl" path="res://Images/Godot Branding/GWJ-Full-Logo-tag-4k.png" id="2_trb24"]
+[ext_resource type="Texture2D" uid="uid://d3ck2lhu7aib8" path="res://Images/Jam #73 branding/wild-wildcard-v2.png" id="3_fqd74"]
+[ext_resource type="Texture2D" uid="uid://bt5k43ln7h488" path="res://Images/Jam #73 branding/thinking-with-portals.png" id="4_kgbqi"]
+[ext_resource type="Texture2D" uid="uid://dlhwary4mujmj" path="res://Images/Jam #73 branding/fun-facts.png" id="5_l4gs5"]
+[ext_resource type="Script" path="res://Scripts/CardSwapper.cs" id="5_sjg1y"]
+[ext_resource type="Texture2D" uid="uid://p1cewaoqsg35" path="res://Images/Jam #73 branding/duck-around.png" id="7_3o6lu"]
 
 [node name="SplashScreen" type="Node2D"]
+script = ExtResource("1_21o2l")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Gwj-full-logo-tag-4k" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(960, 540)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("2_trb24")
+
+[node name="Thinking-with-portals" type="Sprite2D" parent="."]
+position = Vector2(171.5, 534.5)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_kgbqi")
+
+[node name="Fun-facts" type="Sprite2D" parent="."]
+position = Vector2(171.5, 198.5)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_l4gs5")
+
+[node name="Card Swapper" type="Node2D" parent="." node_paths=PackedStringArray("duckCard")]
+position = Vector2(172.5, 875.1)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("5_sjg1y")
+duckCard = NodePath("Duck-around")
+
+[node name="Timer" type="Timer" parent="Card Swapper"]
+wait_time = 0.5
+autostart = true
+
+[node name="Wild-wildcard-v2" type="Sprite2D" parent="Card Swapper"]
+z_index = 1
+texture = ExtResource("3_fqd74")
+
+[node name="Duck-around" type="Sprite2D" parent="Card Swapper"]
+texture = ExtResource("7_3o6lu")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Card Swapper/Timer" to="Card Swapper" method="_on_timer_timeout"]

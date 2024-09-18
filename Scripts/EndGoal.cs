@@ -31,7 +31,7 @@ public partial class EndGoal : Node3D
 		if (levelManager != null)
 		{
 			if (!string.IsNullOrEmpty(_nextLevelPath)) levelManager.Call("load_scene_by_path", _nextLevelPath);
-			else 									  levelManager.Call("reload_scene");
+			else 									   levelManager.Call("reload_scene");
 		}
 		else
 		{
