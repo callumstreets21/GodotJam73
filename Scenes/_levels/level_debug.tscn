@@ -12,7 +12,7 @@
 [node name="DefaultEnvironment" parent="." instance=ExtResource("3_0e3e1")]
 
 [node name="Player" parent="." instance=ExtResource("4_57n5t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32016, 1.41694, -1.53209)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0585, 0.472429, -8.3364)
 
 [node name="Floor Sample" parent="." instance=ExtResource("3_gdilv")]
 
