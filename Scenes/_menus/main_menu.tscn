@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://b76f2gih7f1jo"]
+[gd_scene load_steps=2 format=3 uid="uid://b76f2gih7f1jo"]
+
+[ext_resource type="AudioStream" uid="uid://cpdxh875skm63" path="res://Audio/introAudio.wav" id="1_h1g1n"]
 
 [node name="MainMenu" type="Node2D"]
+
+[node name="IntroAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_h1g1n")
+autoplay = true
