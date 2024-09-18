@@ -6,16 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://v7b4j44hvjej" path="res://Scenes/teleporter.tscn" id="4_84eak"]
 [ext_resource type="PackedScene" uid="uid://dt7rm4c8cord0" path="res://Scenes/Props/torch.tscn" id="5_x38n2"]
 [ext_resource type="PackedScene" uid="uid://dbscgi28d25ko" path="res://Scenes/Game Objects/feather.tscn" id="6_usw3s"]
-[ext_resource type="PackedScene" uid="uid://c5ln8eq3b3wkp" path="res://Scenes/end_goal.tscn" id="7_62jjj"]
+[ext_resource type="PackedScene" path="res://Scenes/end_goal.tscn" id="7_62jjj"]
 
 [node name="LevelDebug" type="Node3D"]
 
 [node name="DefaultEnvironment" parent="." instance=ExtResource("3_0e3e1")]
 
 [node name="Player" parent="." instance=ExtResource("4_57n5t")]
-
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2315, 0.520294, -8.3364)
-
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Floor Sample" parent="." instance=ExtResource("3_gdilv")]
 
