@@ -7,6 +7,7 @@ const MAIN_MENU = preload("res://Scenes/_menus/main_menu.tscn")
 const OPTIONS_MENU = preload("res://Scenes/_menus/options_menu.tscn")
 const SPLASH_SCREEN = preload("res://Scenes/_menus/splash_screen.tscn")
 const WIN_SCREEN = preload("res://Scenes/_menus/win_screen.tscn")
+const FIRST_LEVEL = preload("res://Scenes/_levels/level_debug.tscn")
 
 # Runtime Variables
 var current_scene: Node = null
@@ -21,6 +22,9 @@ func show_game_over():
 	
 func show_main_menu():
 	_change_scene(MAIN_MENU)
+	
+func show_level_1():
+	_change_scene(FIRST_LEVEL)
 	
 func show_options_menu():
 	_change_scene(OPTIONS_MENU)
