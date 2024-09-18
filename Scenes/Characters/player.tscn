@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bgdr43xclpdfg" path="res://Scenes/Components/movement_component.tscn" id="1_aafd6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yt30g"]
-radius = 0.1
-height = 0.25
+radius = 0.25
+height = 0.5
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 
