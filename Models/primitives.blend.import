@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cij8312u55pnp"
-path="res://.godot/imported/primitives.blend-4b697ad48e5b3e87080d381ebe215f77.scn"
+valid=false
 
 [deps]
 
 source_file="res://Models/primitives.blend"
-dest_files=["res://.godot/imported/primitives.blend-4b697ad48e5b3e87080d381ebe215f77.scn"]
 
 [params]
 

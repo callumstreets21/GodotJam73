@@ -1,23 +1,18 @@
+
 [gd_scene load_steps=4 format=3 uid="uid://dkbwkvi8f7mtw"]
 
+
 [ext_resource type="PackedScene" uid="uid://bgdr43xclpdfg" path="res://Scenes/Components/movement_component.tscn" id="1_aafd6"]
-[ext_resource type="PackedScene" uid="uid://blwj6sqn71fhu" path="res://Scenes/Components/DamageComponent.tscn" id="2_t245d"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_kth4q"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yt30g"]
+radius = 0.25
+height = 0.5
 
-[node name="Player" type="Node3D" groups=["Player"]]
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
 
 [node name="MovementComponent" parent="." instance=ExtResource("1_aafd6")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-
-[node name="DamageComponent" parent="." instance=ExtResource("2_t245d")]
-activeLayer = 2
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["Player"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-shape = SubResource("SphereShape3D_kth4q")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(0.442911, 0.442911, 0.442911, 1)
@@ -25,3 +20,8 @@ light_energy = 0.3
 light_indirect_energy = 0.0
 light_specular = 0.0
 omni_attenuation = 4.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Player"]]
+shape = SubResource("CapsuleShape3D_yt30g")
+
+[node name="MovementComponent" parent="." instance=ExtResource("1_aafd6")]

@@ -1,7 +1,7 @@
 extends Node
 class_name Option_Manager
 
-var FOV:float = 0
+var FOV:float = 75
 var MouseSens:float = 1.0
 
 var MusicVolume:float = 0.0
@@ -23,9 +23,8 @@ func _process(delta: float) -> void:
 func SetFOV(value:float) -> void:
 	return
 	if get_tree().current_scene != null && get_tree().get_node_count_in_group("Player") > 0:
-		var player: Node3D = get_tree().get_nodes_in_group("Player")[0]
-		var camera: Camera3D = player.get_node("Camera3D")
-		camera.set_fov(clamp(value, 1, 179))
+		(get_tree().get_nodes_in_group("Player")[0].get_node("Camera3D") as Camera3D).fov = clampf(value,1,179)
+
 	FOV = value
 
 func SetSensitivity(value:float) -> void:
