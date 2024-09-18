@@ -13,6 +13,10 @@ const FIRST_LEVEL = preload("res://Scenes/_levels/level_debug.tscn")
 var current_scene: Node = null
 var current_scene_packed: PackedScene = null
 
+func _process(delta: float) -> void:
+	if(Input.is_action_just_pressed("debug_win")):
+		_change_scene(WIN_SCREEN)
+
 		
 func show_credits():
 	_change_scene(CREDITS_MENU)
