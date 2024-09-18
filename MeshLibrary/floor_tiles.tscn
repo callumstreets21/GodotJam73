@@ -64,7 +64,6 @@ mesh = SubResource("BoxMesh_ve02j")
 shape = SubResource("ConcavePolygonShape3D_jfhle")
 
 [node name="BasicFloor2" type="MeshInstance3D" parent="."]
-visible = false
 mesh = SubResource("BoxMesh_4cm8d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BasicFloor2"]
@@ -73,7 +72,6 @@ mesh = SubResource("BoxMesh_4cm8d")
 shape = SubResource("ConcavePolygonShape3D_jfhle")
 
 [node name="BasicFloor3" type="MeshInstance3D" parent="."]
-visible = false
 mesh = SubResource("BoxMesh_qg3cs")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BasicFloor3"]
@@ -82,7 +80,6 @@ mesh = SubResource("BoxMesh_qg3cs")
 shape = SubResource("ConcavePolygonShape3D_jfhle")
 
 [node name="BasicFloor4" type="MeshInstance3D" parent="."]
-visible = false
 mesh = SubResource("BoxMesh_cn8cp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BasicFloor4"]
@@ -91,7 +88,6 @@ mesh = SubResource("BoxMesh_cn8cp")
 shape = SubResource("ConcavePolygonShape3D_jfhle")
 
 [node name="BasicFloor5" type="MeshInstance3D" parent="."]
-visible = false
 mesh = SubResource("BoxMesh_f5ir3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BasicFloor5"]
