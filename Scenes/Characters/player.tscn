@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkbwkvi8f7mtw"]
+
+[gd_scene load_steps=4 format=3 uid="uid://dkbwkvi8f7mtw"]
+
 
 [ext_resource type="PackedScene" uid="uid://bgdr43xclpdfg" path="res://Scenes/Components/movement_component.tscn" id="1_aafd6"]
 
@@ -7,6 +9,8 @@ radius = 0.25
 height = 0.5
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
+
+[node name="MovementComponent" parent="." instance=ExtResource("1_aafd6")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 
