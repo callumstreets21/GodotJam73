@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dq72pgkv0c501"
-path="res://.godot/imported/Wall.fbx-68d0886aabd83264ebf6f7833135d869.scn"
+uid="uid://cosmof5gpuw6n"
+path="res://.godot/imported/Cross_Junction.fbx-473a0452d6cf3fc078cd0e132fa6b8b2.scn"
 
 [deps]
 
-source_file="res://Models/Wall test/Wall.fbx"
-dest_files=["res://.godot/imported/Wall.fbx-68d0886aabd83264ebf6f7833135d869.scn"]
+source_file="res://Models/Wall_Cross/Cross_Junction.fbx"
+dest_files=["res://.godot/imported/Cross_Junction.fbx-473a0452d6cf3fc078cd0e132fa6b8b2.scn"]
 
 [params]
 
@@ -33,14 +33,14 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "meshes": {
-"Wall_Low": {
+"LowPolyWall_Cross_SectiomShape": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Models/Wall test/Wall_Low.res"
+"save_to_file/path": "res://Models/Wall_Cross/LowPolyWall_Cross_SectiomShape.res"
 }
 }
 }

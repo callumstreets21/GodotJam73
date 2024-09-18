@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcwubu0dttt7f"
-path.s3tc="res://.godot/imported/Wall_standardSurface1_Normal.png-b5590085719550c955b4f02d6c7e546e.s3tc.ctex"
+uid="uid://bvfpkc08c1q62"
+path.s3tc="res://.godot/imported/Wall Normal 1.png-2c3bb0a60c174e20604a46a7d3b35ea6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Wall test/Wall Textures/Wall_standardSurface1_Normal.png"
-dest_files=["res://.godot/imported/Wall_standardSurface1_Normal.png-b5590085719550c955b4f02d6c7e546e.s3tc.ctex"]
+source_file="res://Images/Textures/Wall Textures/Wall Normal 1.png"
+dest_files=["res://.godot/imported/Wall Normal 1.png-2c3bb0a60c174e20604a46a7d3b35ea6.s3tc.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://Models/Wall test/Wall Textures/Wall_standardSurface1_Normal.png"
+roughness/src_normal="res://Images/Textures/Wall Textures/Wall Normal 1.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
