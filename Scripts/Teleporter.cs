@@ -9,13 +9,11 @@ public partial class Teleporter : Node3D
 
 	public void _on_area_3d_body_entered(Node other)
 	{
-		
 		if (!other.IsInGroup("Player")) return;
 		
-		Node3D player = (Node3D)other;
-		GD.Print(player.Name);	
+		Node3D player = (Node3D)other.GetParent();
+			
 		player.GlobalPosition = teleportTarget.GlobalPosition;
 		player.GlobalRotation = teleportTarget.GlobalRotation;
-		
 	}
 }
