@@ -1,14 +1,12 @@
-
 [gd_scene load_steps=3 format=3 uid="uid://dkbwkvi8f7mtw"]
-
 
 [ext_resource type="PackedScene" uid="uid://bgdr43xclpdfg" path="res://Scenes/Components/movement_component.tscn" id="1_aafd6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yt30g"]
-
+radius = 0.1
+height = 0.25
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
-
 
 [node name="Camera3D" type="Camera3D" parent="."]
 
@@ -19,7 +17,7 @@ light_indirect_energy = 0.0
 light_specular = 0.0
 omni_attenuation = 4.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Player"]]
 shape = SubResource("CapsuleShape3D_yt30g")
 
 [node name="MovementComponent" parent="." instance=ExtResource("1_aafd6")]
