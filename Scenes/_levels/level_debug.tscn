@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="4_57n5t"]
 [ext_resource type="PackedScene" uid="uid://v7b4j44hvjej" path="res://Scenes/teleporter.tscn" id="4_84eak"]
 [ext_resource type="PackedScene" uid="uid://dt7rm4c8cord0" path="res://Scenes/Props/torch.tscn" id="5_x38n2"]
-[ext_resource type="PackedScene" path="res://Scenes/teleporter_with_arm.tscn" id="6_4twv7"]
+[ext_resource type="PackedScene" uid="uid://cmjxw04l83o4o" path="res://Scenes/teleporter_with_arm.tscn" id="6_4twv7"]
 
 [node name="LevelDebug" type="Node3D"]
 

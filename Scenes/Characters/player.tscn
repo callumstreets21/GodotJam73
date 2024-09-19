@@ -21,4 +21,6 @@ omni_attenuation = 4.0
 shape = SubResource("CapsuleShape3D_yt30g")
 
 [node name="MovementComponent" parent="." instance=ExtResource("1_aafd6")]
-jumpForce = 2.0
+speed = 6.0
+AirAcceleration = 30.0
+jumpForce = 4.0
