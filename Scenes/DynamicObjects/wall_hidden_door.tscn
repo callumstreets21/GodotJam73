@@ -12,6 +12,7 @@ onceOnly = false
 reversible = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("2_a56h7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]

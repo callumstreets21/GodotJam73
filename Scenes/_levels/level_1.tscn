@@ -1,3 +1,48 @@
-[gd_scene format=3 uid="uid://bn56ncgudcqxy"]
+[gd_scene load_steps=8 format=3 uid="uid://bu8i8mgfurfx4"]
+
+[ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="1_k71gc"]
+[ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="2_mx4bu"]
+[ext_resource type="PackedScene" uid="uid://glndqq2echfi" path="res://Scenes/_floors/floor_level_1.tscn" id="3_jng4v"]
+[ext_resource type="PackedScene" uid="uid://dt7rm4c8cord0" path="res://Scenes/Props/torch.tscn" id="4_osawx"]
+[ext_resource type="PackedScene" uid="uid://clhj4kng8due5" path="res://Scenes/DynamicObjects/activator.tscn" id="5_syshj"]
+[ext_resource type="PackedScene" uid="uid://cr2wfyd1gp0s0" path="res://Scenes/DynamicObjects/wall_hidden_door.tscn" id="6_4xjjn"]
+[ext_resource type="PackedScene" uid="uid://c5ln8eq3b3wkp" path="res://Scenes/end_goal.tscn" id="7_5p0ll"]
 
 [node name="Level1" type="Node3D"]
+
+[node name="DefaultEnvironment" parent="." instance=ExtResource("1_k71gc")]
+
+[node name="Player" parent="." instance=ExtResource("2_mx4bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 4)
+
+[node name="Floor Level 1" parent="." instance=ExtResource("3_jng4v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="Torch" parent="Lighting" instance=ExtResource("4_osawx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -4)
+
+[node name="Torch4" parent="Lighting" instance=ExtResource("4_osawx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 0, -8)
+
+[node name="Torch5" parent="Lighting" instance=ExtResource("4_osawx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, -8)
+
+[node name="Torch2" parent="Lighting" instance=ExtResource("4_osawx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -4)
+
+[node name="Torch3" parent="Lighting" instance=ExtResource("4_osawx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="ActivatorsAndDynamics" type="Node3D" parent="."]
+
+[node name="Activator" parent="ActivatorsAndDynamics" node_paths=PackedStringArray("targetObject") instance=ExtResource("5_syshj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 7)
+targetObject = NodePath("../WallHiddenDoor")
+
+[node name="WallHiddenDoor" parent="ActivatorsAndDynamics" instance=ExtResource("6_4xjjn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -7)
+
+[node name="EndGoal" parent="." instance=ExtResource("7_5p0ll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -11)

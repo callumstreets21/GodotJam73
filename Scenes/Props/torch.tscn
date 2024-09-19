@@ -12,7 +12,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 mesh = SubResource("CylinderMesh_bfaqr")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.664429, 0)
 light_color = Color(0.785841, 0.406413, 0.116389, 1)
 light_energy = 4.0
 light_size = 0.1

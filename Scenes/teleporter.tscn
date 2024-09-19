@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://v7b4j44hvjej"]
 
-[ext_resource type="PackedScene" uid="uid://b2iacxmq8d6c" path="res://Scenes/_floors/editor_marker.tscn" id="1_mt742"]
+[ext_resource type="PackedScene" uid="uid://b2iacxmq8d6c" path="res://Scenes/editor_marker.tscn" id="1_mt742"]
 [ext_resource type="Script" path="res://Scripts/Teleporter.cs" id="1_ytsv6"]
 [ext_resource type="ArrayMesh" uid="uid://n3uyggjkjfo" path="res://Models/Portal/pCylinder5.res" id="2_wuo2j"]
 [ext_resource type="Texture2D" uid="uid://dtg5ppfxxbsk5" path="res://Images/Textures/PortalPadTextures/Portal anim.png" id="4_t1o63"]
