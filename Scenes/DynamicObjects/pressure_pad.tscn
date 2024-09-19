@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq0du8ovb0wat"]
+
+[ext_resource type="Script" path="res://Scripts/DynamicObjects/ActivatorPressurePad.cs" id="1_ias8j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbj0a"]
+albedo_color = Color(0.15967, 0.15967, 0.15967, 1)
+metallic = 0.7
+roughness = 0.2
+
+[sub_resource type="BoxMesh" id="BoxMesh_cmqav"]
+material = SubResource("StandardMaterial3D_wbj0a")
+size = Vector3(1.8, 0.2, 1.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_osphk"]
+size = Vector3(1.8, 0.2, 1.8)
+
+[node name="PressurePad" type="Node3D"]
+script = ExtResource("1_ias8j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_cmqav")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_osphk")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
