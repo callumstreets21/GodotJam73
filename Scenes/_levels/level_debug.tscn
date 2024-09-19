@@ -17,6 +17,9 @@
 
 [node name="DefaultEnvironment" parent="." instance=ExtResource("3_0e3e1")]
 
+[node name="DirectionalLight3D" parent="DefaultEnvironment" index="1"]
+light_energy = 0.2
+
 [node name="Player" parent="." instance=ExtResource("4_57n5t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 3)
 
@@ -75,6 +78,7 @@ triggerOnExit = true
 depressionDistance = 0.08
 targetObject = NodePath("../WallHiddenDoor")
 
+[editable path="DefaultEnvironment"]
 [editable path="Teleporter"]
 [editable path="Teleporter With Arm"]
 [editable path="Teleporter Rotator"]
