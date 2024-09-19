@@ -19,9 +19,9 @@ script = ExtResource("1_ay8je")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 light_color = Color(0.632225, 1.9493e-06, 3.36915e-07, 1)
-spot_range = 7.43
-spot_attenuation = 0.81
-spot_angle = 53.4375
+spot_range = 3.45996
+spot_attenuation = -3.43
+spot_angle = 26.17
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_5x38w")

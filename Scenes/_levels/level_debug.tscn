@@ -45,7 +45,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7.2605)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -11)
 
 [node name="Potato" parent="." instance=ExtResource("7_uvfes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6746, 0.777107, -12.7056)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6746, 0.352989, -12.7056)
 Speed = 1.0
 
 [editable path="NavigationRegion3D/Teleporter With Arm"]
