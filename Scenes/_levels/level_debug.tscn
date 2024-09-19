@@ -47,7 +47,6 @@ targetObject = NodePath("../Moveable Wall")
 
 [node name="Teleporter Rotator" parent="." instance=ExtResource("8_aqqhw")]
 onceOnly = false
-reversible = true
 
 [node name="Torch" parent="Teleporter Rotator/Teleporter/TeleportDestination" index="1" instance=ExtResource("5_x38n2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
