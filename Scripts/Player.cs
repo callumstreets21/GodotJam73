@@ -35,7 +35,6 @@ public partial class Player : CharacterBody3D
 
 	private void ActivateObject()
 	{
-		GD.Print("Activating");
 		_cameraRay.ForceRaycastUpdate();
 		if (!_cameraRay.IsColliding()) return;
 		
