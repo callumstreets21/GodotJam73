@@ -1,3 +1,48 @@
-[gd_scene format=3 uid="uid://dw74o4u8qnglu"]
+[gd_scene load_steps=8 format=3 uid="uid://dts23rop4eux4"]
 
-[node name="Level1" type="Node3D"]
+[ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="1_2b1fy"]
+[ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="2_gp3h1"]
+[ext_resource type="PackedScene" uid="uid://b0bn461q4r2uw" path="res://Scenes/_floors/floor_level_2.tscn" id="3_350ba"]
+[ext_resource type="PackedScene" uid="uid://dt7rm4c8cord0" path="res://Scenes/Props/torch.tscn" id="4_y3k8g"]
+[ext_resource type="PackedScene" uid="uid://v7b4j44hvjej" path="res://Scenes/teleporter.tscn" id="5_lbrj0"]
+[ext_resource type="PackedScene" uid="uid://c5ln8eq3b3wkp" path="res://Scenes/end_goal.tscn" id="5_ohin2"]
+[ext_resource type="PackedScene" uid="uid://c7ocvb2duj8e6" path="res://Scenes/_levels/level_debug.tscn" id="6_afbw6"]
+
+[node name="LevelTemplate" type="Node3D"]
+
+[node name="DefaultEnvironment" parent="." instance=ExtResource("1_2b1fy")]
+
+[node name="Player" parent="." instance=ExtResource("2_gp3h1")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.00590897, 0.5, -5.00323)
+
+[node name="Floor Level 2" parent="." instance=ExtResource("3_350ba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="Torch" parent="Lighting" instance=ExtResource("4_y3k8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -1)
+
+[node name="Torch2" parent="Lighting" instance=ExtResource("4_y3k8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
+
+[node name="ActivatorsAndDynamics" type="Node3D" parent="."]
+
+[node name="Teleporter" parent="ActivatorsAndDynamics" instance=ExtResource("5_lbrj0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -2, 1)
+
+[node name="TeleportDestination" parent="ActivatorsAndDynamics/Teleporter" index="1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 3, 7)
+
+[node name="Teleporter2" parent="ActivatorsAndDynamics" instance=ExtResource("5_lbrj0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
+
+[node name="TeleportDestination" parent="ActivatorsAndDynamics/Teleporter2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 9)
+
+[node name="EndGoal" parent="." instance=ExtResource("5_ohin2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+NextLevel = ExtResource("6_afbw6")
+
+[editable path="ActivatorsAndDynamics/Teleporter"]
+[editable path="ActivatorsAndDynamics/Teleporter2"]
