@@ -8,13 +8,16 @@ public partial class Potato : CharacterBody3D
 	
 	private NavigationAgent3D navAgent;
 	private Vector3 targetPosition;
+	private CharacterBody3D player;
 
 	public override void _Ready()
 	{
 		base._Ready();
 		navAgent = GetNode<NavigationAgent3D>("NavigationAgent3D");
-
-		targetPosition = new Vector3(0, 0, 0);
+		
+		player = GetTree().GetNodesInGroup("Player")[0] as CharacterBody3D;
+		GD.Print(player);
+		targetPosition = player.GlobalTransform.Origin;
 		_UpdateTargetPosition(targetPosition);
 	}
 
@@ -23,11 +26,11 @@ public partial class Potato : CharacterBody3D
 		base._PhysicsProcess(delta);
 		
 		// Look at the target
-		LookAt(targetPosition);
+		this.LookAt(player.GlobalTransform.Origin);
 		
 		// Keep the potato from looking at the floor
 		var tempRotation = Rotation;
-		tempRotation.Y = 0;
+		tempRotation.X = 0;
 		tempRotation.Z = 0;
 		Rotation = tempRotation;
 
@@ -40,6 +43,10 @@ public partial class Potato : CharacterBody3D
 			Velocity = nextVelocity;
 			MoveAndSlide();
 		}
+		
+		targetPosition = player.GlobalTransform.Origin;
+		_UpdateTargetPosition(targetPosition);
+	   
 	}
 
 	private void _UpdateTargetPosition(Vector3 targetPosition)
