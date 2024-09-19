@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://kkf2m3sqjcar" path="res://Scenes/DynamicObjects/Teleporter_Rotator.tscn" id="6_05o0v"]
 [ext_resource type="PackedScene" uid="uid://c5ln8eq3b3wkp" path="res://Scenes/end_goal.tscn" id="6_kci56"]
 [ext_resource type="PackedScene" uid="uid://clhj4kng8due5" path="res://Scenes/DynamicObjects/activator.tscn" id="7_0453p"]
-[ext_resource type="PackedScene" uid="uid://c7ocvb2duj8e6" path="res://Scenes/_levels/level_debug.tscn" id="7_jg88m"]
+[ext_resource type="PackedScene" uid="uid://cxnwdefk3wkv" path="res://Scenes/_levels/level_4.tscn" id="9_6tc7i"]
 
 [node name="LevelTemplate" type="Node3D"]
 
@@ -52,8 +52,9 @@ targetObject = NodePath("../Teleporter Rotator")
 
 [node name="EndGoal" parent="." instance=ExtResource("6_kci56")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-NextLevel = ExtResource("7_jg88m")
+NextLevel = ExtResource("9_6tc7i")
 
+[editable path="DefaultEnvironment"]
 [editable path="ActivatorsAndDynamics/Teleporter"]
 [editable path="ActivatorsAndDynamics/Teleporter Rotator"]
 [editable path="ActivatorsAndDynamics/Teleporter Rotator/Teleporter"]
