@@ -50,8 +50,9 @@ public partial class DynamicMovement : DynamicObject
 
     public override void Activate()
     {
+        if (onceOnly && hasActivated) return;
         if (elapsed > 0) return; // Avoid reactivating if already active
-
+        
         base.Activate();
         
         startPosition = Position;
