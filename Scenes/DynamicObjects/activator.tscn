@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://clhj4kng8due5"]
+
+[ext_resource type="Script" path="res://Scripts/DynamicObjects/Activator.cs" id="1_h2e83"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0c0t5"]
+albedo_color = Color(0.269753, 0.506198, 0.18287, 1)
+metallic = 1.0
+roughness = 0.1
+
+[sub_resource type="BoxMesh" id="BoxMesh_5ws2d"]
+material = SubResource("StandardMaterial3D_0c0t5")
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wlr7m"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="Activator" type="Node3D"]
+script = ExtResource("1_h2e83")
+
+[node name="ActivatorMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_5ws2d")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_wlr7m")

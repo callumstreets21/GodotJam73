@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7ocvb2duj8e6"]
+[gd_scene load_steps=9 format=3 uid="uid://c7ocvb2duj8e6"]
 
 [ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="3_0e3e1"]
 [ext_resource type="PackedScene" uid="uid://clg7mqcgrdji1" path="res://Scenes/_floors/floor_sample.tscn" id="3_gdilv"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://v7b4j44hvjej" path="res://Scenes/teleporter.tscn" id="4_84eak"]
 [ext_resource type="PackedScene" uid="uid://dt7rm4c8cord0" path="res://Scenes/Props/torch.tscn" id="5_x38n2"]
 [ext_resource type="PackedScene" path="res://Scenes/teleporter_with_arm.tscn" id="6_4twv7"]
+[ext_resource type="PackedScene" uid="uid://clhj4kng8due5" path="res://Scenes/DynamicObjects/activator.tscn" id="7_dy4ii"]
+[ext_resource type="PackedScene" uid="uid://kkf2m3sqjcar" path="res://Scenes/DynamicObjects/Teleporter_Rotator.tscn" id="8_aqqhw"]
 
 [node name="LevelDebug" type="Node3D"]
 
@@ -13,6 +15,7 @@
 
 [node name="Player" parent="." instance=ExtResource("4_57n5t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+script = null
 
 [node name="Floor Sample" parent="." instance=ExtResource("3_gdilv")]
 
@@ -33,6 +36,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6759, 0, -7.50152)
 
 [node name="Teleporter With Arm" parent="." instance=ExtResource("6_4twv7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.35421, -0.0303707, -3.60535)
+
+[node name="Activator" parent="." node_paths=PackedStringArray("targetObject") instance=ExtResource("7_dy4ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 0)
+targetObject = NodePath("../Teleporter Rotator")
+
+[node name="Teleporter Rotator" parent="." instance=ExtResource("8_aqqhw")]
 
 [editable path="Teleporter"]
 [editable path="Teleporter With Arm"]
