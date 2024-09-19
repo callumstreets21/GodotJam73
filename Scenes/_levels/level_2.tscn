@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dt7rm4c8cord0" path="res://Scenes/Props/torch.tscn" id="4_y3k8g"]
 [ext_resource type="PackedScene" uid="uid://v7b4j44hvjej" path="res://Scenes/teleporter.tscn" id="5_lbrj0"]
 [ext_resource type="PackedScene" uid="uid://c5ln8eq3b3wkp" path="res://Scenes/end_goal.tscn" id="5_ohin2"]
-[ext_resource type="PackedScene" uid="uid://c7ocvb2duj8e6" path="res://Scenes/_levels/level_debug.tscn" id="6_afbw6"]
+[ext_resource type="PackedScene" uid="uid://dh1i3m484gs8" path="res://Scenes/_levels/level_3.tscn" id="7_bfvdf"]
 
 [node name="LevelTemplate" type="Node3D"]
 
@@ -21,10 +21,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 [node name="Lighting" type="Node3D" parent="."]
 
 [node name="Torch" parent="Lighting" instance=ExtResource("4_y3k8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00463, 0.00759172, -1.00097)
 
 [node name="Torch2" parent="Lighting" instance=ExtResource("4_y3k8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99537, 0.00759172, -1.00097)
 
 [node name="ActivatorsAndDynamics" type="Node3D" parent="."]
 
@@ -42,7 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 9)
 
 [node name="EndGoal" parent="." instance=ExtResource("5_ohin2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-NextLevel = ExtResource("6_afbw6")
+NextLevel = ExtResource("7_bfvdf")
 
 [editable path="ActivatorsAndDynamics/Teleporter"]
 [editable path="ActivatorsAndDynamics/Teleporter2"]
