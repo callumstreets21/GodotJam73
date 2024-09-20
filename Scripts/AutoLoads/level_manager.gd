@@ -1,4 +1,5 @@
 extends Node
+class_name Level_Manager # note add transisions
 
 # Constants
 const CREDITS_MENU = preload("res://Scenes/_menus/credits_menu.tscn")
@@ -10,7 +11,7 @@ const WIN_SCREEN = preload("res://Scenes/_menus/win_screen.tscn")
 const FIRST_LEVEL = preload("res://Scenes/_levels/level_debug.tscn")
 
 # Runtime Variables
-var current_scene: Node = null
+var current_scene: Node = null # unecessary varaibles
 var current_scene_packed: PackedScene = null
 
 func _process(delta: float) -> void:

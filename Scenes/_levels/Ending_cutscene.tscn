@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=4 uid="uid://boc64ujc2fbm8"]
+[gd_scene load_steps=19 format=4 uid="uid://boc64ujc2fbm8"]
 
 [ext_resource type="VideoStream" path="res://Images/Cutscenes/EndingSquence.ogv" id="1_141m8"]
 [ext_resource type="Script" path="res://Scripts/Ending/EndingCutscene.cs" id="1_imbpj"]
+[ext_resource type="PackedScene" uid="uid://b76f2gih7f1jo" path="res://Scenes/_menus/main_menu.tscn" id="2_k3n28"]
 [ext_resource type="Texture2D" uid="uid://dch6147hy4r35" path="res://Images/Textures/Wooden Floor/FloorEditGO.png" id="3_3jny0"]
 [ext_resource type="Theme" uid="uid://nkwrsdxhcjxg" path="res://Themes/BaseMenuTheming1.tres" id="3_8v6jm"]
 [ext_resource type="Texture2D" uid="uid://ct672oms3igmc" path="res://Models/Entities/GooseModel/DuckDuckModelAnim1_Duck2.png" id="3_cs2tf"]
@@ -742,6 +743,7 @@ VidPlayer = NodePath("CanvasLayer/SubViewportContainer/SubViewport/VideoStreamPl
 PlBody = NodePath("Scene/DuckDuckModelAnim2")
 UIScene = NodePath("CanvasLayer/SubViewportContainer/SubViewport/SceneView")
 Bext = NodePath("CanvasLayer/SubViewportContainer/SubViewport/SceneView/Button")
+MSc = ExtResource("2_k3n28")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hsbsg")

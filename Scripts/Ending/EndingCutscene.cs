@@ -9,6 +9,7 @@ public partial class EndingCutscene : Node3D
 	[Export] public Control UIScene;
 	[Export] public Button Bext;
 	private string DeafultBText;
+	[Export] public PackedScene MSc;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -22,6 +23,7 @@ public partial class EndingCutscene : Node3D
 		DeafultBText = Bext.Text;
 		Bext.MouseEntered += () => SetButtonText(Bext, "Back To Menu?");
 		Bext.MouseExited += () => SetButtonText(Bext, DeafultBText);
+		Bext.Pressed += () => GetNode("/root/LevelManager").Call("_change_scene", MSc);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
