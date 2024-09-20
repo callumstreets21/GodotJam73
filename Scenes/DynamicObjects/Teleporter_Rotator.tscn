@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://kkf2m3sqjcar"]
+
+[ext_resource type="Script" path="res://Scripts/DynamicObjects/DynamicRotator.cs" id="1_qhuu3"]
+[ext_resource type="PackedScene" uid="uid://v7b4j44hvjej" path="res://Scenes/teleporter.tscn" id="2_hlwq6"]
+
+[node name="Teleporter Rotator" type="Node3D"]
+script = ExtResource("1_qhuu3")
+
+[node name="Teleporter" parent="." instance=ExtResource("2_hlwq6")]
+
+[editable path="Teleporter"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr2wfyd1gp0s0"]
+
+[ext_resource type="Script" path="res://Scripts/DynamicObjects/DynamicRotator.cs" id="1_hld35"]
+[ext_resource type="ArrayMesh" uid="uid://dwvoex2m7wdks" path="res://Models/Wall/LowPoly_Wall.res" id="2_a56h7"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yohcm"]
+data = PackedVector3Array(1, 0.1854, 0.0793, 1, 0, 0.0793, -1, 0, 0.0793, -1, 0, 0.0793, -1, 0.1854, 0.0793, 1, 0.1854, 0.0793, 1, 0, -0.0793, 1, 0.1854, -0.0793, -1, 0.1854, -0.0793, -1, 0.1854, -0.0793, -1, 0, -0.0793, 1, 0, -0.0793, 1, 0.2, -0.05, 1, 2, -0.05, -1, 2, -0.05, -1, 2, -0.05, -1, 0.2, -0.05, 1, 0.2, -0.05, 1, 2, 0.05, 1, 0.2, 0.05, -1, 0.2, 0.05, -1, 0.2, 0.05, -1, 2, 0.05, 1, 2, 0.05, -1, 0.2, 0.0646, -1, 0.2, 0.05, 1, 0.2, 0.05, 1, 0.2, 0.05, 1, 0.2, 0.0646, -1, 0.2, 0.0646, 1, 0.2, -0.0646, 1, 0.2, -0.05, -1, 0.2, -0.05, -1, 0.2, -0.05, -1, 0.2, -0.0646, 1, 0.2, -0.0646, -1, 0.2, 0.0646, 1, 0.2, 0.0646, 1, 0.1854, 0.0793, 1, 0.1854, 0.0793, -1, 0.1854, 0.0793, -1, 0.2, 0.0646, 1, 0.2, -0.0646, -1, 0.2, -0.0646, -1, 0.1854, -0.0793, -1, 0.1854, -0.0793, 1, 0.1854, -0.0793, 1, 0.2, -0.0646)
+
+[node name="WallHiddenDoor" type="Node3D"]
+script = ExtResource("1_hld35")
+onceOnly = false
+reversible = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_a56h7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yohcm")

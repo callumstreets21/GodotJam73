@@ -1,18 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7ocvb2duj8e6"]
+[gd_scene load_steps=13 format=3 uid="uid://c7ocvb2duj8e6"]
 
 [ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="3_0e3e1"]
 [ext_resource type="PackedScene" uid="uid://clg7mqcgrdji1" path="res://Scenes/_floors/floor_sample.tscn" id="3_gdilv"]
 [ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="4_57n5t"]
 [ext_resource type="PackedScene" uid="uid://v7b4j44hvjej" path="res://Scenes/teleporter.tscn" id="4_84eak"]
 [ext_resource type="PackedScene" uid="uid://dt7rm4c8cord0" path="res://Scenes/Props/torch.tscn" id="5_x38n2"]
-[ext_resource type="PackedScene" path="res://Scenes/teleporter_with_arm.tscn" id="6_4twv7"]
+[ext_resource type="PackedScene" uid="uid://cmjxw04l83o4o" path="res://Scenes/teleporter_with_arm.tscn" id="6_4twv7"]
+[ext_resource type="PackedScene" uid="uid://clhj4kng8due5" path="res://Scenes/DynamicObjects/activator.tscn" id="7_dy4ii"]
+[ext_resource type="PackedScene" uid="uid://kkf2m3sqjcar" path="res://Scenes/DynamicObjects/Teleporter_Rotator.tscn" id="8_aqqhw"]
+[ext_resource type="PackedScene" uid="uid://c4yp3ugkyfdci" path="res://Scenes/DynamicObjects/moveable_wall.tscn" id="9_f6bsl"]
+[ext_resource type="PackedScene" uid="uid://dxe1bogj8qnry" path="res://Scenes/DynamicObjects/teleporter_enable_disable.tscn" id="10_5sohc"]
+[ext_resource type="PackedScene" uid="uid://cr2wfyd1gp0s0" path="res://Scenes/DynamicObjects/wall_hidden_door.tscn" id="11_ogp5j"]
+[ext_resource type="PackedScene" uid="uid://cq0du8ovb0wat" path="res://Scenes/DynamicObjects/pressure_pad.tscn" id="12_jkgsd"]
 
 [node name="LevelDebug" type="Node3D"]
 
 [node name="DefaultEnvironment" parent="." instance=ExtResource("3_0e3e1")]
 
+[node name="DirectionalLight3D" parent="DefaultEnvironment" index="1"]
+light_energy = 0.2
+
 [node name="Player" parent="." instance=ExtResource("4_57n5t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 3)
 
 [node name="Floor Sample" parent="." instance=ExtResource("3_gdilv")]
 
@@ -34,5 +43,43 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6759, 0, -7.50152)
 [node name="Teleporter With Arm" parent="." instance=ExtResource("6_4twv7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.35421, -0.0303707, -3.60535)
 
+[node name="Activator" parent="." node_paths=PackedStringArray("targetObject") instance=ExtResource("7_dy4ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -1)
+targetObject = NodePath("../WallHiddenDoor")
+
+[node name="Activator3" parent="." node_paths=PackedStringArray("targetObject") instance=ExtResource("7_dy4ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, -5)
+targetObject = NodePath("../Teleporter Enable_Disable")
+
+[node name="Activator2" parent="." node_paths=PackedStringArray("targetObject") instance=ExtResource("7_dy4ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.54369, 0.5, 2)
+targetObject = NodePath("../Moveable Wall")
+
+[node name="Teleporter Rotator" parent="." instance=ExtResource("8_aqqhw")]
+onceOnly = false
+
+[node name="Torch" parent="Teleporter Rotator/Teleporter/TeleportDestination" index="1" instance=ExtResource("5_x38n2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Moveable Wall" parent="." instance=ExtResource("9_f6bsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 4)
+onceOnly = false
+reversible = true
+
+[node name="Teleporter Enable_Disable" parent="." instance=ExtResource("10_5sohc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -6)
+
+[node name="WallHiddenDoor" parent="." instance=ExtResource("11_ogp5j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 1)
+
+[node name="PressurePad" parent="." node_paths=PackedStringArray("targetObject") instance=ExtResource("12_jkgsd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -3)
+triggerOnExit = true
+depressionDistance = 0.08
+targetObject = NodePath("../WallHiddenDoor")
+
+[editable path="DefaultEnvironment"]
 [editable path="Teleporter"]
 [editable path="Teleporter With Arm"]
+[editable path="Teleporter Rotator"]
+[editable path="Teleporter Rotator/Teleporter"]

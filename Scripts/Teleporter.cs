@@ -13,7 +13,6 @@ public partial class Teleporter : Node3D
 		if (!other.IsInGroup("Player")) return;
 		
 		Node3D player = (Node3D)other;
-		GD.Print(player.Name);	
 		player.GlobalPosition = teleportTarget.GlobalPosition;
 		player.GlobalRotation = teleportTarget.GlobalRotation;
 		
