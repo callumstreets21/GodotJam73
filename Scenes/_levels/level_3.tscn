@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://dh1i3m484gs8"]
+
+[ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="1_pjo0p"]
+[ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="2_3bdph"]
+[ext_resource type="PackedScene" uid="uid://b0bn461q4r2uw" path="res://Scenes/_floors/floor_level_2.tscn" id="3_kwr1l"]
+[ext_resource type="PackedScene" uid="uid://dt7rm4c8cord0" path="res://Scenes/Props/torch.tscn" id="4_3blam"]
+[ext_resource type="PackedScene" uid="uid://v7b4j44hvjej" path="res://Scenes/teleporter.tscn" id="5_rcxio"]
+[ext_resource type="PackedScene" uid="uid://kkf2m3sqjcar" path="res://Scenes/DynamicObjects/Teleporter_Rotator.tscn" id="6_05o0v"]
+[ext_resource type="PackedScene" uid="uid://c5ln8eq3b3wkp" path="res://Scenes/end_goal.tscn" id="6_kci56"]
+[ext_resource type="PackedScene" uid="uid://clhj4kng8due5" path="res://Scenes/DynamicObjects/activator.tscn" id="7_0453p"]
+[ext_resource type="PackedScene" uid="uid://cxnwdefk3wkv" path="res://Scenes/_levels/level_4.tscn" id="9_6tc7i"]
+
+[node name="LevelTemplate" type="Node3D"]
+
+[node name="DefaultEnvironment" parent="." instance=ExtResource("1_pjo0p")]
+
+[node name="Player" parent="." instance=ExtResource("2_3bdph")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.00590897, 0.5, -5.00323)
+
+[node name="Floor Level 2" parent="." instance=ExtResource("3_kwr1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="Torch" parent="Lighting" instance=ExtResource("4_3blam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 4)
+
+[node name="Torch3" parent="Lighting" instance=ExtResource("4_3blam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -6)
+
+[node name="Torch2" parent="Lighting" instance=ExtResource("4_3blam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="ActivatorsAndDynamics" type="Node3D" parent="."]
+
+[node name="Teleporter" parent="ActivatorsAndDynamics" instance=ExtResource("5_rcxio")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -2, 1)
+
+[node name="TeleportDestination" parent="ActivatorsAndDynamics/Teleporter" index="1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 3, 7)
+
+[node name="Teleporter Rotator" parent="ActivatorsAndDynamics" instance=ExtResource("6_05o0v")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.00365353, 0.00549746, -1.00357)
+onceOnly = false
+
+[node name="Torch" parent="ActivatorsAndDynamics/Teleporter Rotator/Teleporter/TeleportDestination" index="1" instance=ExtResource("4_3blam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Activator" parent="ActivatorsAndDynamics" node_paths=PackedStringArray("targetObject") instance=ExtResource("7_0453p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -7)
+targetObject = NodePath("../Teleporter Rotator")
+
+[node name="EndGoal" parent="." instance=ExtResource("6_kci56")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+NextLevel = ExtResource("9_6tc7i")
+
+[editable path="DefaultEnvironment"]
+[editable path="ActivatorsAndDynamics/Teleporter"]
+[editable path="ActivatorsAndDynamics/Teleporter Rotator"]
+[editable path="ActivatorsAndDynamics/Teleporter Rotator/Teleporter"]
