@@ -5,12 +5,30 @@ namespace GodotTemplate.Scripts;
 
 public partial class AudioManager : Node
 {
+    // Constants
+    private const string OPTIONS_MANAGER_PATH = "res://Scripts/AutoLoads/options_manager.gd";
+    
+    // Statics
+    private static AudioManager _instance;
+    public static AudioManager Instance => _instance;
+    
     // Configurations
     [Export] private AudioStream ambientMusic;
 
     // Cached references
     private AudioStreamPlayer musicSource;
     private Camera3D mainCamera;
+    
+    public override void _EnterTree()
+    {
+        _instance = this;
+    }
+
+    public override void _ExitTree()
+    {
+        _instance = null;
+    }
+    
     public override void _Ready()
     {
         // Find the main camera in the scene and attach the AudioStreamPlayer to it
@@ -44,9 +62,9 @@ public partial class AudioManager : Node
         }
 
         // Accessing the GDScript 'OptionsManager' to retrieve volumes
-        var optionsManager = (GDScript)GD.Load("res://options_manager.gd");
-        float masterVolume = (float)optionsManager.Call("master_volume");
-        float musicVolume = (float)optionsManager.Call("MusicVolume");
+        var optionsManager =  (GDScript)GD.Load(OPTIONS_MANAGER_PATH);
+        float masterVolume = (float)optionsManager.Call("get_master_volume");
+        float musicVolume = (float)optionsManager.Call("get_music_volume");
         musicSource.VolumeDb = Utils.LinearToDb(masterVolume * musicVolume); 
         
     }
@@ -81,9 +99,9 @@ public partial class AudioManager : Node
         audioPlayer.Position = position;
 
         // Accessing the GDScript 'OptionsManager' to retrieve volumes
-        var optionsManager = (GDScript)GD.Load("res://options_manager.gd");
-        float masterVolume = (float)optionsManager.Call("master_volume");
-        float sfxVolume = (float)optionsManager.Call("SFXVolume");
+        var optionsManager = (GDScript)GD.Load(OPTIONS_MANAGER_PATH);
+        float masterVolume = (float)optionsManager.Call("get_master_volume");
+        float sfxVolume = (float)optionsManager.Call("get_sfx_volume");
         
         // Calculate final volume based on master and effects volumes
         float finalVolume = volume * masterVolume * sfxVolume;
