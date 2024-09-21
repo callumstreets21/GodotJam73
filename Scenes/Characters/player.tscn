@@ -7,8 +7,12 @@ radius = 0.25
 height = 1.0
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.35, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(0.442911, 0.442911, 0.442911, 1)
@@ -21,6 +25,6 @@ omni_attenuation = 4.0
 shape = SubResource("CapsuleShape3D_yt30g")
 
 [node name="MovementComponent" parent="." instance=ExtResource("1_aafd6")]
-speed = 6.0
-AirAcceleration = 30.0
+acceleration = 25.0
+deceleration = 40.0
 jumpForce = 4.0

@@ -6,7 +6,7 @@ namespace GodotTemplate.Scripts;
 public partial class MovementComponent : Node3D
 {
 	public Camera3D cam;
-	[Export] private float speed, acceleration = 60.0f, deceleration = 100.0f, AirDrag = 2.0f, AirAcceleration = 10.0f;
+	[Export] private float speed = 4, acceleration = 60.0f, deceleration = 100.0f, AirDrag = 2.0f, AirAcceleration = 10.0f;
 	private Vector2 InputDir;
 	private Vector3 direction;
 	private Vector3 velocity;
@@ -34,13 +34,15 @@ public partial class MovementComponent : Node3D
 		InputDir = Input.GetVector("move_left","move_right","move_down","move_up");
 		isOnGround = parent_to_move.IsOnFloor();
 		
+		GD.Print(InputDir);
+		
 		if (isOnGround && Input.IsActionJustPressed("jump"))
 		{
 			velocity.Y = jumpForce;
 		}
 
-		direction = parent_to_move.Transform.Basis * new Vector3(InputDir.X, 0, -InputDir.Y);
-
+		direction =  (parent_to_move.Transform.Basis * new Vector3(InputDir.X, 0, -InputDir.Y));
+		
 		Vector2 FlatVToward = new Vector2(velocity.X,velocity.Z);
 		//move player velocity vector based on input
 		FlatVToward = FlatVToward.MoveToward(new Vector2(direction.X,direction.Z) * speed, (InputDir.DistanceTo(Vector2.Zero) > 0 ? (isOnGround ? acceleration : AirAcceleration) : (isOnGround ? deceleration : AirDrag))*(float)delta);
