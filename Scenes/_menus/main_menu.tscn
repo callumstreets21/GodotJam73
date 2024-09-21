@@ -36,14 +36,31 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -545.0
-offset_top = 174.0
-offset_right = -38.0
-offset_bottom = -259.0
+offset_left = -546.0
+offset_top = -6.0
+offset_right = -39.0
+offset_bottom = -439.0
 grow_horizontal = 0
 grow_vertical = 2
 theme = SubResource("Theme_56bb1")
 text = "Start Game
+"
+
+[node name="OptionsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -544.0
+offset_top = 175.0
+offset_right = -37.0
+offset_bottom = -258.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = SubResource("Theme_56bb1")
+text = "Options
 "
 
 [node name="ExitButton" type="Button" parent="."]
@@ -68,4 +85,5 @@ stream = ExtResource("4_k58l6")
 autoplay = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
