@@ -6,7 +6,7 @@ namespace GodotTemplate.Scripts;
 public partial class AudioManager : Node
 {
     // Constants
-    private const string OPTIONS_MANAGER_PATH = "res://Scripts/AutoLoads/options_manager.gd";
+    private const string OPTIONS_MANAGER_PATH = "/root/OptionsManager";
     
     // Statics
     private static AudioManager _instance;
@@ -62,7 +62,7 @@ public partial class AudioManager : Node
         }
 
         // Accessing the GDScript 'OptionsManager' to retrieve volumes
-        var optionsManager =  (GDScript)GD.Load(OPTIONS_MANAGER_PATH);
+        var optionsManager = GetNode(OPTIONS_MANAGER_PATH);  
         float masterVolume = (float)optionsManager.Call("get_master_volume");
         float musicVolume = (float)optionsManager.Call("get_music_volume");
         musicSource.VolumeDb = Utils.LinearToDb(masterVolume * musicVolume); 
@@ -99,7 +99,7 @@ public partial class AudioManager : Node
         audioPlayer.Position = position;
 
         // Accessing the GDScript 'OptionsManager' to retrieve volumes
-        var optionsManager = (GDScript)GD.Load(OPTIONS_MANAGER_PATH);
+        var optionsManager = GetNode(OPTIONS_MANAGER_PATH);  
         float masterVolume = (float)optionsManager.Call("get_master_volume");
         float sfxVolume = (float)optionsManager.Call("get_sfx_volume");
         
