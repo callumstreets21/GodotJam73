@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://fj4mdocx3lfx"]
+
+[ext_resource type="Script" path="res://Scripts/light_detection_component.gd" id="1_q8yub"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_i6cci"]
+
+[node name="LightDetectionComponent" type="SubViewport"]
+handle_input_locally = false
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+script = ExtResource("1_q8yub")
+
+[node name="MovingSection" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="MovingSection"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0)
+cull_mask = 1048573
+fov = 40.0
+far = 20.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MovingSection"]
+layers = 524288
+mesh = SubResource("PlaneMesh_i6cci")
