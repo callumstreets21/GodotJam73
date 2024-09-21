@@ -2,12 +2,12 @@ extends SubViewport
 
 @export var offset : Vector3;
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	debug_draw = 2
 
 
 #adjust the position of the moveming section to follow the the parented node
-func _process(delta):
+func _process(delta) -> void:
 	$MovingSection.global_position = get_parent().global_position+offset
 
 #Used to poll the light level when needed
