@@ -1,12 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmcmwao8gsgr3"]
+[gd_scene load_steps=8 format=3 uid="uid://2ihgyg5t37bq"]
 
 [ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="1_jqw3f"]
 [ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="2_xryiw"]
-[ext_resource type="PackedScene" uid="uid://bwkdnixexbicr" path="res://Scenes/_floors/floor_level_7.tscn" id="3_gjcs1"]
-[ext_resource type="PackedScene" uid="uid://dhcdpm2qymit0" path="res://Scenes/Game Objects/destructible_floor.tscn" id="3_y5qho"]
+[ext_resource type="PackedScene" path="res://Scenes/_floors/floor_level_7.tscn" id="3_gjcs1"]
+[ext_resource type="PackedScene" uid="uid://cfaivgmhn44au" path="res://Scenes/Game Objects/destructible_floor.tscn" id="3_y5qho"]
 [ext_resource type="PackedScene" uid="uid://dt7rm4c8cord0" path="res://Scenes/Props/torch.tscn" id="4_njbmy"]
 [ext_resource type="PackedScene" uid="uid://c5ln8eq3b3wkp" path="res://Scenes/end_goal.tscn" id="5_r60rk"]
-[ext_resource type="PackedScene" uid="uid://c7ocvb2duj8e6" path="res://Scenes/_levels/level_debug.tscn" id="6_k887w"]
+[ext_resource type="PackedScene" uid="uid://ds6pk66s5lstx" path="res://Scenes/ending_cutscene.tscn" id="7_gv61q"]
 
 [node name="LevelTemplate" type="Node3D"]
 
@@ -72,4 +72,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 
 [node name="EndGoal" parent="." instance=ExtResource("5_r60rk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
-NextLevel = ExtResource("6_k887w")
+NextLevel = ExtResource("7_gv61q")
