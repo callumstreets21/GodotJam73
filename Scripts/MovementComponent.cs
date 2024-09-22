@@ -6,6 +6,9 @@ namespace GodotTemplate.Scripts;
 
 public partial class MovementComponent : Node3D
 {
+	// Constants
+	private const string OPTIONS_MANAGER_PATH = "/root/OptionsManager";
+	
 	private float speed;
 	private Vector3 direction;
 	private Vector3 velocity;
@@ -18,6 +21,10 @@ public partial class MovementComponent : Node3D
 
 	public override void _Ready()
 	{
+		// Accessing the GDScript 'OptionsManager' to retrieve volumes
+		var optionsManager = GetNode(OPTIONS_MANAGER_PATH);  
+		mouseSensitivity = (float)optionsManager.Call("GetLookSensetivity");
+		
 		speed = 10.0f;
 		direction = Vector3.Zero;
 		velocity = Vector3.Zero;

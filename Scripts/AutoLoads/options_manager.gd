@@ -51,3 +51,6 @@ func get_music_volume():
 	
 func get_sfx_volume():
 	return SFXVolume
+
+func GetLookSensetivity():
+	return MouseSens
