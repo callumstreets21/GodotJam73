@@ -37,6 +37,7 @@ func show_main_menu():
 	_change_scene(MAIN_MENU)
 	
 func show_level_1():
+	CollectableManager.ResetFeatherCount()
 	b_timer_active = true
 	timer = 0
 	_change_scene(FIRST_LEVEL)
@@ -49,7 +50,7 @@ func show_win_screen():
 	_change_scene(WIN_SCREEN)
 	
 func load_scene_by_path(scene):
-	
+	CollectableManager.ConfirmFeather();
 	print(scene)
 	if scene is String:
 		var scene_resource = load(scene)
@@ -63,6 +64,7 @@ func load_scene_by_path(scene):
 		push_error("Invalid scene type passed to load_scene_by_path. Expected a String path or a PackedScene.")
 
 func reload_scene():
+	CollectableManager.RemoveFeather()
 	call_deferred("_reload_current_scene_deferred")
 
 func _reload_current_scene_deferred():

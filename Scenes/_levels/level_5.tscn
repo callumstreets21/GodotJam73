@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cgh3qbcqggitr"]
+[gd_scene load_steps=20 format=4 uid="uid://cgh3qbcqggitr"]
 
 [ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="1_0wfa0"]
 [ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="2_iy71u"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c2tbmbyyfwh82" path="res://Scenes/Props/Oil Drums/oil_drum_stack_3.tscn" id="11_urw5b"]
 [ext_resource type="PackedScene" uid="uid://di60xi0xkc2x6" path="res://Scenes/Props/pillar.tscn" id="12_v0utp"]
 [ext_resource type="PackedScene" uid="uid://cc687yah66c5k" path="res://Scenes/_levels/level_6.tscn" id="15_6ex6w"]
+[ext_resource type="PackedScene" uid="uid://dbscgi28d25ko" path="res://Scenes/Game Objects/feather.tscn" id="16_rm2uv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5epf"]
 albedo_texture = ExtResource("7_0em48")
@@ -236,6 +237,9 @@ transform = Transform3D(0.65, 0, 0, 0, 1, 0, 0, 0, 0.65, -0.00658691, 0.00500393
 [node name="EndGoal" parent="." instance=ExtResource("8_2fj75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -7)
 NextLevel = ExtResource("15_6ex6w")
+
+[node name="Feather" parent="." instance=ExtResource("16_rm2uv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03636, 0.760392, 10.2639)
 
 [editable path="ActivatorsAndDynamics/Teleporter With Arm"]
 [editable path="ActivatorsAndDynamics/Teleporter"]

@@ -85,6 +85,38 @@ grow_vertical = 2
 text = "It only took you"
 label_settings = SubResource("LabelSettings_1t0r2")
 
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -646.0
+offset_top = -30.5
+offset_right = -35.0
+offset_bottom = 30.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Feathers Found"
+label_settings = SubResource("LabelSettings_1t0r2")
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -646.0
+offset_top = 48.5
+offset_right = -35.0
+offset_bottom = 109.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "20 / 534"
+label_settings = SubResource("LabelSettings_1t0r2")
+
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7

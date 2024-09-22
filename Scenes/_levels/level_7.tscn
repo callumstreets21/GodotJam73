@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://2ihgyg5t37bq"]
+[gd_scene load_steps=12 format=3 uid="uid://2ihgyg5t37bq"]
 
 [ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="1_jqw3f"]
 [ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="2_xryiw"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ds6pk66s5lstx" path="res://Scenes/ending_cutscene.tscn" id="7_gv61q"]
 [ext_resource type="PackedScene" uid="uid://ct6k3rpdiha5b" path="res://Scenes/Characters/potato.tscn" id="8_fy5tx"]
 [ext_resource type="PackedScene" uid="uid://w7nhv6x2yl8h" path="res://Scenes/Game Objects/kill_floor.tscn" id="9_x5j2l"]
+[ext_resource type="PackedScene" uid="uid://dbscgi28d25ko" path="res://Scenes/Game Objects/feather.tscn" id="10_eew8s"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_shx6e"]
 vertices = PackedVector3Array(-7.5, 2.4, -27.5, -7.5, 2.4, 7.5, 7.5, 2.4, 7.5, 7.5, 2.4, -27.5, -6.25, 0.4, -26.25, -6.25, 0.4, -18.5, 6.25, 0.4, -18.5, 6.25, 0.4, -26.25, -6.25, 0.4, 2.5, -6.25, 0.4, 6.25, 6.25, 0.4, 6.25, 6.25, 0.4, 2.5)
@@ -100,5 +101,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.47749, 0)
 
 [node name="CollisionShape3D" parent="Kill Floor/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1101, -7.18896, -7.23203)
+
+[node name="Feather" parent="." instance=ExtResource("10_eew8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.40827, 0.644912, -5.20847)
 
 [editable path="Kill Floor"]

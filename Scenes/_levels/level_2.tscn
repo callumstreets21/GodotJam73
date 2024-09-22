@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dts23rop4eux4"]
+[gd_scene load_steps=9 format=3 uid="uid://dts23rop4eux4"]
 
 [ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="1_2b1fy"]
 [ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="2_gp3h1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://v7b4j44hvjej" path="res://Scenes/teleporter.tscn" id="5_lbrj0"]
 [ext_resource type="PackedScene" uid="uid://c5ln8eq3b3wkp" path="res://Scenes/end_goal.tscn" id="5_ohin2"]
 [ext_resource type="PackedScene" uid="uid://dh1i3m484gs8" path="res://Scenes/_levels/level_3.tscn" id="7_bfvdf"]
+[ext_resource type="PackedScene" uid="uid://dbscgi28d25ko" path="res://Scenes/Game Objects/feather.tscn" id="8_pgcfj"]
 
 [node name="LevelTemplate" type="Node3D"]
 
@@ -43,6 +44,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 9)
 [node name="EndGoal" parent="." instance=ExtResource("5_ohin2")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 6)
 NextLevel = ExtResource("7_bfvdf")
+
+[node name="Feather" parent="." instance=ExtResource("8_pgcfj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.86558, -1.42119, 1.04704)
 
 [editable path="ActivatorsAndDynamics/Teleporter"]
 [editable path="ActivatorsAndDynamics/Teleporter2"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cc687yah66c5k"]
+[gd_scene load_steps=11 format=3 uid="uid://cc687yah66c5k"]
 
 [ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="1_fts5i"]
 [ext_resource type="PackedScene" uid="uid://svwqslusx2ab" path="res://Scenes/_floors/floor_level_6.tscn" id="2_58cyp"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://di60xi0xkc2x6" path="res://Scenes/Props/pillar.tscn" id="6_02387"]
 [ext_resource type="PackedScene" uid="uid://2ihgyg5t37bq" path="res://Scenes/_levels/level_7.tscn" id="6_ftge5"]
 [ext_resource type="PackedScene" uid="uid://ct6k3rpdiha5b" path="res://Scenes/Characters/potato.tscn" id="8_ulyyg"]
+[ext_resource type="PackedScene" uid="uid://dbscgi28d25ko" path="res://Scenes/Game Objects/feather.tscn" id="9_sr2ag"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yllp7"]
 vertices = PackedVector3Array(25.75, 0.4, -38.25, 25.75, 0.4, -31.75, 28.25, 0.4, -31.75, 28.25, 0.4, -38.25, -30.25, 0.4, -30.25, -30.25, 0.4, 30.25, 30.25, 0.4, 30.25, 30.25, 0.4, -30.25, -7.5, 2.4, -7.5, -7.5, 2.4, 7.5, 7.5, 2.4, 7.5, 7.5, 2.4, -7.5, -28.25, 0.4, 31.75, -28.25, 0.4, 38.25, -25.75, 0.4, 38.25, -25.75, 0.4, 31.75)
@@ -38,7 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3549, -1.90735e-06, 18.338
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 
 [node name="Torch2" parent="Lighting" instance=ExtResource("4_4i00k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -9.29347)
 
 [node name="ActivatorsAndDynamics" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
@@ -86,3 +87,6 @@ PrintLightLevel = true
 navigation_mesh = SubResource("NavigationMesh_yllp7")
 
 [node name="Floor Template" parent="NavigationRegion3D" instance=ExtResource("2_58cyp")]
+
+[node name="Feather" parent="." instance=ExtResource("9_sr2ag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6707, 0.830719, 16.4118)
