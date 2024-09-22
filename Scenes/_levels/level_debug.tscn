@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c7ocvb2duj8e6"]
+[gd_scene load_steps=14 format=3 uid="uid://c7ocvb2duj8e6"]
 
 [ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="3_0e3e1"]
 [ext_resource type="PackedScene" uid="uid://clg7mqcgrdji1" path="res://Scenes/_floors/floor_sample.tscn" id="3_gdilv"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dxe1bogj8qnry" path="res://Scenes/DynamicObjects/teleporter_enable_disable.tscn" id="10_5sohc"]
 [ext_resource type="PackedScene" uid="uid://cr2wfyd1gp0s0" path="res://Scenes/DynamicObjects/wall_hidden_door.tscn" id="11_ogp5j"]
 [ext_resource type="PackedScene" uid="uid://cq0du8ovb0wat" path="res://Scenes/DynamicObjects/pressure_pad.tscn" id="12_jkgsd"]
+[ext_resource type="PackedScene" uid="uid://cnwcej87i4aem" path="res://Scenes/Characters/potato.tscn" id="13_22y67"]
 
 [node name="LevelDebug" type="Node3D"]
 
@@ -31,6 +32,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -3)
 [node name="TeleportDestination" parent="Teleporter" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7.2605)
 
+[node name="AudioStreamPlayer3D" parent="Teleporter" index="5"]
+stream = null
+
 [node name="Teleporter2" parent="." instance=ExtResource("4_84eak")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -11)
 
@@ -42,6 +46,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6759, 0, -7.50152)
 
 [node name="Teleporter With Arm" parent="." instance=ExtResource("6_4twv7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.35421, -0.0303707, -3.60535)
+
+[node name="AudioStreamPlayer3D" parent="Teleporter With Arm" index="9"]
+stream = null
 
 [node name="Activator" parent="." node_paths=PackedStringArray("targetObject") instance=ExtResource("7_dy4ii")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -1)
@@ -61,6 +68,9 @@ onceOnly = false
 [node name="Torch" parent="Teleporter Rotator/Teleporter/TeleportDestination" index="1" instance=ExtResource("5_x38n2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
+[node name="AudioStreamPlayer3D" parent="Teleporter Rotator/Teleporter" index="5"]
+stream = null
+
 [node name="Moveable Wall" parent="." instance=ExtResource("9_f6bsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 4)
 onceOnly = false
@@ -77,6 +87,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -3)
 triggerOnExit = true
 depressionDistance = 0.08
 targetObject = NodePath("../WallHiddenDoor")
+
+[node name="Potato" parent="." instance=ExtResource("13_22y67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.40197, 0.50002, 0)
 
 [editable path="DefaultEnvironment"]
 [editable path="Teleporter"]
