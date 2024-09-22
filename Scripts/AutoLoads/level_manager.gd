@@ -24,7 +24,6 @@ func _process(delta: float) -> void:
 		
 	if b_timer_active:
 		timer += delta
-		timer = snapped(timer, 0.01)
 	
 
 		
@@ -89,3 +88,4 @@ func _change_scene_deffered(packed_scene: PackedScene):
 		
 func stop_timer():
 	b_timer_active = false
+	timer = round(timer * pow(10.0, 2)) / pow(10.0, 2)
