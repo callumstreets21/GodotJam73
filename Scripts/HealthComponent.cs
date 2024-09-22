@@ -55,7 +55,7 @@ public partial class HealthComponent : Node3D
 	
 	public virtual void Die()
 	{
-		GetNode("root/LevelManager").Call("reload_scene");
+		GetNode("/root/LevelManager").Call("reload_scene");
 	}
 	
 	public void SetInvincible(bool invincible)

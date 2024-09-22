@@ -1,20 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnwcej87i4aem"]
+[gd_scene load_steps=6 format=3 uid="uid://ct6k3rpdiha5b"]
 
 [ext_resource type="Script" path="res://Scripts/Potato.cs" id="1_ay8je"]
 [ext_resource type="PackedScene" uid="uid://blwj6sqn71fhu" path="res://Scenes/Components/DamageComponent.tscn" id="2_o1esq"]
+[ext_resource type="PackedScene" uid="uid://b5f46sctw38e" path="res://Models/Entities/potat/potat1.glb" id="3_2oa54"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5x38w"]
-radius = 0.25
-height = 0.5
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_e5qlm"]
-radius = 0.25
-height = 0.5
+radius = 0.454728
+height = 1.34347
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sbr5v"]
-radius = 0.357371
+radius = 0.647186
 
 [node name="Potato" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_ay8je")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
@@ -26,9 +25,6 @@ spot_angle = 26.17
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_5x38w")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_e5qlm")
-
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="DamageComponent" parent="." instance=ExtResource("2_o1esq")]
@@ -36,5 +32,7 @@ damageAmount = 2.0
 
 [node name="CollisionShape3D" parent="DamageComponent" index="0"]
 shape = SubResource("SphereShape3D_sbr5v")
+
+[node name="potat1" parent="." instance=ExtResource("3_2oa54")]
 
 [editable path="DamageComponent"]
