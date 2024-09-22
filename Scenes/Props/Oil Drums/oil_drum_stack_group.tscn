@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqlohpxfyiihm"]
+
+[ext_resource type="PackedScene" uid="uid://bbsr7t8jwpps2" path="res://Scenes/Props/Oil Drums/oil_drum.tscn" id="1_4duxl"]
+[ext_resource type="PackedScene" uid="uid://d3er6wlnc5eaw" path="res://Scenes/Props/Oil Drums/oil_drum_stack_2.tscn" id="2_vwvfh"]
+[ext_resource type="PackedScene" uid="uid://c2tbmbyyfwh82" path="res://Scenes/Props/Oil Drums/oil_drum_stack_3.tscn" id="3_d3ffq"]
+
+[node name="OilDrumStackGroup" type="Node3D"]
+
+[node name="OilDrum" parent="." instance=ExtResource("1_4duxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.142314, 0, 0.0318746)
+
+[node name="OilDrumStack2" parent="." instance=ExtResource("2_vwvfh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.158875, 0, -0.0777588)
+
+[node name="OilDrumStack3" parent="." instance=ExtResource("3_d3ffq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.110045, 0, 0.241785)

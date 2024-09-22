@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3er6wlnc5eaw"]
+
+[ext_resource type="ArrayMesh" uid="uid://5ux40tcilicf" path="res://Models/Barrel/Oil_Drum.res" id="1_2emcv"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_b7wgx"]
+height = 0.6
+radius = 0.16
+
+[node name="OilDrumStack2" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_2emcv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.299209, 0)
+mesh = ExtResource("1_2emcv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("CylinderShape3D_b7wgx")
