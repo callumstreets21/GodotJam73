@@ -20,8 +20,10 @@ config/icon="res://icon.svg"
 GameManager="*res://Scripts/AutoLoads/game_manager.gd"
 LevelManager="*res://Scripts/AutoLoads/level_manager.gd"
 CollectableManager="*res://Scripts/AutoLoads/CollectableManager.cs"
+DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 AudioManager="*res://Scenes/_autoloads/AudioManager.tscn"
 OptionsManager="*res://Scripts/AutoLoads/options_manager.gd"
+
 
 [display]
 
@@ -34,6 +36,10 @@ window/stretch/mode="canvas_items"
 [dotnet]
 
 project/assembly_name="GodotTemplate"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg")
 
 [global_group]
 
