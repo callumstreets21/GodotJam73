@@ -12,10 +12,19 @@ const FIRST_LEVEL = preload("res://Scenes/_levels/level_1.tscn")
 # Runtime Variables
 var current_scene: Node = null
 var current_scene_packed: PackedScene = null
+var timer: float = 0
+var b_timer_active: bool = false
+
+
 
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("debug_win")):
 		_change_scene(WIN_SCREEN)
+		
+	if b_timer_active:
+		timer += delta
+		timer = snapped(timer, 0.01)
+	
 
 		
 func show_credits():
@@ -28,12 +37,14 @@ func show_main_menu():
 	_change_scene(MAIN_MENU)
 	
 func show_level_1():
+	b_timer_active = true
 	_change_scene(FIRST_LEVEL)
 	
 func show_options_menu():
 	_change_scene(OPTIONS_MENU)
 	
 func show_win_screen():
+	b_timer_active = false
 	_change_scene(WIN_SCREEN)
 	
 func load_scene_by_path(scene):
@@ -74,3 +85,6 @@ func _change_scene_deffered(packed_scene: PackedScene):
 		# Update the current scene references if necessary
 		current_scene_packed = packed_scene
 		current_scene = get_tree().current_scene
+		
+func stop_timer():
+	b_timer_active = false
