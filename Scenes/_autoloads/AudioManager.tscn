@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dchaab2y8ivrq"]
+
+[ext_resource type="Script" path="res://Scripts/AutoLoads/AudioManager.cs" id="1_3o1v2"]
+[ext_resource type="AudioStream" uid="uid://dll3xeaxgd47n" path="res://Audio/Music/light.mp3" id="2_5trk2"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_3o1v2")
+ambientMusic = ExtResource("2_5trk2")

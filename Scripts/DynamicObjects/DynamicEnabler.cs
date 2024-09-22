@@ -28,6 +28,10 @@ public partial class DynamicEnabler : DynamicObject
             {
                 areaNode.Monitoring = !startDisabled;
             }
+            if (node is AudioStreamPlayer3D audioStream)
+            {
+                audioStream.SetStreamPaused(true);
+            }
             // Add additional checks here for other types of nodes and their respective properties
         }
     }
@@ -57,6 +61,12 @@ public partial class DynamicEnabler : DynamicObject
             if (node is Area3D areaNode)
             {
                 areaNode.Monitoring = !areaNode.Monitoring;
+            }
+            if (node is AudioStreamPlayer3D audioStream)
+            {
+                bool shouldPlay = !audioStream.IsPlaying();
+                audioStream.SetStreamPaused(shouldPlay);
+                if (shouldPlay) audioStream.Play();
             }
             // Add additional checks here for other types of nodes and their respective properties
         }
