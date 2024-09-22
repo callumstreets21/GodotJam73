@@ -5,6 +5,7 @@ namespace GodotTemplate.Scripts;
 public partial class Activator : Node3D
 {
 	[Export] DynamicObject targetObject;
+	[Export] private AudioStream activateSound;
 	
 	public virtual void Use()
 	{
@@ -15,6 +16,7 @@ public partial class Activator : Node3D
 		}
 		
 		GD.Print($"{Name} was used.");
+		if (activateSound != null) AudioManager.Instance.PlayClip(activateSound, this.Position);
 		targetObject.Activate();
 	}
 }

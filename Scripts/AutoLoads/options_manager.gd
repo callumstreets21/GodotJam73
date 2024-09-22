@@ -4,8 +4,9 @@ class_name Option_Manager
 var FOV:float = 75
 var MouseSens:float = 1.0
 
-var MusicVolume:float = 0.0
-var SFXVolume:float = 0.0
+var master_volume: float = 1.0
+var MusicVolume:float = 1.0
+var SFXVolume:float = 1.0
 
 var MonoAudio:bool = false
 
@@ -38,3 +39,12 @@ func SetMusicV(value:float)->void:
 #dosent need to be function but plays better with c#
 func SetSFXV(value:float)->void:
 	SFXVolume = value
+
+func get_master_volume():
+	return master_volume
+	
+func get_music_volume():
+	return MusicVolume
+	
+func get_sfx_volume():
+	return SFXVolume

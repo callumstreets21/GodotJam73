@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbj8wqjbkwvar"]
+[gd_scene load_steps=4 format=3 uid="uid://bbj8wqjbkwvar"]
 
 [ext_resource type="Texture2D" uid="uid://bab51kwq1qq2s" path="res://Images/Godot Branding/Wildling_head_only-4k.png" id="1_cbq5y"]
+[ext_resource type="Script" path="res://Scripts/UI/TimerDisplay.gd" id="2_cckw0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i2g1n"]
+font_size = 60
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -29,3 +33,13 @@ grow_vertical = 2
 texture = ExtResource("1_cbq5y")
 expand_mode = 3
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 164.0
+offset_right = 599.0
+offset_bottom = 247.0
+text = "TIME: 12321"
+label_settings = SubResource("LabelSettings_i2g1n")
+script = ExtResource("2_cckw0")
