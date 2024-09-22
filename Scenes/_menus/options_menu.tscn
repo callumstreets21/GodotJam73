@@ -59,6 +59,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.494118)
 
 [node name="Master Volume" type="Label" parent="Options Backing"]
+layout_mode = 0
 offset_left = 445.0
 offset_top = 235.0
 offset_right = 869.0
@@ -70,6 +71,7 @@ text = "Master Volume
 horizontal_alignment = 1
 
 [node name="Master Volume Slider" type="HSlider" parent="Options Backing/Master Volume"]
+layout_mode = 0
 offset_left = 459.0
 offset_top = 11.0
 offset_right = 730.0
@@ -80,6 +82,7 @@ step = 0.01
 value = 1.0
 
 [node name="Music Volume" type="Label" parent="Options Backing"]
+layout_mode = 0
 offset_left = 445.0
 offset_top = 315.0
 offset_right = 869.0
@@ -91,6 +94,7 @@ text = "Music Volume
 horizontal_alignment = 1
 
 [node name="Music Volume Slider" type="HSlider" parent="Options Backing/Music Volume"]
+layout_mode = 0
 offset_left = 459.0
 offset_top = 11.0
 offset_right = 730.0
@@ -101,6 +105,7 @@ step = 0.01
 value = 1.0
 
 [node name="SFX Volume" type="Label" parent="Options Backing"]
+layout_mode = 0
 offset_left = 445.0
 offset_top = 385.0
 offset_right = 869.0
@@ -112,6 +117,7 @@ text = "SFX Volume
 horizontal_alignment = 1
 
 [node name="SFX Volume Slider" type="HSlider" parent="Options Backing/SFX Volume"]
+layout_mode = 0
 offset_left = 459.0
 offset_top = 11.0
 offset_right = 730.0
@@ -122,6 +128,7 @@ step = 0.01
 value = 1.0
 
 [node name="Look Sensetivity" type="Label" parent="Options Backing"]
+layout_mode = 0
 offset_left = 445.0
 offset_top = 532.0
 offset_right = 869.0
@@ -133,6 +140,7 @@ text = "Looks Sensetivity
 horizontal_alignment = 1
 
 [node name="Look Sensetivity Slider" type="HSlider" parent="Options Backing/Look Sensetivity"]
+layout_mode = 0
 offset_left = 459.0
 offset_top = 11.0
 offset_right = 730.0
