@@ -96,7 +96,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
 
 [node name="TeleportDestination" parent="ActivatorsAndDynamics/Teleporter4" index="1"]
-transform = Transform3D(0.914063, 0, -0.405572, 0, 1, 0, 0.405572, 0, 0.914063, -0.206652, 1, -2.34625)
+transform = Transform3D(0.914063, 0, -0.405572, 0, 1, 0, 0.405572, 0, 0.914063, -0.100631, 1, -1.43786)
 
 [node name="Walls and decoration" type="Node3D" parent="."]
 
