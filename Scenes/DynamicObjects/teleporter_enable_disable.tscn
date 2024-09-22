@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxe1bogj8qnry"]
+
+[ext_resource type="Script" path="res://Scripts/DynamicObjects/DynamicEnabler.cs" id="1_u8pcf"]
+[ext_resource type="PackedScene" uid="uid://v7b4j44hvjej" path="res://Scenes/teleporter.tscn" id="2_bf0hl"]
+
+[node name="Teleporter Enable_Disable" type="Node3D"]
+script = ExtResource("1_u8pcf")
+toggleTargets = Array[NodePath]([NodePath("Teleporter/Area3D"), NodePath("Teleporter/AnimatedSprite3D"), NodePath("Teleporter/AudioStreamPlayer3D")])
+onceOnly = false
+reversible = true
+
+[node name="Teleporter" parent="." instance=ExtResource("2_bf0hl")]
+
+[editable path="Teleporter"]

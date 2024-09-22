@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7ocvb2duj8e6"]
+[gd_scene load_steps=13 format=3 uid="uid://c7ocvb2duj8e6"]
 
 [ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="3_0e3e1"]
 [ext_resource type="PackedScene" uid="uid://clg7mqcgrdji1" path="res://Scenes/_floors/floor_sample.tscn" id="3_gdilv"]
@@ -6,20 +6,33 @@
 [ext_resource type="PackedScene" uid="uid://v7b4j44hvjej" path="res://Scenes/teleporter.tscn" id="4_84eak"]
 [ext_resource type="PackedScene" uid="uid://dt7rm4c8cord0" path="res://Scenes/Props/torch.tscn" id="5_x38n2"]
 [ext_resource type="PackedScene" uid="uid://cmjxw04l83o4o" path="res://Scenes/teleporter_with_arm.tscn" id="6_4twv7"]
-[ext_resource type="PackedScene" uid="uid://cnwcej87i4aem" path="res://Scenes/Characters/potato.tscn" id="7_uvfes"]
-
-[sub_resource type="NavigationMesh" id="NavigationMesh_0o848"]
-vertices = PackedVector3Array(-15.5, 2.4, -15.5, -15.5, 2.4, 15.5, 15.5, 2.4, 15.5, 15.5, 2.4, -15.5, 9.75, 0.4, -14.25, 9.5, 0.4, -15.5, 8.5, 0.4, -15.5, 8.25, 0.4, -14.25, -10.25, 0.4, -14.25, -11.75, 0.4, -14.25, -10.25, 0.4, -11.75, -7.75, 0.4, -11.75, -10.5, 0.4, -15.5, -11.5, 0.4, -15.5, -6.25, 0.4, -11.75, 12.25, 0.4, -11.75, 12.25, 0.4, -14.25, 8.25, 0.4, -11.75, 4.25, 0.4, -11.75, 5.75, 0.4, -11.75, -14.25, 0.4, -14.25, -14.25, 0.4, -11.75, 8.5, 0.4, -10.5, 9.75, 0.4, -10.25, 12.25, 0.4, -10.25, 13.5, 0.4, -10.5, 13.75, 0.4, -11.75, 9.5, 0.4, -7.5, 12.25, 0.4, -7.5, 15.5, 0.4, -15.5, 13.5, 0.4, 8.5, 15.5, 0.4, 8.5, 13.75, 0.4, -15.5, 2.75, 0.4, -3, 4, 0.4, -2.75, 4.25, 0.4, -2.75, 4.25, 0.4, -4.25, 2.75, 0.4, -4.25, -15.5, 0.4, -11.5, -15.5, 0.4, -10.5, -14.25, 0.4, -10.25, 2.75, 0.4, -6.25, 8.5, 0.4, -7.5, -10.5, 0.4, -7.5, -10.25, 0.4, -6.25, -11.75, 0.4, -7.75, -11.75, 0.4, -10.25, -14.25, 0.4, -6.5, -11.5, 0.4, -6.5, 4.25, 0.4, -4.5, 5.75, 0.4, -4.25, -10.5, 0.4, -10.5, 4.25, 0.4, -6, 5.75, 0.4, -2.75, 8.25, 0.4, -2.75, 8.25, 0.4, -6.25, 9.5, 0.4, -6.5, 12.25, 0.4, -6.5, 5.75, 0.4, -10.25, 4.25, 0.4, -10.25, -6.25, 0.4, -10.25, -7.75, 0.4, -10.25, 8.25, 0.4, -10.25, -10.25, 0.4, -10.25, -14.25, 0.4, 4.5, -11.5, 0.4, 4.5, 9.5, 0.4, 4.5, 12.25, 0.4, 4.5, 2.5, 0.4, -1.25, 2.5, 0.4, -2.75, 1, 0.4, -2.75, -10.25, 0.4, -0.75, 1, 0.4, -4.5, 2.5, 0.4, -4.5, 3, 0.4, -0.75, 0.5, 0.4, -3.25, 4, 0.4, -1, 8.5, 0.4, 4.5, -10.5, 0.4, 4.5, -14.25, 0.4, 8.25, -15.5, 0.4, 8.5, -15.5, 0.4, 9.5, -14.25, 0.4, 9.75, 13.75, 0.4, 9.75, -10.25, 0.4, 9.75, -10.5, 0.4, 8.5, -11.75, 0.4, 8.25, 9.75, 0.4, 8.25, 8.5, 0.4, 8.5, 8.25, 0.4, 9.75, 12.25, 0.4, 9.75, 9.75, 0.4, 5.75, 12.25, 0.4, 8.25, 8.5, 0.4, 5.5, -11.75, 0.4, 5.75, -10.5, 0.4, 5.5, 13.5, 0.4, 13.75, 15.5, 0.4, 13.75, -7.75, 0.4, 9.75, -6.25, 0.4, 9.75, -6.25, 0.4, 8.25, -7.75, 0.4, 8.25, 4.25, 0.4, 8.25, 4.25, 0.4, 9.75, 5.75, 0.4, 9.75, 5.75, 0.4, 8.25, 8.25, 0.4, 8.25, -10.25, 0.4, 8.25, 9.75, 0.4, 12.25, 12.25, 0.4, 12.25, -10.25, 0.4, 12.25, 8.25, 0.4, 12.25, -14.25, 0.4, 12.25, -11.75, 0.4, 12.25, 9.75, 0.4, 13.75, 8.25, 0.4, 13.75, -10.25, 0.4, 13.75, -15.5, 0.4, 15.5, 15.5, 0.4, 15.5, -11.75, 0.4, 13.75, -15.5, 0.4, 13.75)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(12, 8, 13), PackedInt32Array(13, 8, 9), PackedInt32Array(14, 11, 8), PackedInt32Array(16, 15, 4), PackedInt32Array(4, 15, 17), PackedInt32Array(14, 8, 18), PackedInt32Array(18, 8, 7), PackedInt32Array(4, 17, 7), PackedInt32Array(7, 17, 19), PackedInt32Array(7, 19, 18), PackedInt32Array(20, 9, 21), PackedInt32Array(21, 9, 10), PackedInt32Array(22, 17, 23), PackedInt32Array(23, 17, 24), PackedInt32Array(24, 17, 15), PackedInt32Array(24, 15, 25), PackedInt32Array(25, 15, 26), PackedInt32Array(24, 28, 23), PackedInt32Array(23, 28, 27), PackedInt32Array(26, 29, 25), PackedInt32Array(25, 29, 30), PackedInt32Array(30, 29, 31), PackedInt32Array(26, 32, 29), PackedInt32Array(34, 33, 35), PackedInt32Array(35, 33, 37), PackedInt32Array(35, 37, 36), PackedInt32Array(38, 21, 39), PackedInt32Array(39, 21, 40), PackedInt32Array(44, 43, 41), PackedInt32Array(41, 43, 42), PackedInt32Array(46, 45, 40), PackedInt32Array(40, 45, 47), PackedInt32Array(48, 47, 45), PackedInt32Array(36, 37, 49), PackedInt32Array(50, 36, 49), PackedInt32Array(51, 46, 10), PackedInt32Array(10, 46, 40), PackedInt32Array(10, 40, 21), PackedInt32Array(50, 49, 52), PackedInt32Array(54, 53, 50), PackedInt32Array(44, 48, 43), PackedInt32Array(43, 48, 45), PackedInt32Array(52, 55, 50), PackedInt32Array(50, 55, 54), PackedInt32Array(27, 28, 56), PackedInt32Array(56, 28, 57), PackedInt32Array(27, 56, 42), PackedInt32Array(42, 56, 55), PackedInt32Array(42, 55, 52), PackedInt32Array(42, 52, 41), PackedInt32Array(59, 18, 58), PackedInt32Array(58, 18, 19), PackedInt32Array(60, 59, 43), PackedInt32Array(43, 59, 42), PackedInt32Array(61, 11, 60), PackedInt32Array(60, 11, 14), PackedInt32Array(43, 61, 60), PackedInt32Array(58, 62, 42), PackedInt32Array(43, 63, 61), PackedInt32Array(59, 58, 42), PackedInt32Array(47, 48, 64), PackedInt32Array(64, 48, 65), PackedInt32Array(56, 57, 66), PackedInt32Array(66, 57, 67), PackedInt32Array(69, 68, 70), PackedInt32Array(70, 68, 71), PackedInt32Array(73, 72, 41), PackedInt32Array(41, 72, 44), PackedInt32Array(68, 74, 71), PackedInt32Array(72, 75, 44), PackedInt32Array(44, 75, 71), PackedInt32Array(71, 75, 70), PackedInt32Array(76, 34, 35), PackedInt32Array(76, 35, 53), PackedInt32Array(53, 54, 76), PackedInt32Array(76, 54, 77), PackedInt32Array(71, 74, 78), PackedInt32Array(78, 74, 77), PackedInt32Array(74, 76, 77), PackedInt32Array(80, 79, 81), PackedInt32Array(81, 79, 82), PackedInt32Array(30, 31, 83), PackedInt32Array(85, 84, 86), PackedInt32Array(86, 84, 79), PackedInt32Array(79, 84, 82), PackedInt32Array(88, 87, 89), PackedInt32Array(89, 87, 90), PackedInt32Array(87, 91, 92), PackedInt32Array(92, 91, 67), PackedInt32Array(66, 67, 91), PackedInt32Array(77, 66, 93), PackedInt32Array(93, 66, 91), PackedInt32Array(86, 79, 94), PackedInt32Array(94, 79, 64), PackedInt32Array(78, 77, 95), PackedInt32Array(95, 77, 93), PackedInt32Array(94, 64, 65), PackedInt32Array(78, 95, 65), PackedInt32Array(65, 95, 94), PackedInt32Array(96, 83, 97), PackedInt32Array(97, 83, 31), PackedInt32Array(83, 90, 30), PackedInt32Array(30, 90, 92), PackedInt32Array(92, 90, 87), PackedInt32Array(101, 100, 98), PackedInt32Array(98, 100, 99), PackedInt32Array(100, 95, 102), PackedInt32Array(102, 95, 93), PackedInt32Array(105, 104, 102), PackedInt32Array(102, 104, 103), PackedInt32Array(100, 101, 95), PackedInt32Array(93, 106, 105), PackedInt32Array(101, 107, 95), PackedInt32Array(93, 105, 102), PackedInt32Array(109, 108, 90), PackedInt32Array(90, 108, 89), PackedInt32Array(99, 103, 110), PackedInt32Array(110, 103, 111), PackedInt32Array(108, 111, 89), PackedInt32Array(89, 111, 104), PackedInt32Array(103, 104, 111), PackedInt32Array(112, 82, 113), PackedInt32Array(113, 82, 84), PackedInt32Array(110, 98, 99), PackedInt32Array(113, 84, 110), PackedInt32Array(110, 84, 98), PackedInt32Array(115, 111, 114), PackedInt32Array(114, 111, 108), PackedInt32Array(116, 115, 117), PackedInt32Array(117, 115, 118), PackedInt32Array(119, 113, 116), PackedInt32Array(116, 113, 110), PackedInt32Array(118, 115, 114), PackedInt32Array(96, 97, 118), PackedInt32Array(117, 120, 119), PackedInt32Array(117, 119, 116), PackedInt32Array(114, 96, 118)]
-sample_partition_type = 1
-geometry_parsed_geometry_type = 1
+[ext_resource type="PackedScene" uid="uid://clhj4kng8due5" path="res://Scenes/DynamicObjects/activator.tscn" id="7_dy4ii"]
+[ext_resource type="PackedScene" uid="uid://kkf2m3sqjcar" path="res://Scenes/DynamicObjects/Teleporter_Rotator.tscn" id="8_aqqhw"]
+[ext_resource type="PackedScene" uid="uid://c4yp3ugkyfdci" path="res://Scenes/DynamicObjects/moveable_wall.tscn" id="9_f6bsl"]
+[ext_resource type="PackedScene" uid="uid://dxe1bogj8qnry" path="res://Scenes/DynamicObjects/teleporter_enable_disable.tscn" id="10_5sohc"]
+[ext_resource type="PackedScene" uid="uid://cr2wfyd1gp0s0" path="res://Scenes/DynamicObjects/wall_hidden_door.tscn" id="11_ogp5j"]
+[ext_resource type="PackedScene" uid="uid://cq0du8ovb0wat" path="res://Scenes/DynamicObjects/pressure_pad.tscn" id="12_jkgsd"]
 
 [node name="LevelDebug" type="Node3D"]
 
 [node name="DefaultEnvironment" parent="." instance=ExtResource("3_0e3e1")]
 
+[node name="DirectionalLight3D" parent="DefaultEnvironment" index="1"]
+light_energy = 0.2
+
 [node name="Player" parent="." instance=ExtResource("4_57n5t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 3)
+
+[node name="Floor Sample" parent="." instance=ExtResource("3_gdilv")]
+
+[node name="Teleporter" parent="." instance=ExtResource("4_84eak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -3)
+
+[node name="TeleportDestination" parent="Teleporter" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7.2605)
+
+[node name="Teleporter2" parent="." instance=ExtResource("4_84eak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -11)
 
 [node name="Torch" parent="." instance=ExtResource("5_x38n2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4905, 0, 8.18096)
@@ -27,26 +40,46 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4905, 0, 8.18096)
 [node name="Torch2" parent="." instance=ExtResource("5_x38n2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6759, 0, -7.50152)
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-navigation_mesh = SubResource("NavigationMesh_0o848")
-
-[node name="Teleporter With Arm" parent="NavigationRegion3D" instance=ExtResource("6_4twv7")]
+[node name="Teleporter With Arm" parent="." instance=ExtResource("6_4twv7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.35421, -0.0303707, -3.60535)
 
-[node name="Floor Sample" parent="NavigationRegion3D" instance=ExtResource("3_gdilv")]
+[node name="Activator" parent="." node_paths=PackedStringArray("targetObject") instance=ExtResource("7_dy4ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -1)
+targetObject = NodePath("../WallHiddenDoor")
 
-[node name="Teleporter" parent="NavigationRegion3D" instance=ExtResource("4_84eak")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -3)
+[node name="Activator3" parent="." node_paths=PackedStringArray("targetObject") instance=ExtResource("7_dy4ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, -5)
+targetObject = NodePath("../Teleporter Enable_Disable")
 
-[node name="TeleportDestination" parent="NavigationRegion3D/Teleporter" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7.2605)
+[node name="Activator2" parent="." node_paths=PackedStringArray("targetObject") instance=ExtResource("7_dy4ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.54369, 0.5, 2)
+targetObject = NodePath("../Moveable Wall")
 
-[node name="Teleporter2" parent="NavigationRegion3D" instance=ExtResource("4_84eak")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -11)
+[node name="Teleporter Rotator" parent="." instance=ExtResource("8_aqqhw")]
+onceOnly = false
 
-[node name="Potato" parent="." instance=ExtResource("7_uvfes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6746, 0.352989, -12.7056)
-Speed = 1.0
+[node name="Torch" parent="Teleporter Rotator/Teleporter/TeleportDestination" index="1" instance=ExtResource("5_x38n2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
-[editable path="NavigationRegion3D/Teleporter With Arm"]
-[editable path="NavigationRegion3D/Teleporter"]
+[node name="Moveable Wall" parent="." instance=ExtResource("9_f6bsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 4)
+onceOnly = false
+reversible = true
+
+[node name="Teleporter Enable_Disable" parent="." instance=ExtResource("10_5sohc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -6)
+
+[node name="WallHiddenDoor" parent="." instance=ExtResource("11_ogp5j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 1)
+
+[node name="PressurePad" parent="." node_paths=PackedStringArray("targetObject") instance=ExtResource("12_jkgsd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -3)
+triggerOnExit = true
+depressionDistance = 0.08
+targetObject = NodePath("../WallHiddenDoor")
+
+[editable path="DefaultEnvironment"]
+[editable path="Teleporter"]
+[editable path="Teleporter With Arm"]
+[editable path="Teleporter Rotator"]
+[editable path="Teleporter Rotator/Teleporter"]

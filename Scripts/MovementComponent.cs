@@ -28,23 +28,9 @@ public partial class MovementComponent : Node3D
 	public override void _PhysicsProcess(double delta)
 	{
 		direction = Vector3.Zero;
-		if (Input.IsActionPressed("move_right"))
-		{
-			direction.X += 1;
-		}
-		if (Input.IsActionPressed("move_left"))
-		{
-			direction.X -= 1;
-		}
-		if (Input.IsActionPressed("move_down"))
-		{
-			direction.Z += 1;
-		}
-		if (Input.IsActionPressed("move_up"))
-		{
-			direction.Z -= 1;
-		}
-
+		direction.X = Input.GetAxis("move_left", "move_right");
+		direction.Z = Input.GetAxis("move_up", "move_down");
+		
 		if (direction != Vector3.Zero)
 		{
 			direction = direction.Normalized();
@@ -64,6 +50,18 @@ public partial class MovementComponent : Node3D
 		
 		parent_to_move.Velocity = velocity;
 		parent_to_move.MoveAndSlide();
+
+		LookByController(delta);
+	}
+
+	private void LookByController(double delta)
+	{
+		Vector2 inputVector = Input.GetVector("look_left", "look_right", "look_up", "look_down");
+		Vector3 rotation = parent_to_move.RotationDegrees;
+		rotation.Y -= inputVector.X * mouseSensitivity * (float)delta * 1080;	// TODO, evil magic numbers
+		rotation.X -= inputVector.Y * mouseSensitivity * (float)delta * 1920;	// TODO, evil magic numbers
+		rotation.X = Mathf.Clamp(rotation.X, -90, 90);
+		parent_to_move.RotationDegrees = rotation;
 	}
 
 	public override void _Input(InputEvent @event)
