@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://clhj4kng8due5"]
+[gd_scene load_steps=6 format=3 uid="uid://clhj4kng8due5"]
 
 [ext_resource type="Script" path="res://Scripts/DynamicObjects/Activator.cs" id="1_h2e83"]
+[ext_resource type="AudioStream" uid="uid://c4pempcoarfoq" path="res://Audio/button_click.mp3" id="2_avtd5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0c0t5"]
 albedo_color = Color(0.269753, 0.506198, 0.18287, 1)
@@ -16,6 +17,7 @@ size = Vector3(0.3, 0.3, 0.3)
 
 [node name="Activator" type="Node3D"]
 script = ExtResource("1_h2e83")
+activateSound = ExtResource("2_avtd5")
 
 [node name="ActivatorMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_5ws2d")
