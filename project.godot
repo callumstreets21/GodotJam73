@@ -17,12 +17,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-AudioManager="*res://Scripts/AutoLoads/audio_manager.gd"
 GameManager="*res://Scripts/AutoLoads/game_manager.gd"
 LevelManager="*res://Scripts/AutoLoads/level_manager.gd"
-OptionsManager="*res://Scripts/AutoLoads/options_manager.gd"
 CollectableManager="*res://Scripts/AutoLoads/CollectableManager.cs"
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
+AudioManager="*res://Scenes/_autoloads/AudioManager.tscn"
+OptionsManager="*res://Scripts/AutoLoads/options_manager.gd"
 
 [display]
 

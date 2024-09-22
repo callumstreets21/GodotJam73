@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cs4t3jf5u102l"]
+[gd_scene load_steps=17 format=3 uid="uid://cs4t3jf5u102l"]
 
 [ext_resource type="Texture2D" uid="uid://d00bsowcyyg2v" path="res://Images/Textures/Wooden Floor/Floor Tile_standardSurface1_BaseMap.png" id="1_1su84"]
 [ext_resource type="Texture2D" uid="uid://uu4v5f3k3sa7" path="res://Images/Textures/Wooden Floor/Floor Tile_standardSurface1_Normal.png" id="2_x3o35"]
+[ext_resource type="ArrayMesh" uid="uid://cd8davyo0maqa" path="res://Models/primitives_Stairs.res" id="3_6fbfs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lwi7o"]
 albedo_texture = ExtResource("1_1su84")
@@ -53,9 +54,13 @@ size = Vector3(2, 0.1, 2)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0fadl"]
 data = PackedVector3Array(-1, 0.05, 1, 1, 0.05, 1, -1, -0.05, 1, 1, 0.05, 1, 1, -0.05, 1, -1, -0.05, 1, 1, 0.05, -1, -1, 0.05, -1, 1, -0.05, -1, -1, 0.05, -1, -1, -0.05, -1, 1, -0.05, -1, 1, 0.05, 1, 1, 0.05, -1, 1, -0.05, 1, 1, 0.05, -1, 1, -0.05, -1, 1, -0.05, 1, -1, 0.05, -1, -1, 0.05, 1, -1, -0.05, -1, -1, 0.05, 1, -1, -0.05, 1, -1, -0.05, -1, 1, 0.05, 1, -1, 0.05, 1, 1, 0.05, -1, -1, 0.05, 1, -1, 0.05, -1, 1, 0.05, -1, -1, -0.05, 1, 1, -0.05, 1, -1, -0.05, -1, 1, -0.05, 1, 1, -0.05, -1, -1, -0.05, -1)
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_q0vps"]
+data = PackedVector3Array(-1, 0, -1, -1, 0.2, 1, -1, 0, 1, -1, 0.2, 0.7714, -1, 0.4286, 0.5428, -1, 0.4286, 0.7714, -1, 0, -1, -1, 0.2, 0.7714, -1, 0.2, 1, -1, 1.8, -0.6, -1, 0, -1, -1, 1.8, -1, -1, 1.3429, -0.3715, -1, 1.5714, -0.6, -1, 1.5714, -0.3715, -1, 1.5714, -0.6, -1, 0, -1, -1, 1.8, -0.6, -1, 0, -1, -1, 0.4286, 0.5428, -1, 0.2, 0.7714, -1, 0.4286, 0.5428, -1, 0.6571, 0.3143, -1, 0.6571, 0.5428, -1, 0.6571, 0.3143, -1, 0.8857, 0.0857, -1, 0.8857, 0.3143, -1, 0.8857, 0.0857, -1, 1.1143, -0.1429, -1, 1.1143, 0.0857, -1, 1.1143, -0.1429, -1, 1.3429, -0.3715, -1, 1.3429, -0.1429, -1, 1.3429, -0.3715, -1, 0, -1, -1, 1.5714, -0.6, -1, 0, -1, -1, 0.6571, 0.3143, -1, 0.4286, 0.5428, -1, 0, -1, -1, 0.8857, 0.0857, -1, 0.6571, 0.3143, -1, 1.1143, -0.1429, -1, 0, -1, -1, 1.3429, -0.3715, -1, 0.8857, 0.0857, -1, 0, -1, -1, 1.1143, -0.1429, 1, 1.8, -1, -1, 1.8, -0.6, -1, 1.8, -1, 1, 1.8, -1, 1, 1.8, -0.6, -1, 1.8, -0.6, -1, 0, -1, 1, 0, 1, 1, 0, -1, -1, 0, -1, -1, 0, 1, 1, 0, 1, 1, 0, 1, -1, 0.2, 1, 1, 0.2, 1, 1, 0, 1, -1, 0, 1, -1, 0.2, 1, -1, 0, -1, 1, 1.8, -1, -1, 1.8, -1, -1, 0, -1, 1, 0, -1, 1, 1.8, -1, 1, 1.8, -0.6, -1, 1.5714, -0.6, -1, 1.8, -0.6, 1, 1.8, -0.6, 1, 1.5714, -0.6, -1, 1.5714, -0.6, 1, 1.5714, -0.6, -1, 1.5714, -0.3715, -1, 1.5714, -0.6, 1, 1.5714, -0.6, 1, 1.5714, -0.3715, -1, 1.5714, -0.3715, 1, 1.5714, -0.3715, -1, 1.3429, -0.3715, -1, 1.5714, -0.3715, 1, 1.5714, -0.3715, 1, 1.3429, -0.3715, -1, 1.3429, -0.3715, 1, 1.3429, -0.3715, -1, 1.3429, -0.1429, -1, 1.3429, -0.3715, 1, 1.3429, -0.3715, 1, 1.3429, -0.1429, -1, 1.3429, -0.1429, 1, 1.3429, -0.1429, -1, 1.1143, -0.1429, -1, 1.3429, -0.1429, 1, 1.3429, -0.1429, 1, 1.1143, -0.1429, -1, 1.1143, -0.1429, 1, 1.1143, -0.1429, -1, 1.1143, 0.0857, -1, 1.1143, -0.1429, 1, 1.1143, -0.1429, 1, 1.1143, 0.0857, -1, 1.1143, 0.0857, 1, 1.1143, 0.0857, -1, 0.8857, 0.0857, -1, 1.1143, 0.0857, 1, 1.1143, 0.0857, 1, 0.8857, 0.0857, -1, 0.8857, 0.0857, 1, 0.8857, 0.0857, -1, 0.8857, 0.3143, -1, 0.8857, 0.0857, 1, 0.8857, 0.0857, 1, 0.8857, 0.3143, -1, 0.8857, 0.3143, 1, 0.8857, 0.3143, -1, 0.6571, 0.3143, -1, 0.8857, 0.3143, 1, 0.8857, 0.3143, 1, 0.6571, 0.3143, -1, 0.6571, 0.3143, 1, 0.6571, 0.3143, -1, 0.6571, 0.5428, -1, 0.6571, 0.3143, 1, 0.6571, 0.3143, 1, 0.6571, 0.5428, -1, 0.6571, 0.5428, 1, 0.6571, 0.5428, -1, 0.4286, 0.5428, -1, 0.6571, 0.5428, 1, 0.6571, 0.5428, 1, 0.4286, 0.5428, -1, 0.4286, 0.5428, 1, 0.4286, 0.5428, -1, 0.4286, 0.7714, -1, 0.4286, 0.5428, 1, 0.4286, 0.5428, 1, 0.4286, 0.7714, -1, 0.4286, 0.7714, 1, 0.4286, 0.7714, -1, 0.2, 0.7714, -1, 0.4286, 0.7714, 1, 0.4286, 0.7714, 1, 0.2, 0.7714, -1, 0.2, 0.7714, 1, 0.2, 0.7714, -1, 0.2, 1, -1, 0.2, 0.7714, 1, 0.2, 0.7714, 1, 0.2, 1, -1, 0.2, 1, 1, 0, -1, 1, 1.8, -0.6, 1, 1.8, -1, 1, 1.5714, -0.6, 1, 1.3429, -0.3715, 1, 1.5714, -0.3715, 1, 0, -1, 1, 1.5714, -0.6, 1, 1.8, -0.6, 1, 0.2, 1, 1, 0, -1, 1, 0, 1, 1, 0.4286, 0.5428, 1, 0.2, 0.7714, 1, 0.4286, 0.7714, 1, 0.2, 0.7714, 1, 0, -1, 1, 0.2, 1, 1, 0, -1, 1, 1.3429, -0.3715, 1, 1.5714, -0.6, 1, 1.3429, -0.3715, 1, 1.1143, -0.1429, 1, 1.3429, -0.1429, 1, 1.1143, -0.1429, 1, 0.8857, 0.0857, 1, 1.1143, 0.0857, 1, 0.8857, 0.0857, 1, 0.6571, 0.3143, 1, 0.8857, 0.3143, 1, 0.6571, 0.3143, 1, 0.4286, 0.5428, 1, 0.6571, 0.5428, 1, 0.4286, 0.5428, 1, 0, -1, 1, 0.2, 0.7714, 1, 0, -1, 1, 1.1143, -0.1429, 1, 1.3429, -0.3715, 1, 0, -1, 1, 0.8857, 0.0857, 1, 1.1143, -0.1429, 1, 0.6571, 0.3143, 1, 0, -1, 1, 0.4286, 0.5428, 1, 0, -1, 1, 0.6571, 0.3143, 1, 0.8857, 0.0857)
+
 [node name="FloorTiles" type="Node3D"]
 
 [node name="BasicFloor" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_ve02j")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BasicFloor"]
@@ -64,6 +69,7 @@ mesh = SubResource("BoxMesh_ve02j")
 shape = SubResource("ConcavePolygonShape3D_jfhle")
 
 [node name="BasicFloor2" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_4cm8d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BasicFloor2"]
@@ -72,6 +78,7 @@ mesh = SubResource("BoxMesh_4cm8d")
 shape = SubResource("ConcavePolygonShape3D_jfhle")
 
 [node name="BasicFloor3" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_qg3cs")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BasicFloor3"]
@@ -80,6 +87,7 @@ mesh = SubResource("BoxMesh_qg3cs")
 shape = SubResource("ConcavePolygonShape3D_jfhle")
 
 [node name="BasicFloor4" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_cn8cp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BasicFloor4"]
@@ -88,9 +96,18 @@ mesh = SubResource("BoxMesh_cn8cp")
 shape = SubResource("ConcavePolygonShape3D_jfhle")
 
 [node name="BasicFloor5" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_f5ir3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BasicFloor5"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BasicFloor5/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_0fadl")
+
+[node name="Stairs" type="MeshInstance3D" parent="."]
+mesh = ExtResource("3_6fbfs")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Stairs"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stairs/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_q0vps")

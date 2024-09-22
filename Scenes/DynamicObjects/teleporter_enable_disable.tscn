@@ -5,7 +5,7 @@
 
 [node name="Teleporter Enable_Disable" type="Node3D"]
 script = ExtResource("1_u8pcf")
-toggleTargets = Array[NodePath]([NodePath("Teleporter/Area3D"), NodePath("Teleporter/AnimatedSprite3D")])
+toggleTargets = Array[NodePath]([NodePath("Teleporter/Area3D"), NodePath("Teleporter/AnimatedSprite3D"), NodePath("Teleporter/AudioStreamPlayer3D")])
 onceOnly = false
 reversible = true
 

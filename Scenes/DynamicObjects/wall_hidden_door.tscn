@@ -1,7 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://cr2wfyd1gp0s0"]
+[gd_scene load_steps=8 format=4 uid="uid://cr2wfyd1gp0s0"]
 
 [ext_resource type="Script" path="res://Scripts/DynamicObjects/DynamicRotator.cs" id="1_hld35"]
-[ext_resource type="ArrayMesh" uid="uid://dwvoex2m7wdks" path="res://Models/Wall/LowPoly_Wall.res" id="2_a56h7"]
+[ext_resource type="AudioStream" uid="uid://b5vxomltc64u6" path="res://Audio/stone_sliding.wav" id="2_gucxj"]
+[ext_resource type="Texture2D" uid="uid://1c5lgw5wdofd" path="res://Images/Textures/Wall Textures/Wall Texture 1.png" id="3_anhe2"]
+[ext_resource type="Texture2D" uid="uid://bvfpkc08c1q62" path="res://Images/Textures/Wall Textures/Wall Normal 1.png" id="4_icpdq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5epf"]
+albedo_texture = ExtResource("3_anhe2")
+roughness_texture = ExtResource("4_icpdq")
+normal_enabled = true
+normal_texture = ExtResource("4_icpdq")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7r71s"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -0.0792937, 2, 2, 0.158587),
+"attribute_data": PackedByteArray("uYh+P+escz/6iH4/rjV/P4D7Jjz4Nn8/++smPDGucz9Aewo8zu3+PkY9Cjykxuc+BAJ/P0a85z7+An8/cOP+PgAvCjyUSeI+ANIHPAAXOTtY+H4/AOgzO8wBfz84P+I+UoZ+PyruAD+siH4/8PBwP8DoJjw48nA/wFImPHTvAD/A6SY8k9txP7CIfj9K2nE/sDMKPAAe5D7eAX8/ohPkPg=="),
+"format": 34359742487,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAAOAA0ADQARABAAEgAIAAsACwATABIAEAARAAAAAAADABAAEgATAAYABgAFABIA"),
+"material": SubResource("StandardMaterial3D_i5epf"),
+"name": "standardSurface1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AACAP5vNPT64ZKI9AACAPwAAAAC4ZKI9AACAvwAAAAC4ZKI9AACAv5vNPT64ZKI9AACAPwAAAAC4ZKK9AACAP5vNPT64ZKK9AACAv5vNPT64ZKK9AACAvwAAAAC4ZKK9AACAP8zMTD7MzEy9AACAPwAAAEDMzEy9AACAvwAAAEDMzEy9AACAv8zMTD7MzEy9AACAPwAAAEDMzEw9AACAP8zMTD7MzEw9AACAv8zMTD7MzEw9AACAvwAAAEDMzEw9AACAv8zMTD5UZoQ9AACAP8zMTD5UZoQ9AACAP8zMTD5UZoS9AACAv8zMTD5UZoS9/38Xhv3//r//f/9//f/+v/9//3/9//6//38Xhv3//r//////BQD8v+b5//8EAP2/5vn//wQA/b//////BQD8v6P+//8CAP2//////wUA/L//////BQD8v6P+//8CAP2//3//f/3//r//f1uB/v/+v/9/W4H+//6//3//f/3//r//f2zf/f//v/9/bN/9//+/kqD//wEA/L+SoP//AQD8vw==")
+}]
+blend_shape_mode = 0
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yohcm"]
 data = PackedVector3Array(1, 0.1854, 0.0793, 1, 0, 0.0793, -1, 0, 0.0793, -1, 0, 0.0793, -1, 0.1854, 0.0793, 1, 0.1854, 0.0793, 1, 0, -0.0793, 1, 0.1854, -0.0793, -1, 0.1854, -0.0793, -1, 0.1854, -0.0793, -1, 0, -0.0793, 1, 0, -0.0793, 1, 0.2, -0.05, 1, 2, -0.05, -1, 2, -0.05, -1, 2, -0.05, -1, 0.2, -0.05, 1, 0.2, -0.05, 1, 2, 0.05, 1, 0.2, 0.05, -1, 0.2, 0.05, -1, 0.2, 0.05, -1, 2, 0.05, 1, 2, 0.05, -1, 0.2, 0.0646, -1, 0.2, 0.05, 1, 0.2, 0.05, 1, 0.2, 0.05, 1, 0.2, 0.0646, -1, 0.2, 0.0646, 1, 0.2, -0.0646, 1, 0.2, -0.05, -1, 0.2, -0.05, -1, 0.2, -0.05, -1, 0.2, -0.0646, 1, 0.2, -0.0646, -1, 0.2, 0.0646, 1, 0.2, 0.0646, 1, 0.1854, 0.0793, 1, 0.1854, 0.0793, -1, 0.1854, 0.0793, -1, 0.2, 0.0646, 1, 0.2, -0.0646, -1, 0.2, -0.0646, -1, 0.1854, -0.0793, -1, 0.1854, -0.0793, 1, 0.1854, -0.0793, 1, 0.2, -0.0646)
@@ -10,10 +34,11 @@ data = PackedVector3Array(1, 0.1854, 0.0793, 1, 0, 0.0793, -1, 0, 0.0793, -1, 0,
 script = ExtResource("1_hld35")
 onceOnly = false
 reversible = true
+activationClip = ExtResource("2_gucxj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 gi_mode = 2
-mesh = ExtResource("2_a56h7")
+mesh = SubResource("ArrayMesh_7r71s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 

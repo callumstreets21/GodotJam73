@@ -11,7 +11,7 @@ public partial class DynamicRotator : DynamicObject
     private bool isRotating = false; // Track if rotation is in progress
     private Quaternion startRotation;
     private Quaternion endRotation;
-
+    
     public override void _Process(double delta)
     {
         base._Process(delta);
