@@ -197,16 +197,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00442, 0.00129795, 1.00507)
 
 [node name="Pillar3" parent="Walls and decoration" instance=ExtResource("12_v0utp")]
-transform = Transform3D(0.6, 0, 0, 0, 1.2, 0, 0, 0, 0.6, 1.99341, 0.00500393, 1.99956)
+transform = Transform3D(0.65, 0, 0, 0, 1, 0, 0, 0, 0.65, 1.99341, 0.00500393, 1.99956)
 
 [node name="Pillar4" parent="Walls and decoration" instance=ExtResource("12_v0utp")]
-transform = Transform3D(0.6, 0, 0, 0, 1.2, 0, 0, 0, 0.6, 1.99341, 0.00500393, -0.000440598)
+transform = Transform3D(0.65, 0, 0, 0, 1, 0, 0, 0, 0.65, 1.99341, 0.00500393, -0.000440598)
 
 [node name="Pillar5" parent="Walls and decoration" instance=ExtResource("12_v0utp")]
-transform = Transform3D(0.6, 0, 0, 0, 1.2, 0, 0, 0, 0.6, -0.00658691, 0.00500393, -0.000440598)
+transform = Transform3D(0.65, 0, 0, 0, 1, 0, 0, 0, 0.65, -0.00658691, 0.00500393, -0.000440598)
 
 [node name="Pillar6" parent="Walls and decoration" instance=ExtResource("12_v0utp")]
-transform = Transform3D(0.6, 0, 0, 0, 1.2, 0, 0, 0, 0.6, -0.00658691, 0.00500393, 1.99956)
+transform = Transform3D(0.65, 0, 0, 0, 1, 0, 0, 0, 0.65, -0.00658691, 0.00500393, 1.99956)
 
 [node name="EndGoal" parent="." instance=ExtResource("8_2fj75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -7)
