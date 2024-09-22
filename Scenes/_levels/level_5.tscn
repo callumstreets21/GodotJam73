@@ -172,17 +172,11 @@ mesh = ExtResource("7_5n85y")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls and decoration/BasicWall8/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_rkvhr")
 
-[node name="OilDrum" parent="Walls and decoration" instance=ExtResource("8_5lult")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
-
 [node name="OilDrumStackGroup" parent="Walls and decoration" instance=ExtResource("9_q3nvx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47787, 0, -0.498553)
 
 [node name="OilDrumStack2" parent="Walls and decoration" instance=ExtResource("10_8dx1l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.064548, 0, 0.388792)
-
-[node name="OilDrumStack3" parent="Walls and decoration" instance=ExtResource("10_8dx1l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0517724, 0, 0.0662161)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.064548, 0, 0.454284)
 
 [node name="OilDrumStack4" parent="Walls and decoration" instance=ExtResource("11_urw5b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4984, 0, 0.0196832)
@@ -203,16 +197,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00442, 0.00129795, 1.00507)
 
 [node name="Pillar3" parent="Walls and decoration" instance=ExtResource("12_v0utp")]
-transform = Transform3D(0.6, 0, 0, 0, 1.2, 0, 0, 0, 0.6, 1.99558, 0.00129795, 2.00507)
+transform = Transform3D(0.6, 0, 0, 0, 1.2, 0, 0, 0, 0.6, 1.99341, 0.00500393, 1.99956)
 
 [node name="Pillar4" parent="Walls and decoration" instance=ExtResource("12_v0utp")]
-transform = Transform3D(0.6, 0, 0, 0, 1.2, 0, 0, 0, 0.6, 1.99558, 0.00129795, 0.0050683)
+transform = Transform3D(0.6, 0, 0, 0, 1.2, 0, 0, 0, 0.6, 1.99341, 0.00500393, -0.000440598)
 
 [node name="Pillar5" parent="Walls and decoration" instance=ExtResource("12_v0utp")]
-transform = Transform3D(0.6, 0, 0, 0, 1.2, 0, 0, 0, 0.6, -0.0044167, 0.00129795, 0.0050683)
+transform = Transform3D(0.6, 0, 0, 0, 1.2, 0, 0, 0, 0.6, -0.00658691, 0.00500393, -0.000440598)
 
 [node name="Pillar6" parent="Walls and decoration" instance=ExtResource("12_v0utp")]
-transform = Transform3D(0.6, 0, 0, 0, 1.2, 0, 0, 0, 0.6, -0.0044167, 0.00129795, 2.00507)
+transform = Transform3D(0.6, 0, 0, 0, 1.2, 0, 0, 0, 0.6, -0.00658691, 0.00500393, 1.99956)
 
 [node name="EndGoal" parent="." instance=ExtResource("8_2fj75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -7)
