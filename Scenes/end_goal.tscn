@@ -54,7 +54,6 @@ size = Vector3(1.6, 1.4, 1.4)
 script = ExtResource("1_5rh8n")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 mesh = SubResource("ArrayMesh_pnjnd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Mesh"]
