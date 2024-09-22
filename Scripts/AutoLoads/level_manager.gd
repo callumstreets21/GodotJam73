@@ -38,6 +38,7 @@ func show_main_menu():
 	
 func show_level_1():
 	b_timer_active = true
+	timer = 0
 	_change_scene(FIRST_LEVEL)
 	
 func show_options_menu():
