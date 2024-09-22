@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="1_jqw3f"]
 [ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="2_xryiw"]
-[ext_resource type="PackedScene" path="res://Scenes/_floors/floor_level_7.tscn" id="3_gjcs1"]
+[ext_resource type="PackedScene" uid="uid://bwkdnixexbicr" path="res://Scenes/_floors/floor_level_7.tscn" id="3_gjcs1"]
 [ext_resource type="PackedScene" uid="uid://cfaivgmhn44au" path="res://Scenes/Game Objects/destructible_floor.tscn" id="3_y5qho"]
 [ext_resource type="PackedScene" uid="uid://dt7rm4c8cord0" path="res://Scenes/Props/torch.tscn" id="4_njbmy"]
 [ext_resource type="PackedScene" uid="uid://c5ln8eq3b3wkp" path="res://Scenes/end_goal.tscn" id="5_r60rk"]
