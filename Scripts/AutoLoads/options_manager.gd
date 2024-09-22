@@ -40,6 +40,9 @@ func SetMusicV(value:float)->void:
 func SetSFXV(value:float)->void:
 	SFXVolume = value
 
+func SetMasterVolume(value:float):
+	master_volume = value
+	
 func get_master_volume():
 	return master_volume
 	

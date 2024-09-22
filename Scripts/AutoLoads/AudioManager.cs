@@ -62,11 +62,17 @@ public partial class AudioManager : Node
         }
 
         // Accessing the GDScript 'OptionsManager' to retrieve volumes
+        UpdateMusicVolume();
+
+    }
+
+    public void UpdateMusicVolume()
+    {
+        // Accessing the GDScript 'OptionsManager' to retrieve volumes
         var optionsManager = GetNode(OPTIONS_MANAGER_PATH);  
         float masterVolume = (float)optionsManager.Call("get_master_volume");
         float musicVolume = (float)optionsManager.Call("get_music_volume");
         musicSource.VolumeDb = Utils.LinearToDb(masterVolume * musicVolume); 
-        
     }
 
     public void PauseMusic()
