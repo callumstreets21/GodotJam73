@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmcmwao8gsgr3"]
+
+[ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="1_jqw3f"]
+[ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="2_xryiw"]
+[ext_resource type="PackedScene" uid="uid://bwkdnixexbicr" path="res://Scenes/_floors/floor_level_7.tscn" id="3_gjcs1"]
+[ext_resource type="PackedScene" uid="uid://dhcdpm2qymit0" path="res://Scenes/Game Objects/destructible_floor.tscn" id="3_y5qho"]
+[ext_resource type="PackedScene" uid="uid://dt7rm4c8cord0" path="res://Scenes/Props/torch.tscn" id="4_njbmy"]
+[ext_resource type="PackedScene" uid="uid://c5ln8eq3b3wkp" path="res://Scenes/end_goal.tscn" id="5_r60rk"]
+[ext_resource type="PackedScene" uid="uid://c7ocvb2duj8e6" path="res://Scenes/_levels/level_debug.tscn" id="6_k887w"]
+
+[node name="LevelTemplate" type="Node3D"]
+
+[node name="DefaultEnvironment" parent="." instance=ExtResource("1_jqw3f")]
+
+[node name="Player" parent="." instance=ExtResource("2_xryiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00590897, 0.5, 6.06146)
+
+[node name="DestructibleFloor" parent="." instance=ExtResource("3_y5qho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.105043)
+
+[node name="DestructibleFloor2" parent="." instance=ExtResource("3_y5qho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.06975)
+
+[node name="DestructibleFloor3" parent="." instance=ExtResource("3_y5qho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13336, 0, -2.94968)
+
+[node name="DestructibleFloor4" parent="." instance=ExtResource("3_y5qho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.19637, 0, -6.29826)
+
+[node name="DestructibleFloor5" parent="." instance=ExtResource("3_y5qho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.26621, -9.53674e-07, -9.33377)
+
+[node name="DestructibleFloor6" parent="." instance=ExtResource("3_y5qho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.195843, -9.53674e-07, -9.48716)
+
+[node name="DestructibleFloor7" parent="." instance=ExtResource("3_y5qho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.39378, 0, -9.65669)
+
+[node name="DestructibleFloor8" parent="." instance=ExtResource("3_y5qho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32579, 0, -5.26349)
+
+[node name="DestructibleFloor9" parent="." instance=ExtResource("3_y5qho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.43756, 0, -14.087)
+
+[node name="Floor Level 7" parent="." instance=ExtResource("3_gjcs1")]
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="Torch" parent="Lighting" instance=ExtResource("4_njbmy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 4)
+
+[node name="Torch5" parent="Lighting" instance=ExtResource("4_njbmy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23709, 0, -6.40097)
+
+[node name="Torch6" parent="Lighting" instance=ExtResource("4_njbmy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.41997, 0, -5.65015)
+
+[node name="Torch7" parent="Lighting" instance=ExtResource("4_njbmy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.41997, 0, -14.4624)
+
+[node name="Torch2" parent="Lighting" instance=ExtResource("4_njbmy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4)
+
+[node name="Torch3" parent="Lighting" instance=ExtResource("4_njbmy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -22)
+
+[node name="Torch4" parent="Lighting" instance=ExtResource("4_njbmy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -22)
+
+[node name="ActivatorsAndDynamics" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+
+[node name="EndGoal" parent="." instance=ExtResource("5_r60rk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
+NextLevel = ExtResource("6_k887w")

@@ -51,7 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -7)
 targetObject = NodePath("../Teleporter Rotator")
 
 [node name="EndGoal" parent="." instance=ExtResource("6_kci56")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 6)
 NextLevel = ExtResource("9_6tc7i")
 
 [editable path="DefaultEnvironment"]
