@@ -21,6 +21,7 @@ data = PackedVector3Array(0, 1, 0.5, 0.3536, 1, 0.3536, 0, 0.6, 0.5, 0.3536, 1, 
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+gi_mode = 2
 mesh = SubResource("CylinderMesh_thyym")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
