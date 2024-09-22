@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dxe1bogj8qnry" path="res://Scenes/DynamicObjects/teleporter_enable_disable.tscn" id="6_l33h6"]
 [ext_resource type="PackedScene" uid="uid://cr2wfyd1gp0s0" path="res://Scenes/DynamicObjects/wall_hidden_door.tscn" id="6_u0y2q"]
 [ext_resource type="PackedScene" uid="uid://c5ln8eq3b3wkp" path="res://Scenes/end_goal.tscn" id="7_cjvfb"]
-[ext_resource type="PackedScene" uid="uid://bbj8wqjbkwvar" path="res://Scenes/_menus/win_screen.tscn" id="9_gujeo"]
+[ext_resource type="PackedScene" uid="uid://cgh3qbcqggitr" path="res://Scenes/_levels/level_5.tscn" id="9_ul0gx"]
 
 [node name="Level4" type="Node3D"]
 
@@ -60,7 +60,7 @@ targetObject = NodePath("../WallHiddenDoor")
 
 [node name="EndGoal" parent="." instance=ExtResource("7_cjvfb")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 6)
-NextLevel = ExtResource("9_gujeo")
+NextLevel = ExtResource("9_ul0gx")
 
 [editable path="ActivatorsAndDynamics/Teleporter Enable_Disable"]
 [editable path="ActivatorsAndDynamics/Teleporter Enable_Disable/Teleporter"]

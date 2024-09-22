@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnwcej87i4aem"]
+
+[ext_resource type="Script" path="res://Scripts/Potato.cs" id="1_ay8je"]
+[ext_resource type="PackedScene" uid="uid://blwj6sqn71fhu" path="res://Scenes/Components/DamageComponent.tscn" id="2_o1esq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5x38w"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_e5qlm"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sbr5v"]
+radius = 0.357371
+
+[node name="Potato" type="CharacterBody3D"]
+script = ExtResource("1_ay8je")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+light_color = Color(0.632225, 1.9493e-06, 3.36915e-07, 1)
+spot_range = 3.45996
+spot_attenuation = -3.43
+spot_angle = 26.17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_5x38w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_e5qlm")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="DamageComponent" parent="." instance=ExtResource("2_o1esq")]
+damageAmount = 2.0
+
+[node name="CollisionShape3D" parent="DamageComponent" index="0"]
+shape = SubResource("SphereShape3D_sbr5v")
+
+[editable path="DamageComponent"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqmhexfwuurle"]
+
+[ext_resource type="Script" path="res://Scripts/kill_floor.gd" id="1_nq8qs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdhnw"]
+
+[node name="Kill Floor" type="Node3D"]
+script = ExtResource("1_nq8qs")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_fdhnw")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

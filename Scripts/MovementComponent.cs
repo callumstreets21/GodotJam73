@@ -1,10 +1,14 @@
 using Godot;
 using System;
 
+
 namespace GodotTemplate.Scripts;
 
 public partial class MovementComponent : Node3D
 {
+	// Constants
+	private const string OPTIONS_MANAGER_PATH = "/root/OptionsManager";
+	
 	private float speed;
 	private Vector3 direction;
 	private Vector3 velocity;
@@ -17,6 +21,10 @@ public partial class MovementComponent : Node3D
 
 	public override void _Ready()
 	{
+		// Accessing the GDScript 'OptionsManager' to retrieve volumes
+		var optionsManager = GetNode(OPTIONS_MANAGER_PATH);  
+		mouseSensitivity = (float)optionsManager.Call("GetLookSensetivity");
+		
 		speed = 10.0f;
 		direction = Vector3.Zero;
 		velocity = Vector3.Zero;
@@ -36,18 +44,18 @@ public partial class MovementComponent : Node3D
 			direction = direction.Normalized();
 			direction = parent_to_move.Transform.Basis * direction;
 		}
-		
+
 		isOnGround = parent_to_move.IsOnFloor();
-		
+
 		if (isOnGround && Input.IsActionJustPressed("jump"))
 		{
 			velocity.Y = jumpForce;
 		}
-		
+
 		velocity -= gravity * (float)delta;
 		velocity.X = direction.X * speed;
 		velocity.Z = direction.Z * speed;
-		
+
 		parent_to_move.Velocity = velocity;
 		parent_to_move.MoveAndSlide();
 
