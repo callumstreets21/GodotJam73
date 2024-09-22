@@ -1,0 +1,224 @@
+[gd_scene load_steps=15 format=3 uid="uid://cgh3qbcqggitr"]
+
+[ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="1_0wfa0"]
+[ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="2_iy71u"]
+[ext_resource type="PackedScene" uid="uid://dal0pvqcyj1n6" path="res://Scenes/_floors/floor_level_5.tscn" id="3_q30op"]
+[ext_resource type="PackedScene" uid="uid://dt7rm4c8cord0" path="res://Scenes/Props/torch.tscn" id="4_i6t1x"]
+[ext_resource type="PackedScene" uid="uid://cmjxw04l83o4o" path="res://Scenes/teleporter_with_arm.tscn" id="5_k1c4v"]
+[ext_resource type="PackedScene" uid="uid://v7b4j44hvjej" path="res://Scenes/teleporter.tscn" id="6_oxkuj"]
+[ext_resource type="ArrayMesh" uid="uid://dwvoex2m7wdks" path="res://Models/Wall/LowPoly_Wall.res" id="7_5n85y"]
+[ext_resource type="PackedScene" uid="uid://c5ln8eq3b3wkp" path="res://Scenes/end_goal.tscn" id="8_2fj75"]
+[ext_resource type="PackedScene" uid="uid://bbsr7t8jwpps2" path="res://Scenes/Props/Oil Drums/oil_drum.tscn" id="8_5lult"]
+[ext_resource type="PackedScene" uid="uid://bqlohpxfyiihm" path="res://Scenes/Props/Oil Drums/oil_drum_stack_group.tscn" id="9_q3nvx"]
+[ext_resource type="PackedScene" uid="uid://d3er6wlnc5eaw" path="res://Scenes/Props/Oil Drums/oil_drum_stack_2.tscn" id="10_8dx1l"]
+[ext_resource type="PackedScene" uid="uid://c2tbmbyyfwh82" path="res://Scenes/Props/Oil Drums/oil_drum_stack_3.tscn" id="11_urw5b"]
+[ext_resource type="PackedScene" uid="uid://di60xi0xkc2x6" path="res://Scenes/Props/pillar.tscn" id="12_v0utp"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rkvhr"]
+data = PackedVector3Array(1, 0.1854, 0.0793, 1, 0, 0.0793, -1, 0, 0.0793, -1, 0, 0.0793, -1, 0.1854, 0.0793, 1, 0.1854, 0.0793, 1, 0, -0.0793, 1, 0.1854, -0.0793, -1, 0.1854, -0.0793, -1, 0.1854, -0.0793, -1, 0, -0.0793, 1, 0, -0.0793, 1, 0.2, -0.05, 1, 2, -0.05, -1, 2, -0.05, -1, 2, -0.05, -1, 0.2, -0.05, 1, 0.2, -0.05, 1, 2, 0.05, 1, 0.2, 0.05, -1, 0.2, 0.05, -1, 0.2, 0.05, -1, 2, 0.05, 1, 2, 0.05, -1, 0.2, 0.0646, -1, 0.2, 0.05, 1, 0.2, 0.05, 1, 0.2, 0.05, 1, 0.2, 0.0646, -1, 0.2, 0.0646, 1, 0.2, -0.0646, 1, 0.2, -0.05, -1, 0.2, -0.05, -1, 0.2, -0.05, -1, 0.2, -0.0646, 1, 0.2, -0.0646, -1, 0.2, 0.0646, 1, 0.2, 0.0646, 1, 0.1854, 0.0793, 1, 0.1854, 0.0793, -1, 0.1854, 0.0793, -1, 0.2, 0.0646, 1, 0.2, -0.0646, -1, 0.2, -0.0646, -1, 0.1854, -0.0793, -1, 0.1854, -0.0793, 1, 0.1854, -0.0793, 1, 0.2, -0.0646)
+
+[node name="Level5" type="Node3D"]
+
+[node name="DefaultEnvironment" parent="." instance=ExtResource("1_0wfa0")]
+
+[node name="Player" parent="." instance=ExtResource("2_iy71u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 8)
+
+[node name="Floor Template" parent="." instance=ExtResource("3_q30op")]
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="Torch" parent="Lighting" instance=ExtResource("4_i6t1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.72628)
+
+[node name="Torch2" parent="Lighting" instance=ExtResource("4_i6t1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2.72628)
+
+[node name="Torch3" parent="Lighting" instance=ExtResource("4_i6t1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42304, 0, 10.4503)
+
+[node name="Torch4" parent="Lighting" instance=ExtResource("4_i6t1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.428023, 0, 5.74691)
+
+[node name="Torch5" parent="Lighting" instance=ExtResource("4_i6t1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.816757, 0.839732, -5.45161)
+
+[node name="ActivatorsAndDynamics" type="Node3D" parent="."]
+
+[node name="Teleporter With Arm" parent="ActivatorsAndDynamics" instance=ExtResource("5_k1c4v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="TeleportDestination" parent="ActivatorsAndDynamics/Teleporter With Arm" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 8)
+
+[node name="MeshInstance3D" parent="ActivatorsAndDynamics/Teleporter With Arm" index="5"]
+visible = false
+
+[node name="StaticBody3D" parent="ActivatorsAndDynamics/Teleporter With Arm/MeshInstance3D" index="0"]
+visible = false
+collision_layer = 0
+collision_mask = 0
+input_ray_pickable = false
+
+[node name="CollisionShape3D" parent="ActivatorsAndDynamics/Teleporter With Arm/MeshInstance3D/StaticBody3D" index="0"]
+visible = false
+
+[node name="MeshInstance3D3" parent="ActivatorsAndDynamics/Teleporter With Arm" index="7"]
+visible = false
+
+[node name="StaticBody3D" parent="ActivatorsAndDynamics/Teleporter With Arm/MeshInstance3D3" index="0"]
+visible = false
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape3D" parent="ActivatorsAndDynamics/Teleporter With Arm/MeshInstance3D3/StaticBody3D" index="0"]
+visible = false
+
+[node name="Teleporter" parent="ActivatorsAndDynamics" instance=ExtResource("6_oxkuj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="TeleportDestination" parent="ActivatorsAndDynamics/Teleporter" index="1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.3563, 1, 2)
+
+[node name="Teleporter2" parent="ActivatorsAndDynamics" instance=ExtResource("6_oxkuj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1)
+
+[node name="TeleportDestination" parent="ActivatorsAndDynamics/Teleporter2" index="1"]
+transform = Transform3D(-0.637693, 0, 0.770291, 0, 1, 0, -0.770291, 0, -0.637693, -2.18527, 1, -0.724759)
+
+[node name="Teleporter3" parent="ActivatorsAndDynamics" instance=ExtResource("6_oxkuj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+
+[node name="TeleportDestination" parent="ActivatorsAndDynamics/Teleporter3" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 6)
+
+[node name="Teleporter4" parent="ActivatorsAndDynamics" instance=ExtResource("6_oxkuj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="TeleportDestination" parent="ActivatorsAndDynamics/Teleporter4" index="1"]
+transform = Transform3D(0.914063, 0, -0.405572, 0, 1, 0, 0.405572, 0, 0.914063, -0.206652, 1, -2.34625)
+
+[node name="Walls and decoration" type="Node3D" parent="."]
+
+[node name="BasicWall" type="MeshInstance3D" parent="Walls and decoration"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, -2)
+mesh = ExtResource("7_5n85y")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls and decoration/BasicWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls and decoration/BasicWall/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_rkvhr")
+
+[node name="BasicWall2" type="MeshInstance3D" parent="Walls and decoration"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, 0)
+mesh = ExtResource("7_5n85y")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls and decoration/BasicWall2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls and decoration/BasicWall2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_rkvhr")
+
+[node name="BasicWall3" type="MeshInstance3D" parent="Walls and decoration"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, 2)
+mesh = ExtResource("7_5n85y")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls and decoration/BasicWall3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls and decoration/BasicWall3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_rkvhr")
+
+[node name="BasicWall4" type="MeshInstance3D" parent="Walls and decoration"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, 4)
+mesh = ExtResource("7_5n85y")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls and decoration/BasicWall4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls and decoration/BasicWall4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_rkvhr")
+
+[node name="BasicWall5" type="MeshInstance3D" parent="Walls and decoration"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, -2)
+mesh = ExtResource("7_5n85y")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls and decoration/BasicWall5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls and decoration/BasicWall5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_rkvhr")
+
+[node name="BasicWall6" type="MeshInstance3D" parent="Walls and decoration"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, 0)
+mesh = ExtResource("7_5n85y")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls and decoration/BasicWall6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls and decoration/BasicWall6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_rkvhr")
+
+[node name="BasicWall7" type="MeshInstance3D" parent="Walls and decoration"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, 2)
+mesh = ExtResource("7_5n85y")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls and decoration/BasicWall7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls and decoration/BasicWall7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_rkvhr")
+
+[node name="BasicWall8" type="MeshInstance3D" parent="Walls and decoration"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, 4)
+mesh = ExtResource("7_5n85y")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls and decoration/BasicWall8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls and decoration/BasicWall8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_rkvhr")
+
+[node name="OilDrum" parent="Walls and decoration" instance=ExtResource("8_5lult")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="OilDrumStackGroup" parent="Walls and decoration" instance=ExtResource("9_q3nvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47787, 0, -0.498553)
+
+[node name="OilDrumStack2" parent="Walls and decoration" instance=ExtResource("10_8dx1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.064548, 0, 0.388792)
+
+[node name="OilDrumStack3" parent="Walls and decoration" instance=ExtResource("10_8dx1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0517724, 0, 0.0662161)
+
+[node name="OilDrumStack4" parent="Walls and decoration" instance=ExtResource("11_urw5b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4984, 0, 0.0196832)
+
+[node name="OilDrumStackGroup2" parent="Walls and decoration" instance=ExtResource("9_q3nvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5444, 0, -2.68587)
+
+[node name="OilDrumStackGroup3" parent="Walls and decoration" instance=ExtResource("9_q3nvx")]
+transform = Transform3D(-0.154624, 0, -0.987973, 0, 1, 0, 0.987973, 0, -0.154624, -1.50388, 0, -2.45171)
+
+[node name="OilDrum2" parent="Walls and decoration" instance=ExtResource("8_5lult")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03687, 0, 3.51195)
+
+[node name="Pillar" parent="Walls and decoration" instance=ExtResource("12_v0utp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
+
+[node name="Pillar2" parent="Walls and decoration" instance=ExtResource("12_v0utp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00442, 0.00129795, 1.00507)
+
+[node name="Pillar3" parent="Walls and decoration" instance=ExtResource("12_v0utp")]
+transform = Transform3D(0.6, 0, 0, 0, 1.2, 0, 0, 0, 0.6, 1.99558, 0.00129795, 2.00507)
+
+[node name="Pillar4" parent="Walls and decoration" instance=ExtResource("12_v0utp")]
+transform = Transform3D(0.6, 0, 0, 0, 1.2, 0, 0, 0, 0.6, 1.99558, 0.00129795, 0.0050683)
+
+[node name="Pillar5" parent="Walls and decoration" instance=ExtResource("12_v0utp")]
+transform = Transform3D(0.6, 0, 0, 0, 1.2, 0, 0, 0, 0.6, -0.0044167, 0.00129795, 0.0050683)
+
+[node name="Pillar6" parent="Walls and decoration" instance=ExtResource("12_v0utp")]
+transform = Transform3D(0.6, 0, 0, 0, 1.2, 0, 0, 0, 0.6, -0.0044167, 0.00129795, 2.00507)
+
+[node name="EndGoal" parent="." instance=ExtResource("8_2fj75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -7)
+
+[editable path="ActivatorsAndDynamics/Teleporter With Arm"]
+[editable path="ActivatorsAndDynamics/Teleporter"]
+[editable path="ActivatorsAndDynamics/Teleporter2"]
+[editable path="ActivatorsAndDynamics/Teleporter3"]
+[editable path="ActivatorsAndDynamics/Teleporter4"]

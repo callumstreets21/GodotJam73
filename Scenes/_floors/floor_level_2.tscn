@@ -23,7 +23,6 @@ data = {
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
 [node name="Ceiling" type="GridMap" parent="."]
-visible = false
 mesh_library = ExtResource("1_nqtft")
 cell_center_y = false
 data = {
