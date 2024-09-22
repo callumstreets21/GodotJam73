@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbscgi28d25ko"]
+[gd_scene load_steps=7 format=3 uid="uid://dbscgi28d25ko"]
 
 [ext_resource type="Script" path="res://Scripts/FeatherCollectable.cs" id="1_jolao"]
+[ext_resource type="PackedScene" uid="uid://di33ac72c6x8c" path="res://Models/fether.glb" id="2_trv0n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ndqeo"]
 size = Vector3(0.336121, 0.515991, 0.386658)
@@ -51,6 +52,7 @@ shape = SubResource("BoxShape3D_ndqeo")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(0.416867, -0.908967, 0, 0.908967, 0.416867, 0, 0, 0, 1, 0, 0, 0)
+visible = false
 text = "Feather"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -58,3 +60,6 @@ libraries = {
 "": SubResource("AnimationLibrary_qywsl")
 }
 autoplay = "FeatherSpin"
+
+[node name="fether" parent="." instance=ExtResource("2_trv0n")]
+transform = Transform3D(0.0160987, 0, -0.0681236, 0, 0.07, 0, 0.0681236, 0, 0.0160987, 0.0220707, -0.311776, 0.000599146)
