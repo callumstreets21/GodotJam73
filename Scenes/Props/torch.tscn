@@ -1,23 +1,65 @@
-[gd_scene load_steps=2 format=3 uid="uid://dt7rm4c8cord0"]
+[gd_scene load_steps=8 format=3 uid="uid://dt7rm4c8cord0"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_bfaqr"]
-top_radius = 0.1
-bottom_radius = 0.05
-height = 0.6
+[ext_resource type="ArrayMesh" uid="uid://be6dvfr7dhxqa" path="res://Models/primitives_Torch.res" id="1_iemfd"]
+[ext_resource type="ArrayMesh" uid="uid://df6i02qiiax42" path="res://Models/primitives_Icosphere.res" id="2_07e1v"]
+
+[sub_resource type="Gradient" id="Gradient_50nak"]
+offsets = PackedFloat32Array(0.260606, 0.872727)
+colors = PackedColorArray(0, 0, 0, 1, 0.760784, 0.160784, 0.0745098, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5057y"]
+gradient = SubResource("Gradient_50nak")
+
+[sub_resource type="Curve" id="Curve_e2htg"]
+max_value = 0.1
+_data = [Vector2(0, 0.1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_q3a2v"]
+curve = SubResource("Curve_e2htg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_whpvy"]
+direction = Vector3(0, 0.2, 0)
+spread = 0.0
+initial_velocity_min = 0.1
+initial_velocity_max = 0.2
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 360.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 0.499998
+linear_accel_max = 0.999998
+scale_min = 0.2
+scale_curve = SubResource("CurveTexture_q3a2v")
+color = Color(0.705882, 0.180392, 0, 1)
+color_initial_ramp = SubResource("GradientTexture1D_5057y")
+hue_variation_min = -0.2
+hue_variation_max = 0.2
+turbulence_enabled = true
+turbulence_noise_strength = 0.1
+turbulence_noise_speed = Vector3(0, 1, 0)
+turbulence_influence_min = 0.05
 
 [node name="Torch" type="Node3D"]
 
 [node name="Body" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
-mesh = SubResource("CylinderMesh_bfaqr")
+mesh = ExtResource("1_iemfd")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.664429, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.121, 0)
 light_color = Color(0.785841, 0.406413, 0.116389, 1)
 light_energy = 4.0
-light_size = 0.1
+light_size = 0.01
 shadow_enabled = true
 distance_fade_enabled = true
 omni_range = 10.0
-omni_attenuation = 2.0
+omni_attenuation = 1.8
 omni_shadow_mode = 0
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00035, 0)
+amount = 200
+randomness = 1.0
+local_coords = true
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_whpvy")
+draw_pass_1 = ExtResource("2_07e1v")
