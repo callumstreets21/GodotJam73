@@ -6,41 +6,41 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_ndqeo"]
 size = Vector3(0.336121, 0.515991, 0.386658)
 
-[sub_resource type="Animation" id="Animation_usroh"]
-resource_name = "FeatherSpin"
+[sub_resource type="Animation" id="Animation_sox08"]
+resource_name = "feather"
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label3D:rotation")
+tracks/0/path = NodePath("fether:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 1.1408), Vector3(0, 3.14159, 1.14145), Vector3(0, 6.28319, 1.14145)]
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_vuh6c"]
+[sub_resource type="Animation" id="Animation_vgqqx"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label3D:rotation")
+tracks/0/path = NodePath("fether:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 1.1408)]
+"values": [Vector3(0, -1.33874, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qywsl"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_juu2h"]
 _data = {
-"FeatherSpin": SubResource("Animation_usroh"),
-"RESET": SubResource("Animation_vuh6c")
+"RESET": SubResource("Animation_vgqqx"),
+"feather": SubResource("Animation_sox08")
 }
 
 [node name="Feather" type="Area3D"]
@@ -55,11 +55,11 @@ transform = Transform3D(0.416867, -0.908967, 0, 0.908967, 0.416867, 0, 0, 0, 1, 
 visible = false
 text = "Feather"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_qywsl")
-}
-autoplay = "FeatherSpin"
-
 [node name="fether" parent="." instance=ExtResource("2_trv0n")]
 transform = Transform3D(0.0160987, 0, -0.0681236, 0, 0.07, 0, 0.0681236, 0, 0.0160987, 0.0220707, -0.311776, 0.000599146)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_juu2h")
+}
+autoplay = "feather"
