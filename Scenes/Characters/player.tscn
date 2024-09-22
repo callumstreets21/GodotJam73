@@ -1,11 +1,10 @@
-
-[gd_scene load_steps=6 format=3 uid="uid://dkbwkvi8f7mtw"]
+[gd_scene load_steps=7 format=3 uid="uid://dkbwkvi8f7mtw"]
 
 [ext_resource type="PackedScene" uid="uid://bgdr43xclpdfg" path="res://Scenes/Components/movement_component.tscn" id="1_aafd6"]
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_nm5t0"]
 [ext_resource type="PackedScene" uid="uid://fj4mdocx3lfx" path="res://Scenes/Components/LightDetectionComponent.tscn" id="2_46fqv"]
 [ext_resource type="PackedScene" uid="uid://bl67voc8e8kv5" path="res://Scenes/Components/health_component.tscn" id="4_xdke3"]
-
+[ext_resource type="PackedScene" uid="uid://dnua45bfoij6l" path="res://Scenes/UI/options_menu_ingame.tscn" id="5_ewlq5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yt30g"]
 radius = 0.25
@@ -40,3 +39,6 @@ jumpForce = 4.0
 offset = Vector3(0, -0.5, 0)
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_xdke3")]
+
+[node name="Options Menu" parent="." instance=ExtResource("5_ewlq5")]
+visible = false
