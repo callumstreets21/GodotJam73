@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dxe1bogj8qnry" path="res://Scenes/DynamicObjects/teleporter_enable_disable.tscn" id="10_5sohc"]
 [ext_resource type="PackedScene" uid="uid://cr2wfyd1gp0s0" path="res://Scenes/DynamicObjects/wall_hidden_door.tscn" id="11_ogp5j"]
 [ext_resource type="PackedScene" uid="uid://cq0du8ovb0wat" path="res://Scenes/DynamicObjects/pressure_pad.tscn" id="12_jkgsd"]
-[ext_resource type="PackedScene" uid="uid://cnwcej87i4aem" path="res://Scenes/Characters/potato.tscn" id="13_22y67"]
+[ext_resource type="PackedScene" uid="uid://ct6k3rpdiha5b" path="res://Scenes/Characters/potato.tscn" id="13_22y67"]
 
 [node name="LevelDebug" type="Node3D"]
 

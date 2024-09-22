@@ -1,7 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhcdpm2qymit0"]
+[gd_scene load_steps=9 format=3 uid="uid://cfaivgmhn44au"]
 
 [ext_resource type="Script" path="res://destructible_floor.gd" id="1_j2vmw"]
-[ext_resource type="PackedScene" uid="uid://cs4t3jf5u102l" path="res://MeshLibrary/floor_tiles.tscn" id="2_uil03"]
+[ext_resource type="Texture2D" uid="uid://d00bsowcyyg2v" path="res://Images/Textures/Wooden Floor/Floor Tile_standardSurface1_BaseMap.png" id="2_o0076"]
+[ext_resource type="Texture2D" uid="uid://uu4v5f3k3sa7" path="res://Images/Textures/Wooden Floor/Floor Tile_standardSurface1_Normal.png" id="3_44dbh"]
+[ext_resource type="Texture2D" uid="uid://dlc2ay5hlkewb" path="res://Images/Textures/Wooden Floor/Floor Tile_standardSurface1_MaskMap.png" id="4_r2p5p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mm4ws"]
+albedo_texture = ExtResource("2_o0076")
+roughness_texture = ExtResource("4_r2p5p")
+normal_enabled = true
+normal_texture = ExtResource("3_44dbh")
+
+[sub_resource type="BoxMesh" id="BoxMesh_yb6ea"]
+material = SubResource("StandardMaterial3D_mm4ws")
+size = Vector3(2, 0.2, 2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_btxr8"]
+data = PackedVector3Array(-1, 0.1, 1, 1, 0.1, 1, -1, -0.1, 1, 1, 0.1, 1, 1, -0.1, 1, -1, -0.1, 1, 1, 0.1, -1, -1, 0.1, -1, 1, -0.1, -1, -1, 0.1, -1, -1, -0.1, -1, 1, -0.1, -1, 1, 0.1, 1, 1, 0.1, -1, 1, -0.1, 1, 1, 0.1, -1, 1, -0.1, -1, 1, -0.1, 1, -1, 0.1, -1, -1, 0.1, 1, -1, -0.1, -1, -1, 0.1, 1, -1, -0.1, 1, -1, -0.1, -1, 1, 0.1, 1, -1, 0.1, 1, 1, 0.1, -1, -1, 0.1, 1, -1, 0.1, -1, 1, 0.1, -1, -1, -0.1, 1, 1, -0.1, 1, -1, -0.1, -1, 1, -0.1, 1, 1, -0.1, -1, -1, -0.1, -1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kkxqu"]
 size = Vector3(1.98462, 0.179001, 1.99477)
@@ -9,15 +24,22 @@ size = Vector3(1.98462, 0.179001, 1.99477)
 [node name="DestructibleFloor" type="Node3D"]
 script = ExtResource("1_j2vmw")
 
-[node name="FloorTiles" parent="." instance=ExtResource("2_uil03")]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_yb6ea")
+skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="FloorTiles"]
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorTiles/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_btxr8")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00427246, 0.0636215, -0.00925446)
 shape = SubResource("BoxShape3D_kkxqu")
 
-[node name="Timer" type="Timer" parent="FloorTiles/Area3D"]
+[node name="Timer" type="Timer" parent="Area3D"]
 
-[connection signal="body_entered" from="FloorTiles/Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="timeout" from="FloorTiles/Area3D/Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="Area3D/Timer" to="." method="_on_timer_timeout"]
