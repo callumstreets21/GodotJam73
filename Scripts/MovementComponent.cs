@@ -74,6 +74,12 @@ public partial class MovementComponent : Node3D
 
 	public override void _Input(InputEvent @event)
 	{
+		// I aplologise for my sins - Lee-Roy
+		// ABSOLUTELY DO NOT READ THIS CODE
+		var optionsManager = GetNode(OPTIONS_MANAGER_PATH); // Nothing to see here
+		mouseSensitivity = (float)optionsManager.Call("GetLookSensetivity"); // Just some stuff
+		// KEEP SCROLLING
+		
 		if (@event is InputEventMouseMotion mouseEvent)
 		{
 			Vector3 rotation = parent_to_move.RotationDegrees;

@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnua45bfoij6l"]
+
+[ext_resource type="PackedScene" uid="uid://brtoj0e7cjkym" path="res://Scenes/_menus/options_menu.tscn" id="1_5yvvd"]
+[ext_resource type="FontFile" uid="uid://duw1sex2c13gb" path="res://Fonts/Remnant-Regular.ttf" id="2_nj7up"]
+[ext_resource type="Script" path="res://Scripts/UI/OptionsMenuIngame.cs" id="2_qcrku"]
+[ext_resource type="Script" path="res://Scripts/UI/reloadbutton.gd" id="3_w5yuv"]
+
+[sub_resource type="Theme" id="Theme_56bb1"]
+default_font = ExtResource("2_nj7up")
+default_font_size = 72
+
+[node name="Options Menu" instance=ExtResource("1_5yvvd")]
+process_mode = 3
+script = ExtResource("2_qcrku")
+
+[node name="TextureRect" parent="." index="0"]
+visible = false
+
+[node name="BackButton3" type="Button" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 308.5
+offset_top = -170.0
+offset_right = 815.5
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_56bb1")
+text = "Close"
+
+[node name="BackButton2" type="Button" parent="." index="2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -253.5
+offset_top = -170.0
+offset_right = 253.5
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_56bb1")
+text = "Reload"
+script = ExtResource("3_w5yuv")
+
+[node name="BackButton" parent="." index="3"]
+visible = false
+
+[connection signal="pressed" from="BackButton3" to="BackButton2" method="_on_back_button_3_pressed"]
+[connection signal="pressed" from="BackButton2" to="BackButton2" method="_on_pressed"]
