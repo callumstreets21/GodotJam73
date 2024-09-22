@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dt7rm4c8cord0" path="res://Scenes/Props/torch.tscn" id="4_4i00k"]
 [ext_resource type="PackedScene" uid="uid://c5ln8eq3b3wkp" path="res://Scenes/end_goal.tscn" id="5_5gud2"]
 [ext_resource type="PackedScene" uid="uid://di60xi0xkc2x6" path="res://Scenes/Props/pillar.tscn" id="6_02387"]
-[ext_resource type="PackedScene" path="res://Scenes/_levels/level_7.tscn" id="6_ftge5"]
+[ext_resource type="PackedScene" uid="uid://2ihgyg5t37bq" path="res://Scenes/_levels/level_7.tscn" id="6_ftge5"]
 
 [node name="LevelTemplate" type="Node3D"]
 
