@@ -1,12 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmcmwao8gsgr3"]
+[gd_scene load_steps=11 format=3 uid="uid://2ihgyg5t37bq"]
 
 [ext_resource type="PackedScene" uid="uid://ia38iawogjd7" path="res://Scenes/default_environment.tscn" id="1_jqw3f"]
 [ext_resource type="PackedScene" uid="uid://dkbwkvi8f7mtw" path="res://Scenes/Characters/player.tscn" id="2_xryiw"]
-[ext_resource type="PackedScene" uid="uid://bwkdnixexbicr" path="res://Scenes/_floors/floor_level_7.tscn" id="3_gjcs1"]
-[ext_resource type="PackedScene" uid="uid://dhcdpm2qymit0" path="res://Scenes/Game Objects/destructible_floor.tscn" id="3_y5qho"]
+[ext_resource type="PackedScene" path="res://Scenes/_floors/floor_level_7.tscn" id="3_gjcs1"]
+[ext_resource type="PackedScene" uid="uid://cfaivgmhn44au" path="res://Scenes/Game Objects/destructible_floor.tscn" id="3_y5qho"]
 [ext_resource type="PackedScene" uid="uid://dt7rm4c8cord0" path="res://Scenes/Props/torch.tscn" id="4_njbmy"]
 [ext_resource type="PackedScene" uid="uid://c5ln8eq3b3wkp" path="res://Scenes/end_goal.tscn" id="5_r60rk"]
 [ext_resource type="PackedScene" uid="uid://c7ocvb2duj8e6" path="res://Scenes/_levels/level_debug.tscn" id="6_k887w"]
+[ext_resource type="PackedScene" uid="uid://ct6k3rpdiha5b" path="res://Scenes/Characters/potato.tscn" id="8_fy5tx"]
+[ext_resource type="PackedScene" uid="uid://w7nhv6x2yl8h" path="res://Scenes/Game Objects/kill_floor.tscn" id="9_x5j2l"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_shx6e"]
+vertices = PackedVector3Array(-7.5, 2.4, -27.5, -7.5, 2.4, 7.5, 7.5, 2.4, 7.5, 7.5, 2.4, -27.5, -6.25, 0.4, -26.25, -6.25, 0.4, -18.5, 6.25, 0.4, -18.5, 6.25, 0.4, -26.25, -6.25, 0.4, 2.5, -6.25, 0.4, 6.25, 6.25, 0.4, 6.25, 6.25, 0.4, 2.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9)]
 
 [node name="LevelTemplate" type="Node3D"]
 
@@ -42,8 +48,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32579, 0, -5.26349)
 [node name="DestructibleFloor9" parent="." instance=ExtResource("3_y5qho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.43756, 0, -14.087)
 
-[node name="Floor Level 7" parent="." instance=ExtResource("3_gjcs1")]
-
 [node name="Lighting" type="Node3D" parent="."]
 
 [node name="Torch" parent="Lighting" instance=ExtResource("4_njbmy")]
@@ -73,3 +77,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 [node name="EndGoal" parent="." instance=ExtResource("5_r60rk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
 NextLevel = ExtResource("6_k887w")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_shx6e")
+
+[node name="Floor Level 7" parent="NavigationRegion3D" instance=ExtResource("3_gjcs1")]
+
+[node name="Potato" parent="." instance=ExtResource("8_fy5tx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.15453, 0.755725, 4.30593)
+Speed = 2.5
+DetectionRangeLight = 1000.0
+DetectionRangeDark = 1000.0
+
+[node name="Potato2" parent="." instance=ExtResource("8_fy5tx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80791, 0.825553, 4.306)
+Speed = 2.5
+DetectionRangeLight = 1000.0
+DetectionRangeDark = 1000.0
+
+[node name="Kill Floor" parent="." instance=ExtResource("9_x5j2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.47749, 0)
+
+[node name="CollisionShape3D" parent="Kill Floor/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1101, -7.18896, -7.23203)
+
+[editable path="Kill Floor"]

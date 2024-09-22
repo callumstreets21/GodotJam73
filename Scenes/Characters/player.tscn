@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkbwkvi8f7mtw"]
+[gd_scene load_steps=6 format=3 uid="uid://dkbwkvi8f7mtw"]
 
 [ext_resource type="PackedScene" uid="uid://bgdr43xclpdfg" path="res://Scenes/Components/movement_component.tscn" id="1_aafd6"]
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_nm5t0"]
-[ext_resource type="PackedScene" uid="uid://dnua45bfoij6l" path="res://Scenes/UI/options_menu_ingame.tscn" id="2_qjrsi"]
+[ext_resource type="PackedScene" uid="uid://fj4mdocx3lfx" path="res://Scenes/Components/LightDetectionComponent.tscn" id="2_46fqv"]
+[ext_resource type="PackedScene" uid="uid://bl67voc8e8kv5" path="res://Scenes/Components/health_component.tscn" id="4_xdke3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yt30g"]
 radius = 0.25
@@ -10,9 +11,6 @@ height = 1.0
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_nm5t0")
-
-[node name="Options Menu" parent="." instance=ExtResource("2_qjrsi")]
-visible = false
 
 [node name="Camera3D" type="Camera3D" parent="."]
 cull_mask = 524287
@@ -35,3 +33,8 @@ shape = SubResource("CapsuleShape3D_yt30g")
 
 [node name="MovementComponent" parent="." instance=ExtResource("1_aafd6")]
 jumpForce = 4.0
+
+[node name="LightDetectionComponent" parent="." instance=ExtResource("2_46fqv")]
+offset = Vector3(0, -0.5, 0)
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_xdke3")]
