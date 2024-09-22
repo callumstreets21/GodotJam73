@@ -2,7 +2,7 @@ using Godot;
 using System;
 using GodotTemplate.Scripts;
 
-public partial class OptionsMenu : Control
+public partial class OptionsMenuIngame : Control
 {
 	// Constants
 	private const string OPTIONS_MANAGER_PATH = "/root/OptionsManager";
@@ -18,7 +18,16 @@ public partial class OptionsMenu : Control
 		HSlider Sense = GetNode<HSlider>("Options Backing/Look Sensetivity/Look Sensetivity Slider");
 		Sense.Value = GetNode(OPTIONS_MANAGER_PATH).Call("GetLookSensetivity").AsDouble();
 	}
-
+	
+	public override void _UnhandledInput(InputEvent @event)
+	{
+		if (@event.IsActionPressed("pause"))
+		{
+			Visible = !Visible;
+			Input.MouseMode = Visible ? Input.MouseModeEnum.Visible : Input.MouseModeEnum.Captured;
+			GetTree().Paused = Visible ? true : false;
+		}
+	}
 	
 	public void _on_back_button_pressed()
 	{

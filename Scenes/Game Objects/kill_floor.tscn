@@ -1,8 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqmhexfwuurle"]
+[gd_scene load_steps=3 format=3 uid="uid://w7nhv6x2yl8h"]
 
 [ext_resource type="Script" path="res://Scripts/kill_floor.gd" id="1_nq8qs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fdhnw"]
+size = Vector3(278.702, 15.3779, 330.493)
 
 [node name="Kill Floor" type="Node3D"]
 script = ExtResource("1_nq8qs")
@@ -10,6 +11,7 @@ script = ExtResource("1_nq8qs")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.743, 0, 77.2395)
 shape = SubResource("BoxShape3D_fdhnw")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
