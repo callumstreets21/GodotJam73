@@ -9,13 +9,15 @@ sky_material = SubResource("ProceduralSkyMaterial_ut04f")
 
 [sub_resource type="Environment" id="Environment_0hmcr"]
 background_mode = 1
-background_color = Color(0.0110197, 0.00976828, 0.0314386, 1)
+background_color = Color(0.115388, 0.107163, 0.208182, 1)
 background_energy_multiplier = 0.1
 sky = SubResource("Sky_1t6tt")
 tonemap_mode = 2
 ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_min_cell_size = 12.0
 glow_enabled = true
 glow_strength = 2.0
 glow_bloom = 0.1
